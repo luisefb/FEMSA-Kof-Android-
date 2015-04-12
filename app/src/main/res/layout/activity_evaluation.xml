@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <ScrollView
+        android:id="@+id/scroll_questions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_evaluation_title"
+                style="@style/tv_header"
+                android:text="@string/txt_h1"/>
+
+            <include
+                android:id="@+id/ll_question1"
+                layout="@layout/ui_question_ratio" />
+
+            <include
+                android:id="@+id/ll_question2"
+                layout="@layout/ui_question_ratio" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_next"
+        style="@style/bt_red"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:onClick="clickNext"
+        android:text="@string/bt_next"/>
+
+
+</RelativeLayout>

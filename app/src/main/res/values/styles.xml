@@ -1,0 +1,195 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+
+
+    <style name="dialog_progress" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="bg_textfield" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_textfield</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textColorHint">#BFBFBF</item>
+        <item name="android:textColor">#AAAAAA</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="bt_red" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:contentDescription">@string/desc</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:paddingLeft">50dp</item>
+        <item name="android:paddingRight">50dp</item>
+        <item name="android:background">@drawable/bt_red</item>
+    </style>
+
+    <style name="bt_gray" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#E31820</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@drawable/bt_gray</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="bt_home" parent="@android:style/Widget.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#FF161F</item>
+    </style>
+
+    <style name="bt_game" parent="@android:style/Widget.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">280dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#292727</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="tv_header" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#EB103E</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="tv_question" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#111111</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="tv_game" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#868686</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tv_heart" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#868686</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tv_prizes" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#868686</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tv_line" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_textview_line</item>
+        <item name="android:textColor">#555555</item>
+    </style>
+
+    <style name="bt_radio">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#5F5F5F</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/bg_radio_button</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="bt_checkbox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#E31820</item>
+        <item name="android:button">@drawable/bg_checkbox_button</item>
+        <item name="android:background">@drawable/bt_gray_checkbox</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="tv_gray" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#E31820</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bt_gray</item>
+    </style>
+
+    <style name="bt_map" parent="@android:style/Widget.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="tv_table_info" parent="@android:style/Widget.TextView">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">21dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textColor">#E31820</item>
+    </style>
+
+    <style name="tv_set" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">14sp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">#e31720</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+</resources>

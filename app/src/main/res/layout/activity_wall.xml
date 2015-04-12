@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+        <mx.app.ambassador.ui.layouts.FlowLayout
+            xmlns:flowlayout="http://schemas.android.com/apk/res/mx.app.ambassador"
+            android:id="@+id/fl_wall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="32dp"
+            flowlayout:orientation="horizontal"
+            flowlayout:horizontalSpacing="40dp"
+            flowlayout:verticalSpacing="6dp">
+
+            <!--
+
+            <include layout="@layout/ui_wall_item"/>
+
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <TextView
+                style="@style/tv_header"
+                android:text="@string/txt_wall_4"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+
+            <include layout="@layout/ui_wall_item"/>
+            -->
+
+        </mx.app.ambassador.ui.layouts.FlowLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

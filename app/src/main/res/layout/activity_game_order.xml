@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+        <ImageView
+            android:id="@+id/img_rail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/image_game_order_rail" />
+
+        <ImageView
+            android:id="@+id/img_truck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/image_game_order_truck" />
+
+        <TextView
+            android:id="@+id/tv_set0"
+            style="@style/tv_set"
+            android:layout_marginLeft="30dp"
+            android:drawableTop="@drawable/image_game_order_sm_0"
+            android:text="6 pck\nlatas" />
+
+        <TextView
+            android:id="@+id/tv_set1"
+            android:layout_toRightOf="@+id/tv_set0"
+            style="@style/tv_set"
+            android:drawableTop="@drawable/image_game_order_md_0"
+            android:text="12 pck\n250ml." />
+
+        <TextView
+            android:id="@+id/tv_set2"
+            android:layout_toRightOf="@+id/tv_set1"
+            style="@style/tv_set"
+            android:drawableTop="@drawable/image_game_order_bg_0"
+            android:text="6 pck\n1 litro" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_set0"
+            android:layout_alignRight="@id/tv_set2"
+            android:layout_above="@+id/tv_set2"
+            android:layout_marginBottom="20dp"
+            android:textColor="#e31720"
+            android:gravity="center"
+            android:text="1. Arma los Empaques"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/img_truck"
+            android:layout_alignRight="@id/img_truck"
+            android:layout_above="@+id/img_truck"
+            android:layout_marginBottom="20dp"
+            android:textColor="#e31720"
+            android:gravity="center"
+            android:text="2. Acomódalos en el Camión"/>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/ll_instructions"
+        layout="@layout/ui_game_instructions" />
+
+</RelativeLayout>

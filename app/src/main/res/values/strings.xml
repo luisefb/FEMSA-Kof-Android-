@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Embajadores</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="desc"></string>
+
+    <string name="hint_username">Usuario</string>
+    <string name="hint_password">Contraseña</string>
+
+    <string name="bt_recover">¿Olvidaste tu contraseña?</string>
+    <string name="bt_login">Login</string>
+    <string name="bt_alert">Alerta</string>
+    <string name="bt_cancel">Cancelar</string>
+    <string name="bt_save">Guardar</string>
+    <string name="bt_close">Cerrar</string>
+    <string name="bt_send">Enviar</string>
+    <string name="bt_acept">Aceptar</string>
+    <string name="bt_done">Salir</string>
+    <string name="bt_skip">Saltar</string>
+    <string name="bt_next">Siguiente</string>
+    <string name="bt_start">Iniciar</string>
+
+    <string name="bt_home_logbook">Bitácora</string>
+    <string name="bt_home_play">Jugar</string>
+    <string name="bt_home_guidelines">Guías</string>
+    <string name="bt_home_profile">Perfil</string>
+    <string name="bt_home_wall">Cuadro de Honor</string>
+    <string name="bt_home_yammer">Yammer</string>
+
+    <string name="bt_game_kof">Código KOF</string>
+    <string name="bt_game_team">Equipa al Equipo</string>
+    <string name="bt_game_products">Caza Productos</string>
+    <string name="bt_game_order">Todo en Orden</string>
+    <string name="bt_game_refrigerator">Reto Refri</string>
+
+    <string name="bt_checklist_sell">Preventa</string>
+    <string name="bt_checklist_storage">Bodega</string>
+    <string name="bt_checklist_service">Autoservicio</string>
+    <string name="bt_checklist_delivery">Reparto</string>
+    <string name="bt_checklist_info">Información</string>
+
+    <string name="bt_map_checklist">Checklist</string>
+    <string name="bt_map_feedback">Feedback Total</string>
+    <string name="bt_map_top10">Top Ten</string>
+    <string name="bt_map_evaluation">Pre Evaluación</string>
+    <string name="bt_map_game">Jugar</string>
+
+    <string name="txt_profile_prize_1">Be in love</string>
+    <string name="txt_profile_prize_2">Be bold</string>
+    <string name="txt_profile_prize_3">Be aggresive</string>
+    <string name="txt_profile_prize_4">Be peristent</string>
+    <string name="txt_profile_prize_5">Be aware</string>
+    <string name="txt_profile_prize_6">Be a realist</string>
+    <string name="txt_profile_prize_7">Be first</string>
+    <string name="txt_profile_prize_8">Be together</string>
+    <string name="txt_profile_prize_9">Be on time</string>
+    <string name="txt_profile_prize_10">Be proud</string>
+
+    <string name="bt_checklist_info_recomendations">Instrucciones</string>
+    <string name="bt_checklist_info_maps">Mapas / Direcciones</string>
+    <string name="bt_checklist_info_units">Unidad Operativa</string>
+
+    <string name="bt_select_camera">Desde la cámara</string>
+    <string name="bt_select_photo">Desde la galería</string>
+    <string name="bt_delete_photo">Eliminar foto</string>
+
+    <string name="txt_username">GEID</string>
+    <string name="txt_password">Contraseña</string>
+    <string name="txt_select_option">Selecciona una opción</string>
+    <string name="txt_error">Error</string>
+    <string name="txt_thanks">Gracias</string>
+    <string name="txt_sending">Enviando</string>
+    <string name="txt_updating">Actualizando</string>
+    <string name="txt_alert">¡Advertencia!</string>
+    <string name="txt_alert_close_session">¿Deseas cerrar tu sesión?</string>
+    <string name="txt_comments">Comentarios</string>
+    <string name="txt_skills">Skills</string>
+    <string name="txt_prizes">Premios</string>
+    <string name="txt_notes">Notas</string>
+    <string name="txt_instructions">Instrucciones</string>
+    <string name="txt_time">01:00</string>
+    <string name="txt_lines">-------</string>
+    <string name="txt_finished">Finalizado</string>
+
+    <string name="error_username">Verifica el formato del correo.</string>
+    <string name="error_password">La contraseña debe tener al menos 1 caracter.</string>
+    <string name="error_connectivity">No se encontró señal de internet.</string>
+
+
+    <string name="txt_game_instructions_kof">Arrastra los conceptos al icono que sea el correcto.\n¡Usa nuestro código!</string>
+    <string name="txt_game_instructions_team">Arrastra las herramientas a cada uno de los personajes del equipo KOF.\n¡Dale las armas correctas al equipo!</string>
+    <string name="txt_game_instructions_products">Haz click en los productos que se indican en la parte superior derecha.\n¡Tienes 1 minuto para hacer todos los puntos que puedas!</string>
+    <string name="txt_game_instructions_order">Haz click en los productos que se indican en la parte superior derecha.\n¡Tienes 1 minuto para hacer todos los puntos que puedas!</string>
+    <string name="txt_game_instructions_refri">Demuestra que sabes el acomodo de los productos.\n¡Deja solo los productos que deben ir en el enfriador!</string>
+
+
+    <string name="txt_gy_1">Croquis C.D. Coecillo</string>
+    <string name="txt_gy_2">Croquis Cedis Norte</string>
+    <string name="txt_gy_3">Croquis Cedis Sur</string>
+    <string name="txt_gy_4">Croquis Chalco</string>
+    <string name="txt_gy_5">Croquis Coacalco</string>
+    <string name="txt_gy_6">Croquis Cuautitlán</string>
+    <string name="txt_gy_7">Croquis Reyes</string>
+    <string name="txt_gy_8">Croquis Texcoco</string>
+    <string name="txt_gy_9">Croquis Tlalnepantla</string>
+    <string name="txt_gy_10">Croquis Tlalpan</string>
+    <string name="txt_gy_11">Croquis Zaragoza</string>
+
+
+    <string name="txt_info_head_1">Unidad operativa</string>
+    <string name="txt_info_head_2">Nombre</string>
+    <string name="txt_info_head_3">Teléfono</string>
+    <string name="txt_info_head_4">Extensión</string>
+
+    <string name="txt_info_unity_1">Cuautitlán</string>
+    <string name="txt_info_name_1">Daniela Zamora Gómez</string>
+    <string name="txt_info_tel_1">58725617</string>
+    <string name="txt_info_ext_1">4417</string>
+
+    <string name="txt_info_unity_2">Texcoco</string>
+    <string name="txt_info_name_2">Rebeca Ruano Gutiérrez</string>
+    <string name="txt_info_tel_2">015959522100 </string>
+    <string name="txt_info_ext_2">2112</string>
+
+    <string name="txt_info_unity_3">Coacalco</string>
+    <string name="txt_info_name_3">Erika Guillén Ibarra</string>
+    <string name="txt_info_tel_3">58989500</string>
+    <string name="txt_info_ext_3">9501</string>
+
+    <string name="txt_info_unity_4">Tlalnepantla</string>
+    <string name="txt_info_name_4">Verónica Gutiérrez Daniel</string>
+    <string name="txt_info_tel_4">57269030</string>
+    <string name="txt_info_ext_4">2816</string>
+
+    <string name="txt_info_unity_5">Coecillo</string>
+    <string name="txt_info_name_5">Victor Valentín Mancera</string>
+    <string name="txt_info_tel_5">17222758706</string>
+    <string name="txt_info_ext_5">4550</string>
+
+    <string name="txt_info_unity_6">Ciel Norte</string>
+    <string name="txt_info_name_6">Guadalupe García González</string>
+    <string name="txt_info_tel_6">5565 2880</string>
+    <string name="txt_info_ext_6">9908</string>
+
+
+    <string-array name="array_checklist_sales">
+
+        <item>Escaneo de entrada del cliente y saludar al cliente</item>
+        <item>Revisar inventarios</item>
+        <item>Relleno de enfriadores y exhibidores</item>
+        <item>Diálogo de Respeto al Enfriador</item>
+        <item>Sugerir y elaborar pedido</item>
+        <item>informar y ofrecer promociones o lanzamientos</item>
+        <item>Generar ticket y confirmarlo con el cliente</item>
+        <item>Escuchar y atender al cliente</item>
+        <item>Despedida y escaneo de salida del cliente</item>
+
+    </string-array>
+
+    <string-array name="array_checklist_distribution">
+
+        <item>El procedimiento de cobro seguro</item>
+        <item>Los procedimientos de seguridad de manejo de carga</item>
+        <item>El procedimiento de seguridad de maniobra en reversa</item>
+        <item>La revisión de carga</item>
+        <item>Cómo hacer la revisión de una unidad previo a la salida de la Unidad Operativa</item>
+        <item>El manejo correcto del producto</item>
+        <item>El proceso de Liquidación</item>
+
+    </string-array>
+
+    <string-array name="array_checklist_storage">
+
+        <item>Generales de cómo está conformada la bodega (puestos y sus principales roles: auxiliar de bodega, montacarguista, maniobras generales y chofer de patio)</item>
+        <item>Uso e importacia del equipo de seguridad</item>
+        <item>Orden y limpieza del almacén</item>
+        <item>TPM</item>
+        <item>Recepción y atención de fleteo (mencionar el manejo de producto no conforme)</item>
+        <item>Acomodo de producto en almacén primeras entradas primeras salidas</item>
+        <item>Carga de rutas, desde marbete hasta armado de tarimas</item>
+        <item>Armado de tarimas estándar y Armado de restos</item>
+
+    </string-array>
+
+    <string-array name="array_checklist_service">
+
+        <item>Aprendí a frentear el equipo de refrigeración, anaqueles y exhibiciones adicionales</item>
+        <item>Aprendí a rellenar equipos de refrigeración</item>
+        <item>Aprendí a rellenar anaqueles y exhibiciones</item>
+        <item>Aprendí la rotación del producto</item>
+        <item>Aprendí la limpieza de productos y anaqueles</item>
+        <item>Aprendí la negociación de espacios en el autoservicio</item>
+
+    </string-array>
+
+    
+
+    
+    <!-- TEXTOS FAKE -->
+
+    <string name="txt_h1">Conceptos básicos de FEMSA</string>
+    <string name="txt_q1">¿En qué industria se desarrolla FEMSA?</string>
+    <string name="txt_q1_a1">Aeronáutica</string>
+    <string name="txt_q1_a2">Bebidas</string>
+    <string name="txt_q1_a3">Naval</string>
+    <string name="txt_h2">Conceptos básicos de FEMSA</string>
+    <string name="txt_q2">¿Cuál es el segundo accionista cervecero más importante?</string>
+    <string name="txt_q2_a1">Indio</string>
+    <string name="txt_q2_a2">Modelo</string>
+    <string name="txt_q2_a3">Heineken</string>
+
+    <string name="txt_cb_1">Revisar inventarios</string>
+    <string name="txt_cb_2">Cotejar datos con vendedor</string>
+    <string name="txt_cb_3">Acomodar por marca</string>
+    <string name="txt_cb_4">Revisar cenefas de precios</string>
+    <string name="txt_cb_5">Sacar fantasmas</string>
+    <string name="txt_cb_6">Tomar foto del refri</string>
+
+    <string name="txt_wall_1">Juan Peréz</string>
+    <string name="txt_wall_2">Marzo 26 2015</string>
+    <string name="txt_wall_3">Generación 1</string>
+    <string name="txt_wall_4">Generación 2</string>
+
+    <string name="txt_rank_1">Gerardo Lopéz</string>
+    <string name="txt_rank_2">Generación 1970</string>
+
+    <string name="txt_log_day1">Día 1</string>
+    <string name="txt_log_day2">Día 2</string>
+    <string name="txt_log_day3">Día 3</string>
+    <string name="txt_log_day4">Día 4</string>
+    <string name="txt_log_day5">Día 5</string>
+    <string name="txt_log_lorem">Lorem ipsum dolor sit amet, consectetuer adispiscing elit. Ananean commodo ligula eget dolor. Anananean massa.</string>
+    <string name="txt_log_notes">Notas.</string>
+
+    <string name="txt_report_percent">44%</string>
+    <string name="txt_report_text">Be in love - Enamórate</string>
+
+    <string name="txt_profile_heart">x10</string>
+    <string name="txt_profile_corp">Corporativo</string>
+    <string name="txt_profile_rank">Puesto</string>
+    <string name="txt_profile_email">Correo</string>
+
+</resources>

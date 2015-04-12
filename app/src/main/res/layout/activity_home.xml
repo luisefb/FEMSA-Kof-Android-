@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2">
+
+    <include layout="@layout/header" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_home_logbook"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_home_logbook"
+                android:tag="1"
+                android:onClick="clickSection"
+                android:text="@string/bt_home_logbook" />
+
+            <Button
+                android:id="@+id/bt_home_play"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_home_play"
+                android:tag="2"
+                android:onClick="clickSection"
+                android:text="@string/bt_home_play" />
+
+            <Button
+                android:id="@+id/bt_home_guidelines"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_home_guidelines"
+                android:tag="3"
+                android:onClick="clickSection"
+                android:alpha="0.5"
+                android:text="@string/bt_home_guidelines" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/bt_home_profile"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_home_profile"
+                android:tag="4"
+                android:onClick="clickSection"
+                android:text="@string/bt_home_profile" />
+
+            <Button
+                android:id="@+id/bt_home_wall"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_home_wall"
+                android:tag="5"
+                android:onClick="clickSection"
+                android:text="@string/bt_home_wall" />
+
+            <Button
+                android:id="@+id/bt_home_instructions"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_home_yammer"
+                android:tag="6"
+                android:onClick="clickSection"
+                android:alpha="0.5"
+                android:text="@string/bt_home_yammer" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+</RelativeLayout>

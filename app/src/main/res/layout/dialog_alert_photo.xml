@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/alert_msg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/bt_select_photo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_select_photo" />
+
+    <Button
+        android:id="@+id/bt_select_camera"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_select_camera" />
+
+    <Button
+        android:id="@+id/bt_delete_photo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_delete_photo"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/bt_close"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_close" />
+
+</LinearLayout>

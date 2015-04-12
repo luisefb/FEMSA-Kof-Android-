@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <RelativeLayout
+        android:id="@+id/rl_logbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:paddingTop="5dp">
+
+        <LinearLayout
+            android:id="@+id/ll_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="40dp">
+
+            <!--
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_tab_on"
+                android:textColor="#FFFFFF"
+                android:text="@string/txt_log_day1"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_tab_off"
+                android:textColor="#FFFFFF"
+                android:text="@string/txt_log_day2"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_tab_off"
+                android:textColor="#FFFFFF"
+                android:text="@string/txt_log_day3"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_tab_off"
+                android:textColor="#FFFFFF"
+                android:text="@string/txt_log_day4"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_tab_off"
+                android:textColor="#FFFFFF"
+                android:text="@string/txt_log_day5"/>
+            -->
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_days"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#DCDCDC"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/txt_instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/txt_instructions"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_instructions"
+                android:text="@string/txt_notes"
+                android:textColor="#EB103E"
+                android:textSize="25sp" />
+
+
+            <EditText
+                android:id="@+id/txt_notes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_notes"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/rl_logbook_right"
+                android:background="@null"
+                android:gravity="left|top" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_logbook_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txt_instructions">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:onClick="clickPencil"
+                    android:src="@drawable/bt_icon_draw" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/rl_canvas"
+                    android:background="@null"
+                    android:onClick="clickPhoto"
+                    android:src="@drawable/bt_icon_camera" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_canvas"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#ff0000">
+
+                    <ImageView
+                        android:id="@+id/img_canvas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_logbook_camera" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <Button
+            style="@style/bt_red"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:onClick="clickSave"
+            android:text="@string/bt_save" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

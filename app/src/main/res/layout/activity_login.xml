@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_1">
+
+    <View
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logo_login"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/img_logo"
+        android:paddingTop="20dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/txt_username"
+            android:layout_width="400dp"
+            android:hint="@string/hint_username"
+            android:inputType="textEmailAddress"
+            style="@style/bg_textfield"/>
+
+        <EditText
+            android:id="@+id/txt_password"
+            android:layout_width="400dp"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            style="@style/bg_textfield"/>
+
+        <Button
+            android:onClick="clickLogin"
+            style="@style/bt_red"
+            android:text="@string/bt_login"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

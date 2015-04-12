@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <LinearLayout
+        android:id="@+id/ll_profile_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/bt_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc"
+            android:onClick="clickPhoto"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bt_profile_avatar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_skills"
+            android:textColor="#FF111D"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_heart_be_bold"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:drawableLeft="@drawable/icon_heart_1"
+                android:text="@string/txt_profile_heart" />
+
+            <!--
+            <TextView
+                android:id="@+id/tv_heart_2"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:drawableLeft="@drawable/icon_heart_2"
+                android:text="@string/txt_profile_heart" />
+            -->
+
+            <TextView
+                android:id="@+id/tv_heart_be_proud"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:drawableLeft="@drawable/icon_heart_3"
+                android:text="@string/txt_profile_heart" />
+
+            <TextView
+                android:id="@+id/tv_heart_be_in_love"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:drawableLeft="@drawable/icon_heart_4"
+                android:text="@string/txt_profile_heart" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/tv_heart_be_aware"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:drawableLeft="@drawable/icon_heart_5"
+                android:text="@string/txt_profile_heart" />
+
+            <TextView
+                android:id="@+id/tv_heart_be_together"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:drawableLeft="@drawable/icon_heart_6"
+                android:text="@string/txt_profile_heart" />
+
+            <TextView
+                android:id="@+id/tv_heart_be_on_time"
+                style="@style/tv_heart"
+                android:layout_weight="33"
+                android:visibility="invisible"
+                android:drawableLeft="@drawable/icon_heart_4"
+                android:text="@string/txt_profile_heart" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_toRightOf="@+id/ll_profile_left"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/ll_profile_coke"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_wall_1"
+                android:textColor="#555555"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_business"
+                style="@style/tv_line"
+                android:drawableLeft="@drawable/icon_profile_corporative"
+                android:text="@string/txt_profile_corp" />
+
+            <TextView
+                android:id="@+id/txt_rank"
+                style="@style/tv_line"
+                android:drawableLeft="@drawable/icon_profile_rank"
+                android:text="@string/txt_profile_rank" />
+
+            <TextView
+                android:id="@+id/txt_email"
+                style="@style/tv_line"
+                android:drawableLeft="@drawable/icon_profile_email"
+                android:text="@string/txt_profile_email" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/txt_prizes"
+                android:textColor="#FF161F"
+                android:textSize="30sp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/badge_be_bold"
+                    style="@style/tv_prizes"
+                    android:layout_weight="33"
+                    android:drawableLeft="@drawable/icon_circle_bold_1"
+                    android:text="@string/txt_profile_prize_2" />
+
+                <TextView
+                    android:id="@+id/badge_be_proud"
+                    style="@style/tv_prizes"
+                    android:layout_weight="50"
+                    android:drawableLeft="@drawable/icon_circle_proud_1"
+                    android:text="@string/txt_profile_prize_10" />
+
+
+
+
+            </LinearLayout>
+
+            <!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/tv_prizes"
+                    android:layout_weight="33"
+                    android:drawableLeft="@drawable/icon_circle_aggresive"
+                    android:text="@string/txt_profile_prize_3" />
+
+                <TextView
+                    style="@style/tv_prizes"
+                    android:layout_weight="33"
+                    android:drawableLeft="@drawable/icon_circle_persistent"
+                    android:text="@string/txt_profile_prize_4" />
+
+            </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/badge_be_in_love"
+                    style="@style/tv_prizes"
+                    android:layout_weight="33"
+                    android:drawableLeft="@drawable/icon_circle_in_love_1"
+                    android:text="@string/txt_profile_prize_1" />
+
+                <TextView
+                    android:id="@+id/badge_be_aware"
+                    style="@style/tv_prizes"
+                    android:layout_weight="50"
+                    android:drawableLeft="@drawable/icon_circle_aware_1"
+                    android:text="@string/txt_profile_prize_5" />
+
+
+            </LinearLayout>
+
+            <!---
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/tv_prizes"
+                    android:layout_weight="50"
+                    android:drawableLeft="@drawable/icon_circle_first"
+                    android:text="@string/txt_profile_prize_7" />
+
+                <TextView
+                    style="@style/tv_prizes"
+                    android:layout_weight="50"
+                    android:drawableLeft="@drawable/icon_circle_realist"
+                    android:text="@string/txt_profile_prize_6" />
+
+            </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/badge_be_together"
+                    style="@style/tv_prizes"
+                    android:layout_weight="50"
+                    android:drawableLeft="@drawable/icon_circle_together_1"
+                    android:text="@string/txt_profile_prize_8" />
+
+                <!--
+                <TextView
+                    style="@style/tv_prizes"
+                    android:layout_weight="50"
+                    android:drawableLeft="@drawable/icon_circle_time"
+                    android:text="@string/txt_profile_prize_9" />
+                -->
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_profile_coke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/image_profile_coke" />
+
+            <Button
+                style="@style/bt_red"
+                android:onClick="clickSave"
+                android:text="@string/bt_save" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

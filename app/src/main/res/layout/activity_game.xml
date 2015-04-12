@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_2">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/header">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_game_kof"
+                style="@style/bt_game"
+                android:drawableLeft="@drawable/bt_game_kof"
+                android:tag="1"
+                android:onClick="clickSection"
+                android:text="@string/bt_game_kof" />
+
+            <Button
+                android:id="@+id/bt_game_team"
+                style="@style/bt_game"
+                android:drawableLeft="@drawable/bt_game_team"
+                android:tag="2"
+                android:onClick="clickSection"
+                android:text="@string/bt_game_team" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/bt_game_products"
+                style="@style/bt_game"
+                android:drawableLeft="@drawable/bt_game_products"
+                android:tag="3"
+                android:onClick="clickSection"
+                android:text="@string/bt_game_products" />
+
+            <Button
+                android:id="@+id/bt_game_order"
+                style="@style/bt_game"
+                android:drawableLeft="@drawable/bt_game_order"
+                android:tag="4"
+                android:onClick="clickSection"
+                android:text="@string/bt_game_order" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/bt_game_refrigerator"
+                style="@style/bt_game"
+                android:drawableLeft="@drawable/bt_game_refrigerator"
+                android:tag="5"
+                android:onClick="clickSection"
+                android:text="@string/bt_game_refrigerator" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
