@@ -51,8 +51,8 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
             startActivityForResult(intent, 1);
         }
 
-        txtUsername.setText("daniel@kco.com");
-        txtPassword.setText("123qaz");
+        //txtUsername.setText("daniel@kco.com");
+        //txtPassword.setText("123qaz");
 
     }
 
@@ -157,7 +157,7 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
                 txtPassword.setText("");
 
                 User.set("prevaluation", evaluation == 0 ? "false" : "true", this);
-                User.set("prevaluation", "true", this);
+                //User.set("prevaluation", "true", this);
 
                 Intent intent = new Intent(LoginActivity.this, MapActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

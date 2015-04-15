@@ -308,7 +308,7 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage(msg).setNeutralButton(R.string.bt_close, null).show();
         } else {
 
-            User.set("prevaluation", "yes", this);
+            User.set("prevaluation", "true", this);
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Gracias por contestar la evaluación");

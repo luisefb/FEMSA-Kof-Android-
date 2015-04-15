@@ -2,6 +2,7 @@ package mx.app.ambassador.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import mx.app.ambassador.R;
@@ -25,8 +26,13 @@ public class ChecklistActivity extends SectionActivity {
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
         setTitle("Check List");
+        check();
 
-        if (User.get("checklist_type", this) != null) {
+    }
+
+
+    protected void check() {
+        if (!User.get("checklist_type", this).isEmpty()) {
 
             String type = User.get("checklist_type", this);
 
@@ -45,10 +51,7 @@ public class ChecklistActivity extends SectionActivity {
             findViewById(R.id.bt_checklist_1).setAlpha(1.0f);
 
         }
-
-
     }
-
 
 
 	/*--------------*/
@@ -67,11 +70,21 @@ public class ChecklistActivity extends SectionActivity {
             nav.putExtra("option", selected);
         } else if (selected == 4) {
             nav.putExtra("option", selected);
-        } /*else if (selected == 5) {
-            nav = new Intent(ChecklistActivity.this, InfoActivity.class);
-        }*/
+        }
 
-        startActivity(nav);
+        startActivityForResult(nav, 1);
 
+    }
+
+
+
+
+	/*-----------------*/
+	/* OVERRIDE RESULT */
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        check();
     }
 }

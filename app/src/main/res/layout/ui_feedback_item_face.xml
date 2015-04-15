@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:textSize="30dp"
+        android:textSize="15dp"
         android:id="@+id/tv_question_face"
+        android:layout_marginTop="20dp"
         android:text="@string/txt_q1"/>
 
     <RadioGroup

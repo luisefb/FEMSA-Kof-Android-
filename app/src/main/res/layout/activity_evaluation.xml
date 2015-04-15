@@ -30,11 +30,11 @@
 
             <include
                 android:id="@+id/ll_question1"
-                layout="@layout/ui_question_ratio" />
+                layout="@layout/ui_feedback_item_ratio" />
 
             <include
                 android:id="@+id/ll_question2"
-                layout="@layout/ui_question_ratio" />
+                layout="@layout/ui_feedback_item_ratio" />
 
         </LinearLayout>
 

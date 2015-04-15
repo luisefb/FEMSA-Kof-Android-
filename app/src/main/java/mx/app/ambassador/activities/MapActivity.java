@@ -107,7 +107,10 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else if (selected == 7) {
             nav = new Intent(MapActivity.this, InfoActivity.class);
         } else if (selected == 8) {
+            User.set("checklist_type", null, this);
             nav = new Intent(MapActivity.this, ChecklistActivity.class);
+        } else if (selected == 9) {
+            nav = new Intent(MapActivity.this, FeedbackActivity.class);
         } else if (selected == 10) {
             nav = new Intent(MapActivity.this, RankingActivity.class);
         } else if (selected == 11) {

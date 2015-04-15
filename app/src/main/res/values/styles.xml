@@ -248,12 +248,12 @@
         <item name="android:drawablePadding">7dp</item>
     </style>
 
-    <style name="TotalFeedBackBtns">
+    <style name="bt_feedback_tab">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:background">@drawable/_00_barra_roja_grande</item>
+        <item name="android:background">#E31820</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
 </resources>

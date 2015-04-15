@@ -7,8 +7,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:padding="5dp"
-        android:textSize="30dp"
+        android:textSize="15dp"
         android:layout_below="@id/clinical_answer_a"
         android:id="@+id/tv_question_b"
         android:text="texto"/>
@@ -20,20 +21,22 @@
         android:id="@+id/clinical_answer_b">
         <Button
             android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:background="@drawable/_00_barra_roja_grande"
+            android:layout_height="wrap_content"
+            android:background="#E31820"
             android:text="SI"
-            android:textSize="25dp"
+            android:padding="10dp"
+            android:textSize="15dp"
             android:textColor="@android:color/white"
             android:layout_marginRight="30dp"/>
 
         <Button
             android:layout_width="130dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:text="NO"
-            android:textSize="25dp"
+            android:textSize="15dp"
+            android:padding="10dp"
             android:textColor="@android:color/white"
-            android:background="@drawable/_00_barra_roja_grande"/>
+            android:background="#E31820"/>
     </LinearLayout>
 
 </LinearLayout>

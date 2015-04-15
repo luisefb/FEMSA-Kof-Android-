@@ -16,27 +16,28 @@
         android:id="@+id/buttons_linear_layout"
         android:layout_below="@+id/header">
         <Button
-            style="@style/TotalFeedBackBtns"
+            android:id="@+id/bt_experience"
+            style="@style/bt_feedback_tab"
             android:text="Experiencia"
-            android:id="@+id/experience_btn"
-            android:textSize="30dp"
-            android:onClick="showExperienceScroll"
+            android:textColor="#FFFFFF"
+            android:background="#b6171b"
+            android:onClick="clickExperience"
             />
         <Button
-            style="@style/TotalFeedBackBtns"
-            android:textSize="30dp"
-            android:id="@+id/clinical_btn"
+            android:id="@+id/bt_clinic"
+            style="@style/bt_feedback_tab"
+            android:textColor="#ef7d7d"
+            android:background="#E31820"
             android:text="Clínica"
-            android:onClick="showClinicalScroll"
+            android:onClick="clickClinic"
             />
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/sv_experience"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/sv_experience"
-        android:layout_below="@+id/buttons_linear_layout"
-        android:visibility="invisible">
+        android:layout_below="@+id/buttons_linear_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,19 +57,19 @@
                 style="@style/bt_red"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:id="@+id/btn_experience"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/bt_next"/>
+                android:layout_gravity="right"
+                android:text="@string/bt_save"/>
 
         </LinearLayout>
 
     </ScrollView>
 
     <ScrollView
+        android:id="@+id/sv_clinic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/sv_clinical"
         android:layout_below="@+id/buttons_linear_layout"
         android:visibility="invisible">
 
@@ -90,10 +91,10 @@
                 style="@style/bt_red"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:id="@+id/btn_clinical"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/bt_next"/>
+                android:layout_gravity="right"
+                android:text="@string/bt_save"/>
 
         </LinearLayout>
 

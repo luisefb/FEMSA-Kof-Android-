@@ -63,8 +63,9 @@ public class ChecklistOptsActivity extends SectionActivity implements WebBridge.
         Resources res = getResources();
         String[] data = new String[0];
 
-        boolean finished  = User.get("checklist_type", this) != null;
+        boolean finished  = !User.get("checklist_type", this).isEmpty();
         String[] checked = new String[0];
+
         if (finished) {
             type    = Integer.parseInt(User.get("checklist_type", this));
             checked = User.get("checklist_answers", this).split(",");
@@ -171,6 +172,12 @@ public class ChecklistOptsActivity extends SectionActivity implements WebBridge.
 
             User.set("checklist_answers", getOptions(false), this);
             User.set("checklist_type", Integer.toString(type), this);
+            findViewById(R.id.bt_send).setVisibility(View.GONE);
+            for (int i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].setEnabled(false);
+            }
+
+            new AlertDialog.Builder(this).setTitle(R.string.txt_thanks).setMessage("Gracias por completar el checklist").setNeutralButton(R.string.bt_close, null).show();
 
         }
     }

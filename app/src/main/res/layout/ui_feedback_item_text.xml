@@ -5,10 +5,11 @@
     android:orientation="vertical">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:textSize="30dp"
+        android:textSize="15sp"
         android:id="@+id/tv_question"
         android:text="pregunta"/>
 
@@ -19,7 +20,7 @@
         android:gravity="left"
         android:layout_margin="10dp"
         android:paddingLeft="10dp"
-        android:textSize="30dp"
+        android:textSize="15sp"
         android:background="@android:color/darker_gray"
         android:layout_below="@+id/clinical_question_a"
         android:hint="Tu respuesta"
