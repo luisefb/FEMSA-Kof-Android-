@@ -314,7 +314,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         img.setEnabled(true);
 
         AnimatorSet set           = new AnimatorSet();
-        ObjectAnimator translateX = ObjectAnimator.ofFloat(img, "translationX", -w, imgRail.getWidth() + imgRail.getWidth() * 0.25f);
+        ObjectAnimator translateX = ObjectAnimator.ofFloat(img, "translationX", -w, imgRail.getWidth() + imgRail.getWidth() * 0.18f);
         ObjectAnimator translateY = ObjectAnimator.ofFloat(img, "translationY", y, y + imgRail.getHeight() * 0.75f);
         ObjectAnimator rotation   = ObjectAnimator.ofFloat(img, "rotation", 0f, 45.0f);
         ObjectAnimator alpha      = ObjectAnimator.ofFloat(img, "alpha", 1.0f, 0.0f);
@@ -322,14 +322,14 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         translateX.setInterpolator(new LinearInterpolator());
         translateY.setInterpolator(new LinearInterpolator());
 
-        translateX.setDuration(4500);
+        translateX.setDuration(6000);
         translateY.setDuration(1000);
         rotation.setDuration(1000);
         alpha.setDuration(1000);
 
-        translateY.setStartDelay(3500);
-        rotation.setStartDelay(3350);
-        alpha.setStartDelay(3500);
+        translateY.setStartDelay(5000);
+        rotation.setStartDelay(4850);
+        alpha.setStartDelay(5000);
 
         set.playTogether(translateX, translateY, rotation, alpha);
 

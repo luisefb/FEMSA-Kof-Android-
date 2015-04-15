@@ -1,4 +1,4 @@
-package mx.app.ambassador.activities.checklist;
+package mx.app.ambassador.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -7,42 +7,43 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import mx.app.ambassador.R;
-import mx.app.ambassador.activities.SectionActivity;
+import mx.app.ambassador.activities.info.InfoMapsActivity;
 
 /**
  * Created by kreativeco on 07/04/15.
  */
-public class ChecklistMapsActivity extends SectionActivity {
+public class InfoActivity extends SectionActivity {
 
 
 	/*------------*/
 	/* PROPERTIES */
 
-    RelativeLayout rlMap;
-    ImageView imgMap;
+    RelativeLayout rlTable;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checklist_maps);
+        setContentView(R.layout.activity_info);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
-        setTitle("Croquis");
-        
-        rlMap = (RelativeLayout) findViewById(R.id.rl_map);
-        imgMap = (ImageView) findViewById(R.id.img_map);
+        setTitle("Información");
+
+        rlTable = (RelativeLayout) findViewById(R.id.rl_table);
+
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)rlTable.getLayoutParams();
+        params.topMargin = getStatusBarHeight();
+        rlTable.setLayoutParams(params);
 
     }
 
 
 
-	/*--------------*/
+    /*--------------*/
 	/* CLICK EVENTS */
 
     public void clickSection(View v) {
@@ -50,13 +51,20 @@ public class ChecklistMapsActivity extends SectionActivity {
         int selected = Integer.parseInt(v.getTag().toString());
         Intent nav   = null;
 
-        int r = getResources().getIdentifier("image_map_" + selected, "drawable", getPackageName());
-        imgMap.setImageResource(r);
-        show();
+        if (selected == 1) {
+            nav = new Intent(InfoActivity.this, InfoMapsActivity.class);
+        } else if (selected == 2) {
+            show();
+        } else if (selected == 3) {
+            nav = new Intent(InfoActivity.this, InfoMapsActivity.class);
+        }
+
+        if (nav == null) return;
+
+        nav.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivityForResult(nav, 1);
 
     }
-
-
 
 
 
@@ -65,11 +73,11 @@ public class ChecklistMapsActivity extends SectionActivity {
 
     protected void show() {
 
-        rlMap.setVisibility(View.VISIBLE);
+        rlTable.setVisibility(View.VISIBLE);
 
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(rlMap, "scaleX", 2.0f, 1.0f);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(rlMap, "scaleY", 2.0f, 1.0f);
-        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlMap, "alpha",  0.0f, 1.0f);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(rlTable, "scaleX", 2.0f, 1.0f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(rlTable, "scaleY", 2.0f, 1.0f);
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlTable, "alpha",  0.0f, 1.0f);
 
         scaleX.setDuration(400);
         scaleY.setDuration(400);
@@ -81,9 +89,11 @@ public class ChecklistMapsActivity extends SectionActivity {
 
     }
 
+
+
     public void clickHide(View v){
 
-        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlMap, "alpha",  1.0f, 0.0f);
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlTable, "alpha",  1.0f, 0.0f);
         alpha1.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {}
@@ -93,7 +103,7 @@ public class ChecklistMapsActivity extends SectionActivity {
             public void onAnimationRepeat(Animator animation) {}
             @Override
             public void onAnimationEnd(Animator animation) {
-                rlMap.setVisibility(View.GONE);
+                rlTable.setVisibility(View.GONE);
             }
         });
         alpha1.start();

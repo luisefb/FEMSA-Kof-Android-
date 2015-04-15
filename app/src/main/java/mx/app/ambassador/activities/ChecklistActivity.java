@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import mx.app.ambassador.R;
-import mx.app.ambassador.activities.checklist.ChecklistInfoActivity;
 import mx.app.ambassador.activities.checklist.ChecklistOptsActivity;
 import mx.app.ambassador.utils.User;
 
@@ -68,9 +67,9 @@ public class ChecklistActivity extends SectionActivity {
             nav.putExtra("option", selected);
         } else if (selected == 4) {
             nav.putExtra("option", selected);
-        }else if (selected == 5) {
-            nav = new Intent(ChecklistActivity.this, ChecklistInfoActivity.class);
-        }
+        } /*else if (selected == 5) {
+            nav = new Intent(ChecklistActivity.this, InfoActivity.class);
+        }*/
 
         startActivity(nav);
 

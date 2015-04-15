@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="30dp"
+        android:layout_below="@id/clinical_answer_a"
+        android:id="@+id/tv_question_b"
+        android:text="texto"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/clinical_answer_b">
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:background="@drawable/_00_barra_roja_grande"
+            android:text="SI"
+            android:textSize="25dp"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="30dp"/>
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="NO"
+            android:textSize="25dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/_00_barra_roja_grande"/>
+    </LinearLayout>
+
+</LinearLayout>

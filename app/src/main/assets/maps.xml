@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maps>
+   <item>
+      <name>CEDIS EL COECILLO</name>
+      <address>Av. Industria Automotriz 1,203, Col. El Coecillo, Toluca, Edo. de México</address>
+      <lat>19.298326</lat>
+      <lng>-99.597096</lng>
+   </item>
+   <item>
+      <name>CEDIS NORTE</name>
+      <address>Blvd. De los Ferrocarriles No. 247, Esq. Norte 35, Col. Industrial Vallejo</address>
+      <lat>19.480542</lat>
+      <lng>-99.159159</lng>
+   </item>
+   <item>
+      <name>CEDIS SUR</name>
+      <address>Eje 3 Oriente casi esq. Ermita Iztapalapa</address>
+      <lat>19.355307</lat>
+      <lng>-99.112842</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA CHALCO</name>
+      <address>Km. 40 Carretera México – Cuautla, Chalco, Edo. De México.</address>
+      <lat>19.255843</lat>
+      <lng>-98.889109</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA COACALCO</name>
+      <address>Av. José López Bonaga s/n, Col. Guadalupe Victoria, Ecatepec Edo. De México</address>
+      <lat>19.628300</lat>
+      <lng>-99.078529</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA CUAUTITLÁN</name>
+      <address>Delfín Sur No. 18, Fraccionamiento Industrial Cuamatla, Cuautitlán Izcalli, Edo. De México</address>
+      <lat>19.664331</lat>
+      <lng>-99.187982</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA LOS REYES</name>
+      <address>KM. 22.3 DE LA CARRETERA MÉXICO – TEXCOCO, COL. LA MAGDALENA ATLICPAC, LOS REYES LA PAZ, EDO. DE MÉXICO</address>
+      <lat>19.357352</lat>
+      <lng>-98.957302</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA TEXCOCO</name>
+      <address>Camino a Lomas de Cristo No. 3 Fraccionamiento Lomas de Cristo</address>
+      <lat>19.464787</lat>
+      <lng>-98.890138</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA TLALNEPANTLA</name>
+      <address>Abraham Lincon No. 1, Col. Fraccionamiento Industrial Puente de Vigas, Tlalnepantla.</address>
+      <lat>19.523783</lat>
+      <lng>-99.208681</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA TLALPAN</name>
+      <address>Calzada de Tlalpan No. 3001 Col. El Reloj</address>
+      <lat>19.314512</lat>
+      <lng>-99.140174</lng>
+   </item>
+   <item>
+      <name>DISTRIBUIDORA ZARAGOZA</name>
+      <address>Oriente 237 No. 108 Esq. Av. Ignacio Zaragoza Col. Agrícola Oriental</address>
+      <lat>19.406566</lat>
+      <lng>-99.073332</lng>
+   </item>
+</maps>

@@ -164,6 +164,7 @@
     <style name="bt_map" parent="@android:style/Widget.Button">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:textSize">14sp</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:textColor">#FFFFFF</item>
@@ -190,6 +191,69 @@
         <item name="android:gravity">center</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="bt_radio_face1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#5F5F5F</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/bg_radio_face1</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="bt_radio_face2">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#5F5F5F</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/bg_radio_face2</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="bt_radio_face3">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#5F5F5F</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/bg_radio_face3</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="bt_radio_face4">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#5F5F5F</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/bg_radio_face4</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="bt_radio_face5">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#5F5F5F</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/bg_radio_face5</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:drawablePadding">7dp</item>
+    </style>
+
+    <style name="TotalFeedBackBtns">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/_00_barra_roja_grande</item>
     </style>
 
 </resources>

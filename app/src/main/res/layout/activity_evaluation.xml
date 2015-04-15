@@ -6,7 +6,7 @@
 
     <include
         android:id="@+id/header"
-        layout="@layout/header_toggle" />
+        layout="@layout/header" />
 
     <ScrollView
         android:id="@+id/scroll_questions"

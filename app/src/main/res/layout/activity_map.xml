@@ -23,28 +23,85 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
-    <include
-        android:id="@+id/header"
-        layout="@layout/header_map" />
+    <View
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:id="@+id/ll_map_menu"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#88000000"
         android:paddingTop="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="90dp"
+        android:layout_below="@+id/status_bar"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_map_logbook"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_logbook"
+            android:tag="1"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_logbook"/>
+
+        <Button
+            android:id="@+id/bt_map_game"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_game"
+            android:tag="2"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_game"/>
+
+        <Button
+            android:id="@+id/bt_map_guidelines"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_guidelines"
+            android:tag="3"
+            android:onClick="clickSection"
+            android:alpha="0.5"
+            android:text="@string/bt_map_guidelines"/>
+
+        <Button
+            android:id="@+id/bt_map_profile"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_profile"
+            android:tag="4"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_profile"/>
+
+        <Button
+            android:id="@+id/bt_map_wall"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_wall"
+            android:tag="5"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_wall"/>
+
+        <Button
+            android:id="@+id/bt_map_yammer"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_yammer"
+            android:tag="6"
+            android:onClick="clickSection"
+            android:alpha="0.5"
+            android:text="@string/bt_map_yammer"/>
+
+        <Button
+            android:id="@+id/bt_map_info"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_info"
+            android:tag="7"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_info"/>
 
         <Button
             android:id="@+id/bt_map_checklist"
             style="@style/bt_map"
             android:drawableLeft="@drawable/bt_map_checklist"
-            android:tag="1"
+            android:tag="8"
             android:onClick="clickSection"
             android:text="@string/bt_map_checklist"/>
 
@@ -52,7 +109,7 @@
             android:id="@+id/bt_map_feedback"
             style="@style/bt_map"
             android:drawableLeft="@drawable/bt_map_feedback"
-            android:tag="2"
+            android:tag="9"
             android:onClick="clickSection"
             android:text="@string/bt_map_feedback"/>
 
@@ -60,39 +117,23 @@
             android:id="@+id/bt_map_top10"
             style="@style/bt_map"
             android:drawableLeft="@drawable/bt_map_top10"
-            android:tag="3"
+            android:tag="10"
             android:onClick="clickSection"
             android:text="@string/bt_map_top10"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
+    <Button
+        android:id="@+id/bt_map_logout"
+        style="@style/bt_map"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/bt_map_evaluation"
-            style="@style/bt_map"
-            android:drawableLeft="@drawable/bt_map_evaluation"
-            android:tag="4"
-            android:onClick="clickSection"
-            android:text="@string/bt_map_evaluation"/>
-
-        <Button
-            android:id="@+id/bt_map_game"
-            style="@style/bt_map"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/bt_map_game"
-            android:tag="5"
-            android:onClick="clickSection"
-            android:text="@string/bt_map_game"/>
-
-
-    </LinearLayout>
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:textStyle="normal"
+        android:drawableTop="@drawable/bt_map_logout"
+        android:tag="11"
+        android:onClick="clickSection"
+        android:text="@string/bt_map_logout"/>
 
 </RelativeLayout>

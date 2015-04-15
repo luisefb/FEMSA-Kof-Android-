@@ -2,6 +2,7 @@ package mx.app.ambassador.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,13 +48,15 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
     LinearLayout llQuestion1;
     LinearLayout llQuestion2;
 
+    String type;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluation);
-        overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
+        overridePendingTransition(R.anim.fade_in, R.anim.static_motion);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
         setTitle("Evaluación");
 
@@ -65,6 +68,11 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
         StringBuilder bufferer = new StringBuilder();
         BufferedReader reader  = null;
         String row             = "";
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            type = bundle.getString("type");
+        }
 
         try {
             InputStream stream = getAssets().open("evaluation.json");
@@ -117,6 +125,10 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
         answers();
     }
 
+    @Override
+    public void onBackPressed() {
+        clickBack(null);
+    }
 
 
 
@@ -213,16 +225,15 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
 
         JSONObject evaluation = new JSONObject();
         try {
-            evaluation.put("type", "pre");
+            evaluation.put("type", type);
             evaluation.put("evaluations", answers);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        Log.e("FINISH", evaluation.toString());
-
         Map<String, Object> params = User.getToken(this);
         params.put("json", evaluation.toString());
+        params.put("type", type);
         WebBridge.send("webservices.php?task=addAnswerdEvaluation", params, "Cargando", this, this);
 
     }
@@ -265,6 +276,18 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
 
 
 
+	/*-----------------*/
+	/* OVERRIDE RESULT */
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode != RESULT_OK) {
+            finish();
+        }
+    }
+
+
 	/*--------------------*/
 	/* WEBBRIDGE LISTENER */
 
@@ -285,13 +308,17 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage(msg).setNeutralButton(R.string.bt_close, null).show();
         } else {
 
+            User.set("prevaluation", "yes", this);
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Gracias por contestar la evaluación");
             builder.setCancelable(true);
             builder.setPositiveButton(R.string.bt_close, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    dialog.cancel();
-                    clickBack(null);
+                    Intent intent = new Intent(EvaluationActivity.this, ResultsActivity.class);
+                    intent.putExtra("type", type);
+                    startActivityForResult(intent, 1);
+
                 }
             });
 

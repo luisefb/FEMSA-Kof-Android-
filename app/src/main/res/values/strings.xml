@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Embajadores</string>
+    <string name="app_name">Yo soy KOF</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -23,13 +23,6 @@
     <string name="bt_next">Siguiente</string>
     <string name="bt_start">Iniciar</string>
 
-    <string name="bt_home_logbook">Bitácora</string>
-    <string name="bt_home_play">Jugar</string>
-    <string name="bt_home_guidelines">Guías</string>
-    <string name="bt_home_profile">Perfil</string>
-    <string name="bt_home_wall">Cuadro de Honor</string>
-    <string name="bt_home_yammer">Yammer</string>
-
     <string name="bt_game_kof">Código KOF</string>
     <string name="bt_game_team">Equipa al Equipo</string>
     <string name="bt_game_products">Caza Productos</string>
@@ -42,11 +35,18 @@
     <string name="bt_checklist_delivery">Reparto</string>
     <string name="bt_checklist_info">Información</string>
 
+    <string name="bt_map_logbook">Bitácora</string>
+    <string name="bt_map_game">Jugar</string>
+    <string name="bt_map_guidelines">Guías</string>
+    <string name="bt_map_profile">Perfil</string>
+    <string name="bt_map_wall">Cuadro de Honor</string>
+    <string name="bt_map_yammer">Yammer</string>
+    <string name="bt_map_info">Información</string>
     <string name="bt_map_checklist">Checklist</string>
     <string name="bt_map_feedback">Feedback Total</string>
     <string name="bt_map_top10">Top Ten</string>
     <string name="bt_map_evaluation">Pre Evaluación</string>
-    <string name="bt_map_game">Jugar</string>
+    <string name="bt_map_logout">Cerrar Sesión</string>
 
     <string name="txt_profile_prize_1">Be in love</string>
     <string name="txt_profile_prize_2">Be bold</string>
@@ -84,6 +84,9 @@
     <string name="txt_time">01:00</string>
     <string name="txt_lines">-------</string>
     <string name="txt_finished">Finalizado</string>
+    <string name="txt_getting_location">Obteniendo ubicación</string>
+    <string name="txt_gps_alert">¡Tu GPS está deshabilitado! ¿Te gustaría activarlo?</string>
+    <string name="txt_gps_activate">Habilitar GPS</string>
 
     <string name="error_username">Verifica el formato del correo.</string>
     <string name="error_password">La contraseña debe tener al menos 1 caracter.</string>
@@ -194,6 +197,23 @@
         <item>Aprendí la limpieza de productos y anaqueles</item>
         <item>Aprendí la negociación de espacios en el autoservicio</item>
 
+    </string-array>
+
+    <string-array name="txt_array_experience_questions">
+        <item>Las dinámicas la evalúas como:</item>
+        <item>La calidad de los materiales la evalúas como:</item>
+        <item>La calidad del contenido lo evalúas como:</item>
+        <item>¿Recomendarías éste curso para que se imparta a otros grupos? ¿Por qué?</item>
+        <item>¿Tienes alguna sugerencia para mejorarlo?</item>
+        <item>Comentarios adicionales</item>
+    </string-array>
+
+    <string-array name="txt_array_clinical_questions">
+        <item>¿De qué manera ésta experiencia genera valor en tu trabajo?</item>
+        <item>¿Adquiriste mayor conocimiento de nuestros productos y conocimiento del negocio?</item>
+        <item>¿Tienes claro el rol de embajador activo?</item>
+        <item>¿Contamos contigo para ser un embajador activo en el mercado?</item>
+        <item>¿Alguna sugerencia para mejorar ésta experiencia en el mercado?</item>
     </string-array>
 
     

@@ -47,9 +47,12 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
         txtPassword = (EditText)findViewById(R.id.txt_password);
 
         if (User.getToken(this) != null) {
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MapActivity.class);
             startActivityForResult(intent, 1);
         }
+
+        txtUsername.setText("daniel@kco.com");
+        txtPassword.setText("123qaz");
 
     }
 
@@ -121,6 +124,7 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
 
 
 
+
 	/*--------------------*/
 	/* WEBBRIDGE LISTENER */
 
@@ -142,17 +146,22 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
 
             if (url.contains("login")) {
 
-                String token = "";
+                String token   = "";
+                int evaluation = 0;
                 try {
-                    token 	 = json.getString("token");
+                    token 	   = json.getString("token");
+                    evaluation = json.getInt("pre");
                 } catch (Exception e) {}
 
                 User.setToken(txtUsername.getText().toString(), token, this);
                 txtPassword.setText("");
 
-                Intent nav = new Intent(LoginActivity.this, HomeActivity.class);
-                nav.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(nav, 1);
+                User.set("prevaluation", evaluation == 0 ? "false" : "true", this);
+                User.set("prevaluation", "true", this);
+
+                Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivityForResult(intent, 1);
 
             }
 

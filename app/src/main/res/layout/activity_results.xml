@@ -8,6 +8,43 @@
         android:id="@+id/header"
         layout="@layout/header_toggle" />
 
+    <mx.app.ambassador.ui.layouts.FlowLayout
+        xmlns:flowlayout="http://schemas.android.com/apk/res/mx.app.ambassador"
+        android:id="@+id/fl_results"
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        flowlayout:orientation="horizontal"
+        flowlayout:horizontalSpacing="0dp"
+        flowlayout:verticalSpacing="20dp">
 
+    </mx.app.ambassador.ui.layouts.FlowLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fl_results"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Puntuación Total"/>
+
+        <TextView
+            android:id="@+id/txt_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:text="-"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

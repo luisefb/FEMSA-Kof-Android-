@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="30dp"
+        android:id="@+id/tv_question_face"
+        android:text="@string/txt_q1"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            style="@style/bt_radio_face1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="1"/>
+
+        <RadioButton
+            style="@style/bt_radio_face2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="2"/>
+
+        <RadioButton
+            style="@style/bt_radio_face3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="3"/>
+
+        <RadioButton
+            style="@style/bt_radio_face4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="4"/>
+
+        <RadioButton
+            style="@style/bt_radio_face5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="5"/>
+
+    </RadioGroup>
+</LinearLayout>

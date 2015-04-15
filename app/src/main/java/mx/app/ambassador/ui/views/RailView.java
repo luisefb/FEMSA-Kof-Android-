@@ -26,7 +26,7 @@ import mx.app.ambassador.R;
 public class RailView extends RelativeLayout implements View.OnClickListener {
 
     int wRail;
-    int duration = 3500;
+    int duration = 4500;
     int max;
     RelativeLayout rlRails;
     RelativeLayout rlProducts;
@@ -41,7 +41,7 @@ public class RailView extends RelativeLayout implements View.OnClickListener {
     private Runnable updateData = new Runnable(){
         public void run(){
             create();
-            handler.postDelayed(updateData, 1100 - random.nextInt(200));
+            handler.postDelayed(updateData, 1600 - random.nextInt(200));
         }
     };
 

@@ -21,6 +21,7 @@ import java.util.Map;
 
 import mx.app.ambassador.R;
 import mx.app.ambassador.activities.ProfileActivity;
+import mx.app.ambassador.activities.info.InfoMapsActivity;
 import mx.app.ambassador.ui.dialogs.ProgressDialog;
 
 
@@ -100,35 +101,18 @@ public class WebBridge {
 		return wb;
 	}
 	
-	static public WebBridge send(String url, String message, Activity activity, ProfileActivity callback) {
+	static public WebBridge send(String url, String message, Activity activity, WebBridgeListener callback) {
 		final WebBridge wb = WebBridge.getInstance(activity, message, callback);
 		if (wb != null) {
-			
 			AjaxCallback<String> ajaxCallback = new AjaxCallback<String>() {
 				@Override
 		         public void callback(String url, String json, AjaxStatus status) { wb.result(url, json, status); }
 			};
-
 			wb.aq.ajax(WebBridge.url(url), String.class, ajaxCallback);
-			
 		}
 		return wb;
 	}
-	
-	static public WebBridge send(String url, Activity activity, WebBridgeListener callback) {
-		final WebBridge wb = WebBridge.getInstance(activity, null, callback);
-		if (wb != null) {
-			
-			AjaxCallback<String> ajaxCallback = new AjaxCallback<String>() {
-				@Override
-		         public void callback(String url, String json, AjaxStatus status) { wb.result(url, json, status); }
-			};
 
-			wb.aq.ajax(WebBridge.url(url), String.class, ajaxCallback);
-			
-		}
-		return wb;
-	}
 	
 	static public WebBridge send(String url, Map<String,Object> params, Activity activity) {
 		final WebBridge wb = WebBridge.getInstance(activity, null, null);
@@ -143,21 +127,6 @@ public class WebBridge {
 			Log.e("MSG", params.toString());
 			
 			wb.aq.ajax(WebBridge.url(url), params, String.class, ajaxCallback);
-			
-		}
-		return wb;
-	}
-	
-	static public WebBridge send(String url, Activity activity) {
-		final WebBridge wb = WebBridge.getInstance(activity, null, null);
-		if (wb != null) {
-			
-			AjaxCallback<String> ajaxCallback = new AjaxCallback<String>() {
-				@Override
-		         public void callback(String url, String json, AjaxStatus status) { wb.result(url, json, status); }
-			};
-
-			wb.aq.ajax(WebBridge.url(url), String.class, ajaxCallback);
 			
 		}
 		return wb;

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_6">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/_00_barra_roja_grande"
+        android:id="@+id/buttons_linear_layout"
+        android:layout_below="@+id/header">
+        <Button
+            style="@style/TotalFeedBackBtns"
+            android:text="Experiencia"
+            android:id="@+id/experience_btn"
+            android:textSize="30dp"
+            android:onClick="showExperienceScroll"
+            />
+        <Button
+            style="@style/TotalFeedBackBtns"
+            android:textSize="30dp"
+            android:id="@+id/clinical_btn"
+            android:text="Clínica"
+            android:onClick="showClinicalScroll"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sv_experience"
+        android:layout_below="@+id/buttons_linear_layout"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ll_experience_questions"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <Button
+                style="@style/bt_red"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/btn_experience"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/bt_next"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sv_clinical"
+        android:layout_below="@+id/buttons_linear_layout"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ll_clinical_questions"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <Button
+                style="@style/bt_red"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/btn_clinical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/bt_next"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="30dp"
+        android:id="@+id/tv_question"
+        android:text="pregunta"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/clinical_answer_a"
+        android:gravity="left"
+        android:layout_margin="10dp"
+        android:paddingLeft="10dp"
+        android:textSize="30dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/clinical_question_a"
+        android:hint="Tu respuesta"
+        android:alpha="0.8"/>
+</LinearLayout>
