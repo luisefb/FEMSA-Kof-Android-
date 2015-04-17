@@ -54,7 +54,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
 	/* PROPERTIES */
 
     Boolean finished, started;
-    int width, height, timer, points, current;
+    int width, height, timer, points, current, record, max = 60;
 
     LinearLayout llInstructions;
     RelativeLayout rlContent;
@@ -66,6 +66,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
     TextView txtScore;
     TextView txtTime;
     TextView txtMessage;
+    TextView txtRecord;
 
     ArrayList<HashMap<String, String>> data;
     String[] types = new String[]{"Colas", "Jugos/Néctares", "No Carbonatadas"};
@@ -108,6 +109,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
         txtScore   = (TextView)findViewById(R.id.txt_score);
         txtTime    = (TextView)findViewById(R.id.txt_time);
         txtMessage = (TextView)findViewById(R.id.txt_message);
+        txtRecord  = (TextView)findViewById(R.id.txt_record);
 
         ViewTreeObserver vto = rlContent.getViewTreeObserver();
         if(vto.isAlive()){
@@ -124,7 +126,20 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
             });
         }
 
+
         llMessage.setAlpha(0);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            record = bundle.getInt("record");
+        }
+
+
+        txtType.setText("");
+        txtScore.setText("");
+        txtTime.setText("");
+        txtRecord.setText("Récord anterior: " + record + " puntos");
+
     }
 
 
@@ -175,6 +190,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
             ((Button)findViewById(R.id.bt_instructions)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    setResult(Activity.RESULT_OK);
                     clickBack(null);
                 }
             });
@@ -215,6 +231,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "caza-productos");
         params.put("json", result.toString());
+        params.put("game_records", points);
 
         WebBridge.send("webservices.php?task=addAnswerdGames", params, "Cargando", this, this);
         //
@@ -226,7 +243,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
 
         width    = rlContent.getWidth();
         height   = rlContent.getHeight();
-        timer    = 10;
+        timer    = max;
         finished = false;
         started  = false;
         points   = 0;
@@ -259,7 +276,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
 
         if (!started) return;
 
-        String result = String.format("%02d:%02d", timer / 100, timer % 100);
+        String result = String.format("%02d:%02d", timer / 60, timer % 60);
         txtTime.setText(result);
         timer--;
     }

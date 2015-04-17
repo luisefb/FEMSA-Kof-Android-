@@ -9,28 +9,30 @@
         layout="@layout/header_toggle" />
 
     <LinearLayout
+        android:id="@+id/buttons_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/_00_barra_roja_grande"
-        android:id="@+id/buttons_linear_layout"
-        android:layout_below="@+id/header">
+        android:layout_below="@+id/header"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/bt_experience"
             style="@style/bt_feedback_tab"
-            android:text="Experiencia"
-            android:textColor="#FFFFFF"
             android:background="#b6171b"
             android:onClick="clickExperience"
-            />
+            android:text="Experiencia"
+            android:enabled="false"
+            android:textColor="#FFFFFF" />
+
         <Button
             android:id="@+id/bt_clinic"
             style="@style/bt_feedback_tab"
-            android:textColor="#ef7d7d"
             android:background="#E31820"
-            android:text="Clínica"
             android:onClick="clickClinic"
-            />
+            android:text="Clínica"
+            android:enabled="false"
+            android:textColor="#ef7d7d" />
+
     </LinearLayout>
 
     <ScrollView
@@ -43,24 +45,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <LinearLayout
+                android:id="@+id/ll_experience_questions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/ll_experience_questions"
                 android:orientation="vertical">
-
             </LinearLayout>
 
             <Button
                 style="@style/bt_red"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
                 android:layout_gravity="right"
-                android:text="@string/bt_save"/>
+                android:onClick="clickNext"
+                android:text="@string/bt_next" />
 
         </LinearLayout>
 
@@ -77,24 +78,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <LinearLayout
+                android:id="@+id/ll_clinical_questions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/ll_clinical_questions"
                 android:orientation="vertical">
 
             </LinearLayout>
 
-            <Button
-                style="@style/bt_red"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="right"
-                android:text="@string/bt_save"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="@style/bt_red"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="right"
+                    android:onClick="clickPrevious"
+                    android:text="@string/bt_previous" />
+
+                <Button
+                    style="@style/bt_red"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:onClick="clickSend"
+                    android:text="@string/bt_send" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 

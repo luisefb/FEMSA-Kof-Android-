@@ -9,6 +9,7 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -48,8 +49,9 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 	/*------------*/
 	/* PROPERTIES */
 
-    int width, height, points;
+    int width, height, points, record, timer, max = 40;
     float offsetY;
+    boolean finished;
     RelativeLayout rlContent;
     LinearLayout llInstructions;
 
@@ -59,6 +61,24 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
     ArrayList<HashMap<String, String>> data;
     String[] chars = new String[]{"presales", "storage", "autoservice", "delivery"};
+    TextView txtRecord;
+
+
+    Handler handler = new Handler();
+    private Runnable updateTimer = new Runnable(){
+        public void run(){
+            String time  = String.format("%02d:%02d", timer / 60, timer % 60);
+            txtRecord.setText("Récord " + record + " aciertos || Tiempo: " + time);
+            timer--;
+            if (timer >= 0) {
+                handler.postDelayed(updateTimer, 1000);
+            } else {
+                finished = true;
+                end();
+            }
+        }
+    };
+
 
 
     @Override
@@ -97,6 +117,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         random();
 
         rlContent = (RelativeLayout)findViewById(R.id.rl_content);
+        txtRecord = (TextView)findViewById(R.id.txt_record);
 
         ViewTreeObserver vto = rlContent.getViewTreeObserver();
         if(vto.isAlive()){
@@ -112,6 +133,14 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
                 }
             });
         }
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            record = bundle.getInt("record");
+        }
+
+        txtRecord.setText("");
+
     }
 
 
@@ -143,6 +172,10 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         });
 
         alpha.start();
+
+        timer = max;
+        handler.postDelayed(updateTimer, 0);
+
     }
 
 
@@ -165,6 +198,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
             ((Button)findViewById(R.id.bt_instructions)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    setResult(Activity.RESULT_OK);
                     clickBack(null);
                 }
             });
@@ -193,7 +227,10 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
         for (int i=0; i<answers.length; i++) {
 
-            if (answers[i] == null) return;
+            if (answers[i] == null) {
+                if (finished) continue;
+                return;
+            }
 
             try {
 
@@ -213,6 +250,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "equipar-al-equipo");
         params.put("json", result.toString());
+        params.put("game_records", points);
 
         WebBridge.send("webservices.php?task=addAnswerdGames", params, "Cargando", this, this);
     }
@@ -237,13 +275,14 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
             float x = (i%2) * 180 + gap;
             float y = (float)(Math.floor(i/2) * (height/2)) + gap;
 
-            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, (height-gap)/2);
             ImageView img = new ImageView(this);
             img.setImageResource(drawable);
             img.setLayoutParams(params);
             img.setX(x);
             img.setY(y);
             img.setTag(chars[i]);
+            img.setPadding(0,0,0,20);
 
             images[i] = img;
 

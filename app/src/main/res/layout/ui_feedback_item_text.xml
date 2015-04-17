@@ -5,7 +5,6 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -16,7 +15,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:id="@+id/clinical_answer_a"
+        android:id="@+id/txt_answer"
         android:gravity="left"
         android:layout_margin="10dp"
         android:paddingLeft="10dp"
@@ -24,5 +23,6 @@
         android:background="@android:color/darker_gray"
         android:layout_below="@+id/clinical_question_a"
         android:hint="Tu respuesta"
+        android:layout_marginBottom="20dp"
         android:alpha="0.8"/>
 </LinearLayout>

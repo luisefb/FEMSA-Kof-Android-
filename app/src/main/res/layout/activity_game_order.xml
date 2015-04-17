@@ -8,6 +8,19 @@
         android:id="@+id/header"
         layout="@layout/header_toggle" />
 
+    <TextView
+        android:id="@+id/txt_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#E31820"
+        android:layout_alignBottom="@+id/header"
+        android:layout_alignTop="@+id/header"
+        android:gravity="center"
+        android:text="Record: 01:00 || Tiempo: 01:00"
+        android:layout_marginTop="25dp"
+        android:textSize="18sp"/>
+
     <RelativeLayout
         android:id="@+id/rl_content"
         android:layout_width="match_parent"
@@ -35,21 +48,21 @@
             style="@style/tv_set"
             android:layout_marginLeft="30dp"
             android:drawableTop="@drawable/image_game_order_sm_0"
-            android:text="6 pck\nlatas" />
+            android:text="6 pack\nlatas" />
 
         <TextView
             android:id="@+id/tv_set1"
             android:layout_toRightOf="@+id/tv_set0"
             style="@style/tv_set"
             android:drawableTop="@drawable/image_game_order_md_0"
-            android:text="12 pck\n250ml." />
+            android:text="12 pack\n250ml." />
 
         <TextView
             android:id="@+id/tv_set2"
             android:layout_toRightOf="@+id/tv_set1"
             style="@style/tv_set"
             android:drawableTop="@drawable/image_game_order_bg_0"
-            android:text="6 pck\n1 litro" />
+            android:text="6 pack\n1 litro" />
 
         <TextView
             android:layout_width="match_parent"

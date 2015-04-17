@@ -7,10 +7,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:padding="5dp"
         android:textSize="15dp"
-        android:layout_below="@id/clinical_answer_a"
         android:id="@+id/tv_question_b"
         android:text="texto"/>
 
@@ -18,25 +16,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
         android:id="@+id/clinical_answer_b">
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:background="#E31820"
-            android:text="SI"
-            android:padding="10dp"
-            android:textSize="15dp"
-            android:textColor="@android:color/white"
-            android:layout_marginRight="30dp"/>
 
-        <Button
-            android:layout_width="130dp"
+        <RadioGroup
+            android:id="@+id/rg_yesno"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NO"
-            android:textSize="15dp"
-            android:padding="10dp"
-            android:textColor="@android:color/white"
-            android:background="#E31820"/>
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_yes"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="NO"
+                android:layout_marginRight="30dp"
+                android:drawableLeft="@null"
+                android:tag="1"/>
+
+            <RadioButton
+                android:id="@+id/rb_no"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@null"
+                android:text="SI"
+                android:tag="0"/>
+
+        </RadioGroup>
+
     </LinearLayout>
 
 </LinearLayout>

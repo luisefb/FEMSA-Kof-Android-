@@ -9,6 +9,8 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
@@ -26,6 +28,7 @@ import com.androidquery.callback.AjaxStatus;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +51,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
 	/*------------*/
 	/* PROPERTIES */
 
-    int width, height, space, points;
+    int width, height, space, points, record, timer, max = 40;
     float offsetY;
     RelativeLayout rlContent;
     LinearLayout llInstructions;
@@ -57,6 +60,27 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
     TextView[] answers;
     ArrayList<HashMap<String, String>> data;
     Button btFinish;
+    TextView txtRecord;
+
+
+    Handler handler = new Handler();
+    private Runnable updateTimer = new Runnable(){
+        public void run(){
+
+        String time  = String.format("%02d:%02d", timer / 60, timer % 60);
+        txtRecord.setText("Récord " + record + " aciertos || Tiempo: " + time);
+        timer--;
+
+        if (timer >= 0) {
+            handler.postDelayed(updateTimer, 1000);
+        } else {
+            clickFinish(null);
+        }
+
+        }
+    };
+
+
 
 
     @Override
@@ -79,7 +103,6 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "Operadora");}});
         data.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "Producto o Marca");}});
         data.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "Comunidad");}});
-        data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "Base de Datos");}});
         data.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "Botelleo");}});
         data.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "Planta");}});
         data.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "Combo");}});
@@ -87,11 +110,24 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         data.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "Centro de Canje");}});
         data.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "Crédito Formal");}});
         data.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "Sabores");}});
+        data.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "Café Blak");}});
+        data.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "Caja");}});
+        data.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "Caja Unidad");}});
+        data.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "Combo");}});
+        data.add(new HashMap<String, String>() {{ put("i", "23"); put("n", "Efectividad");}});
+        data.add(new HashMap<String, String>() {{ put("i", "24"); put("n", "FPC (Fecha\nPreferente Consumo)");}});
+        data.add(new HashMap<String, String>() {{ put("i", "25"); put("n", "Hola Coca Cola");}});
+        data.add(new HashMap<String, String>() {{ put("i", "26"); put("n", "Inventario Físico");}});
+        data.add(new HashMap<String, String>() {{ put("i", "27"); put("n", "Pallet");}});
+        data.add(new HashMap<String, String>() {{ put("i", "28"); put("n", "Pet");}});
+        data.add(new HashMap<String, String>() {{ put("i", "29"); put("n", "Producto Extraño");}});
+        //data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "Base de Datos");}});
 
         random();
 
         rlContent = (RelativeLayout)findViewById(R.id.rl_content);
         btFinish  = (Button)findViewById(R.id.bt_finish);
+        txtRecord = (TextView)findViewById(R.id.txt_record);
 
         ViewTreeObserver vto = rlContent.getViewTreeObserver();
         if(vto.isAlive()){
@@ -108,6 +144,12 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
             });
         }
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            record = bundle.getInt("record");
+        }
+
+        txtRecord.setText("");
         btFinish.setVisibility(View.GONE);
     }
 
@@ -140,6 +182,9 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
             txt.setEnabled(true);
         }
 
+        timer = max;
+        handler.postDelayed(updateTimer, 0);
+
     }
 
     public void clickFinish(View v) {
@@ -149,12 +194,16 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         int h = d.getIntrinsicHeight();
 
         final JSONObject result  = new JSONObject();
+        AlphaAnimation a = new AlphaAnimation(0.0f, 1.0f);;
 
         for (int i=0; i<answers.length; i++) {
 
             HashMap<String, String> row = data.get(i);
             ImageView img = new ImageView(this);
             ImageView ans = images[i];
+
+            if (answers[i] == null) continue;
+
             boolean success = answers[i].getTag().equals(row.get("i"));
 
             if (success) {
@@ -167,7 +216,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
             img.setX(ans.getX() + (ans.getWidth() - w)/2);
             img.setY(ans.getY() + (ans.getHeight() - h) / 2);
 
-            AlphaAnimation a = new AlphaAnimation(0.0f, 1.0f);
+            a = new AlphaAnimation(0.0f, 1.0f);
             a.setDuration(300);
             a.setStartOffset(150 * i);
 
@@ -181,6 +230,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
 
             } catch (JSONException e) {}
 
+            /*
             if (i == answers.length - 1) {
                 a.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -193,10 +243,25 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
                     }
                 });
             }
+            */
 
             img.startAnimation(a);
             rlContent.addView(img);
         }
+
+        if (a != null) {
+            a.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {}
+                @Override
+                public void onAnimationRepeat(Animation animation) {}
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    end(result);
+                }
+            });
+        }
+
     }
 
 
@@ -219,6 +284,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
             ((Button)findViewById(R.id.bt_instructions)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    setResult(Activity.RESULT_OK);
                     clickBack(null);
                 }
             });
@@ -249,6 +315,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
 
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "codigo-kof");
+        params.put("game_records", points);
         params.put("json", result.toString());
 
         WebBridge.send("webservices.php?task=addAnswerdGames", params, "Cargando", this, this);
@@ -263,7 +330,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         images      = new ImageView[9];
         texts       = new TextView[images.length];
         answers     = new TextView[images.length];
-        space   = (int)Math.round((height * 0.9)/images.length);
+        space   = (int)Math.round((height * 0.95)/images.length);
 
         int size    = (int)Math.round((height * 0.9)/3.0);
         int gap     = (int)Math.round((height * 0.1)/4.0);
@@ -290,6 +357,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
             txt.setText(row.get("n"));
             txt.setX(20);
             txt.setY((float)(space * rand[i] + 20));
+            txt.setGravity(Gravity.CENTER);
 
             images[i] = img;
             texts[i]  = txt;

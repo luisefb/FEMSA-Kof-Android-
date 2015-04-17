@@ -38,15 +38,15 @@
       "item": [
         {
           "question": "¿Qúe significa TPM?",
-          "answer1": "Más de 70 marcas y 500 productos",
-          "answer2": "Más de 30 marcas y 350 productos",
-          "answer3": "20 marcas y 200 productos"
+          "answer1": "Manejo temporal de producto",
+          "answer2": "Total de producto que manejamos",
+          "answer3": "Manejo total de producto"
         },
         {
           "question": "¿Qué incluye el código de los productos?",
-          "answer1": "Retornables, no retornables, multiempaques",
-          "answer2": "Colas, Sabores, Tés, Isotónicos, Jugos y néctares, energetizantes, café, lácteos, bebidas funcionales, bebidas a base de frutas, agua",
-          "answer3": "Sensitivas y no sensitivas"
+          "answer1": "Fecha de caducidad, lote, línea de producción",
+          "answer2": "Fecha de consumo óptimo, fecha de elaboración, lote de producción ",
+          "answer3": "Hora de elaboración, fecha de salida al mercado, lote de producción"
         },
         {
           "question": "Selecciona las condiciones que se deben de cuidar para garantizar que el producto llegue correctamente",
@@ -78,7 +78,7 @@
         },
         {
           "question": "Todo lo que Coca Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta",
-          "answer1": "Película de Exito",
+          "answer1": "Película de éxito",
           "answer2": "La propuesta de valor",
           "answer3": "Valor Industria"
         }
@@ -176,7 +176,7 @@
           "question": "¿Cuáles son las claves para el éxito 2015 de Distribución en la estrategia Crecer Crecer Crecer?",
           "answer1": "Prepotencia y prisa",
           "answer2": "Indiferente y servicio",
-          "answer3": "Seguridad, Calidad, Oportunidad, Disciplina operativa ,Servicio"
+          "answer3": "Seguridad, Calidad, Oportunidad, Disciplina  operativa ,Servicio"
         },
         {
           "question": "¿El azúcar de los refrescos de cola contribuye al sobrepeso y la obesidad?",

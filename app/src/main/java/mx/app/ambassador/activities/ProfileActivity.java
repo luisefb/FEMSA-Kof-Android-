@@ -319,11 +319,11 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
                     ((TextView)findViewById(R.id.tv_heart_be_aware)).setText( "x"    + skills.get("be_aware") );
                     ((TextView)findViewById(R.id.tv_heart_be_together)).setText( "x" + skills.get("be_together") );
 
-                    int r1 = getResources().getIdentifier("icon_circle_bold_"     + badgets.get("be_bold"),      "drawable", getPackageName());
-                    int r2 = getResources().getIdentifier("icon_circle_proud_"    + badgets.get("be_proud"),     "drawable", getPackageName());
-                    int r3 = getResources().getIdentifier("icon_circle_in_love_"  + badgets.get("be_in_love"),   "drawable", getPackageName());
-                    int r4 = getResources().getIdentifier("icon_circle_aware_"    + badgets.get("be_aware"),     "drawable", getPackageName());
-                    int r5 = getResources().getIdentifier("icon_circle_together_" + badgets.get("be_together"),  "drawable", getPackageName());
+                    int r1 = getResources().getIdentifier("icon_circle_bold_"     + (badgets.getInt("be_bold") + 1),      "drawable", getPackageName());
+                    int r2 = getResources().getIdentifier("icon_circle_proud_"    + (badgets.getInt("be_proud") + 1),     "drawable", getPackageName());
+                    int r3 = getResources().getIdentifier("icon_circle_in_love_"  + (badgets.getInt("be_in_love") + 1),   "drawable", getPackageName());
+                    int r4 = getResources().getIdentifier("icon_circle_aware_"    + (badgets.getInt("be_aware") + 1),     "drawable", getPackageName());
+                    int r5 = getResources().getIdentifier("icon_circle_together_" + (badgets.getInt("be_together") + 1),  "drawable", getPackageName());
 
                     ((TextView)findViewById(R.id.badge_be_bold)).setCompoundDrawablesWithIntrinsicBounds(r1, 0, 0, 0);
                     ((TextView)findViewById(R.id.badge_be_proud)).setCompoundDrawablesWithIntrinsicBounds(r2, 0, 0, 0);

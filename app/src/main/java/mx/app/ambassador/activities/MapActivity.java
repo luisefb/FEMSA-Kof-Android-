@@ -1,8 +1,12 @@
 package mx.app.ambassador.activities;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,10 +40,12 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
 	/* PROPERTIES */
 
     LinearLayout llMenu;
+    RelativeLayout rlMap;
+    RelativeLayout rlFemsa;
 
     Button btLogbook;
     Button btGame;
-    Button btGuidelines;
+    Button btLibrary;
     Button btProfile;
     Button btWall;
     Button btYammer;
@@ -47,6 +53,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
     Button btChecklist;
     Button btFeedback;
     Button btTop10;
+    Button btEvaluation;
 
 
     @Override
@@ -58,10 +65,12 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
         setTitle("Mapa");
 
+        rlMap        = (RelativeLayout)findViewById(R.id.rl_map);
+        rlFemsa      = (RelativeLayout)findViewById(R.id.rl_femsa);
         llMenu       = (LinearLayout)findViewById(R.id.ll_map_menu);
         btLogbook    = (Button)findViewById(R.id.bt_map_logbook);
         btGame       = (Button)findViewById(R.id.bt_map_game);
-        btGuidelines = (Button)findViewById(R.id.bt_map_guidelines);
+        btLibrary    = (Button)findViewById(R.id.bt_map_library);
         btProfile    = (Button)findViewById(R.id.bt_map_profile);
         btWall       = (Button)findViewById(R.id.bt_map_wall);
         btYammer     = (Button)findViewById(R.id.bt_map_yammer);
@@ -69,13 +78,14 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         btChecklist  = (Button)findViewById(R.id.bt_map_checklist);
         btFeedback   = (Button)findViewById(R.id.bt_map_feedback);
         btTop10      = (Button)findViewById(R.id.bt_map_top10);
+        btEvaluation = (Button)findViewById(R.id.bt_map_evaluation);
 
         llMenu.setVisibility(View.GONE);
-        btFeedback.setVisibility(View.GONE);
-        btChecklist.setVisibility(View.GONE);
-        btGame.setVisibility(View.GONE);
+        rlMap.setVisibility(View.GONE);
 
+        hide();
 
+        /*
         if (User.get("prevaluation", this).equals("true")) {
             Map<String, Object> params = User.getToken(this);
             WebBridge.send("webservices.php?task=getStatusMap", params, "Cargando", this, this);
@@ -84,6 +94,10 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
             intent.putExtra("type", "pre");
             startActivityForResult(intent, 1);
         }
+        */
+
+        Map<String, Object> params = User.getToken(this);
+        WebBridge.send("webservices.php?task=getStatusMap", params, "Cargando", this, this);
 
     }
 
@@ -112,8 +126,11 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else if (selected == 9) {
             nav = new Intent(MapActivity.this, FeedbackActivity.class);
         } else if (selected == 10) {
-            nav = new Intent(MapActivity.this, RankingActivity.class);
+            nav = new Intent(MapActivity.this, EvaluationActivity.class);
+            nav.putExtra("type", "post");
         } else if (selected == 11) {
+            nav = new Intent(MapActivity.this, RankingActivity.class);
+        } else if (selected == 12) {
             User.clear(this);
             setResult(Activity.RESULT_OK);
             finish();
@@ -125,6 +142,29 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         nav.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(nav);
 
+    }
+
+    public void clickHide(View v){
+
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlFemsa, "alpha",  1.0f, 0.0f);
+        alpha1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {}
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                rlFemsa.setVisibility(View.GONE);
+            }
+        });
+        alpha1.start();
+    }
+
+    public void clickFemsa(View v){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ccf.tuola.mx/"));
+        startActivity(browserIntent);
     }
 
 
@@ -142,6 +182,31 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         v.startAnimation(a);
     }
 
+    protected void hide() {
+        btFeedback.setVisibility(View.GONE);
+        btChecklist.setVisibility(View.GONE);
+        btGame.setVisibility(View.GONE);
+        btEvaluation.setVisibility(View.GONE);
+    }
+
+    protected void showFemsa() {
+
+        rlFemsa.setVisibility(View.VISIBLE);
+
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(rlFemsa, "scaleX", 2.0f, 1.0f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(rlFemsa, "scaleY", 2.0f, 1.0f);
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlFemsa, "alpha",  0.0f, 1.0f);
+
+        scaleX.setDuration(400);
+        scaleY.setDuration(400);
+        alpha1.setDuration(400);
+
+        AnimatorSet set = new AnimatorSet();
+        set.play(scaleX).with(scaleY).with(alpha1);
+        set.start();
+
+    }
+
 
 
 	/*-----------------*/
@@ -150,9 +215,12 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode != RESULT_OK) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            fade(rlMap);
             Map<String, Object> params = User.getToken(this);
             WebBridge.send("webservices.php?task=getStatusMap", params, "Cargando", this, this);
+        } else if (requestCode == 1 && resultCode != RESULT_OK) {
+            clickBack(null);
         }
     }
 
@@ -177,11 +245,24 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else {
             if (url.contains("getStatusMap")) {
 
-                int level = 0;
+                int level = 0, pre = 0, checklist = 0, feedback = 0, post = 0;
 
                 try {
-                    level = json.getInt("map_level_access");
+                    level       = json.getInt("map_level_access");
+                    pre         = json.getInt("pre");
+                    checklist   = json.getInt("checklist");
+                    feedback    = json.getInt("feedback");
+                    post        = json.getInt("post");
                 } catch (Exception e) {}
+
+                if (pre == 0) {
+                    Intent intent = new Intent(MapActivity.this, EvaluationActivity.class);
+                    intent.putExtra("type", "pre");
+                    startActivityForResult(intent, 1);
+                    return;
+                }
+
+                hide();
 
                 ImageView path = (ImageView)findViewById(R.id.img_map_path);
                 ImageView dflt = (ImageView)findViewById(R.id.img_map_path_default);
@@ -194,13 +275,20 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
                 a.setFillAfter(true);
                 dflt.startAnimation(a);
 
+                fade(rlMap);
                 fade(path);
                 fade(llMenu);
 
                 if (level > 1  || true) fade(btGame);
-                if (level == 4 || true) btChecklist.setVisibility(View.VISIBLE);
-                if (level == 5 || true) btFeedback.setVisibility(View.VISIBLE);
-
+                if (level == 4 || true && checklist == 0) btChecklist.setVisibility(View.VISIBLE);
+                if (level == 5 || true) {
+                    if (feedback == 0) {
+                        btFeedback.setVisibility(View.VISIBLE);
+                    } else if (post == 0) {
+                        btEvaluation.setVisibility(View.VISIBLE);
+                    }
+                }
+                if (level == 7) showFemsa();
             }
         }
     }

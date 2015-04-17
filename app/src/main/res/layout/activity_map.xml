@@ -4,24 +4,44 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_2">
 
-    <ImageView
+    <RelativeLayout
+        android:id="@+id/rl_map"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/image_map" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_map_path_default"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/image_map_status_0" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_map" />
 
-    <ImageView
-        android:id="@+id/img_map_path"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        <ImageView
+            android:id="@+id/img_map_path_default"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_map_status_0" />
+
+        <ImageView
+            android:id="@+id/img_map_path"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <Button
+            android:id="@+id/bt_map_logout"
+            style="@style/bt_map"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="normal"
+            android:drawableTop="@drawable/bt_map_logout"
+            android:tag="12"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_logout"/>
+
+    </RelativeLayout>
 
     <View
         android:id="@+id/status_bar"
@@ -56,13 +76,13 @@
             android:text="@string/bt_map_game"/>
 
         <Button
-            android:id="@+id/bt_map_guidelines"
+            android:id="@+id/bt_map_library"
             style="@style/bt_map"
-            android:drawableLeft="@drawable/bt_map_guidelines"
+            android:drawableLeft="@drawable/bt_map_library"
             android:tag="3"
             android:onClick="clickSection"
             android:alpha="0.5"
-            android:text="@string/bt_map_guidelines"/>
+            android:text="@string/bt_map_library"/>
 
         <Button
             android:id="@+id/bt_map_profile"
@@ -114,26 +134,69 @@
             android:text="@string/bt_map_feedback"/>
 
         <Button
+            android:id="@+id/bt_map_evaluation"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_evaluation"
+            android:tag="10"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_evaluation"/>
+
+        <Button
             android:id="@+id/bt_map_top10"
             style="@style/bt_map"
             android:drawableLeft="@drawable/bt_map_top10"
-            android:tag="10"
+            android:tag="11"
             android:onClick="clickSection"
             android:text="@string/bt_map_top10"/>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/bt_map_logout"
-        style="@style/bt_map"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="20dp"
-        android:textStyle="normal"
-        android:drawableTop="@drawable/bt_map_logout"
-        android:tag="11"
-        android:onClick="clickSection"
-        android:text="@string/bt_map_logout"/>
+    <RelativeLayout
+        android:id="@+id/rl_femsa"
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:background="#AA000000"
+        android:padding="40dp">
+
+        <ScrollView
+            android:id="@+id/sv_femsa"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:background="@android:color/transparent"
+                android:onClick="clickFemsa"
+                android:src="@drawable/image_femsa_info"/>
+
+
+        </ScrollView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_game_error"
+            android:layout_alignRight="@+id/sv_femsa"
+            android:layout_marginRight="-20dp"
+            android:onClick="clickHide"/>
+
+        <TextView
+            style="@style/bt_gray"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/sv_femsa"
+            android:layout_marginBottom="-50dp"
+            android:text="Haz clic en la imagen para ir al sitio web"/>
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

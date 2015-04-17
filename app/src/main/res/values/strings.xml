@@ -21,6 +21,7 @@
     <string name="bt_done">Salir</string>
     <string name="bt_skip">Saltar</string>
     <string name="bt_next">Siguiente</string>
+    <string name="bt_previous">Anterior</string>
     <string name="bt_start">Iniciar</string>
 
     <string name="bt_game_kof">Código KOF</string>
@@ -37,7 +38,7 @@
 
     <string name="bt_map_logbook">Bitácora</string>
     <string name="bt_map_game">Jugar</string>
-    <string name="bt_map_guidelines">Guías</string>
+    <string name="bt_map_library">Biblioteca</string>
     <string name="bt_map_profile">Perfil</string>
     <string name="bt_map_wall">Cuadro de Honor</string>
     <string name="bt_map_yammer">Yammer</string>
@@ -45,7 +46,7 @@
     <string name="bt_map_checklist">Checklist</string>
     <string name="bt_map_feedback">Feedback Total</string>
     <string name="bt_map_top10">Top Ten</string>
-    <string name="bt_map_evaluation">Pre Evaluación</string>
+    <string name="bt_map_evaluation">Post Evaluación</string>
     <string name="bt_map_logout">Cerrar Sesión</string>
 
     <string name="txt_profile_prize_1">Be in love</string>

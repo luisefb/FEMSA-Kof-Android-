@@ -1,5 +1,6 @@
 package mx.app.ambassador.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -282,7 +283,8 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode != RESULT_OK) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            setResult(Activity.RESULT_OK);
             finish();
         }
     }
@@ -308,7 +310,7 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage(msg).setNeutralButton(R.string.bt_close, null).show();
         } else {
 
-            User.set("prevaluation", "true", this);
+            //User.set("prevaluation", "true", this);
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Gracias por contestar la evaluación");

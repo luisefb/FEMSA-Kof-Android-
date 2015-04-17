@@ -8,6 +8,19 @@
         android:id="@+id/header"
         layout="@layout/header_toggle" />
 
+    <TextView
+        android:id="@+id/txt_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#E31820"
+        android:layout_alignBottom="@+id/header"
+        android:layout_alignTop="@+id/header"
+        android:gravity="center"
+        android:text="Record: 01:00 || Tiempo: 01:00"
+        android:layout_marginTop="25dp"
+        android:textSize="18sp"/>
+
     <RelativeLayout
         android:id="@+id/rl_content"
         android:layout_width="match_parent"
@@ -19,10 +32,14 @@
     <Button
         android:id="@+id/bt_finish"
         style="@style/bt_red"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/header"
+        android:layout_alignTop="@+id/header"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="10dp"
         android:onClick="clickFinish"
+        android:visibility="gone"
         android:text="@string/bt_send"/>
 
     

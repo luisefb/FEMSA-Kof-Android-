@@ -10,39 +10,44 @@
         android:padding="5dp"
         android:textSize="15dp"
         android:id="@+id/tv_question_face"
-        android:layout_marginTop="20dp"
         android:text="@string/txt_q1"/>
 
     <RadioGroup
+        android:id="@+id/rg_face"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/rb_face1"
             style="@style/bt_radio_face1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:tag="1"/>
 
         <RadioButton
+            android:id="@+id/rb_face2"
             style="@style/bt_radio_face2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:tag="2"/>
 
         <RadioButton
+            android:id="@+id/rb_face3"
             style="@style/bt_radio_face3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:tag="3"/>
 
         <RadioButton
+            android:id="@+id/rb_face4"
             style="@style/bt_radio_face4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:tag="4"/>
 
         <RadioButton
+            android:id="@+id/rb_face5"
             style="@style/bt_radio_face5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

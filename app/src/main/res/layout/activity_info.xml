@@ -34,6 +34,7 @@
             android:tag="2"
             android:onClick="clickSection"
             android:layout_marginBottom="20dp"
+            android:visibility="gone"
             android:text="@string/bt_checklist_info_units" />
 
         <Button

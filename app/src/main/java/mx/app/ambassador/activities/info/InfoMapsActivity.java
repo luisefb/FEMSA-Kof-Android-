@@ -14,6 +14,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -190,12 +191,12 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
         Button bt = (Button)v;
         int index = Integer.parseInt(v.getTag().toString());
 
-        long lat = 0;
-        long lng = 0;
+        double lat = 0;
+        double lng = 0;
 
         try {
-            lat = data.getJSONObject(index).getLong("lat");
-            lng = data.getJSONObject(index).getLong("lng");
+            lat = data.getJSONObject(index).getDouble("lat");
+            lng = data.getJSONObject(index).getDouble("lng");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -204,6 +205,8 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
         agency.setPosition(new LatLng(lat, lng));
         agency.setTitle(bt.getText().toString());
         agency.showInfoWindow();
+
+        Log.e("", lat + ":" + lng);
 
         if (user != null) {
             String url = "http://maps.googleapis.com/maps/api/directions/json?"
@@ -268,8 +271,6 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
 
         locationManager.removeUpdates(this);
         user = new LatLng(location.getLatitude(), location.getLongitude());
-
-        LatLng MELBOURNE = new LatLng(-37.813, 144.962);
 
         MarkerOptions o = new MarkerOptions().position(user).title("Tu ubicación").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         mapView.addMarker(o);

@@ -123,7 +123,7 @@
                 android:id="@+id/txt_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_wall_1"
+                android:text="@string/txt_lines"
                 android:textColor="#555555"
                 android:textSize="34sp"
                 android:textStyle="bold" />
@@ -132,19 +132,19 @@
                 android:id="@+id/txt_business"
                 style="@style/tv_line"
                 android:drawableLeft="@drawable/icon_profile_corporative"
-                android:text="@string/txt_profile_corp" />
+                android:text="@string/txt_lines" />
 
             <TextView
                 android:id="@+id/txt_rank"
                 style="@style/tv_line"
                 android:drawableLeft="@drawable/icon_profile_rank"
-                android:text="@string/txt_profile_rank" />
+                android:text="@string/txt_lines" />
 
             <TextView
                 android:id="@+id/txt_email"
                 style="@style/tv_line"
                 android:drawableLeft="@drawable/icon_profile_email"
-                android:text="@string/txt_profile_email" />
+                android:text="@string/txt_lines" />
 
             <TextView
                 android:layout_width="wrap_content"

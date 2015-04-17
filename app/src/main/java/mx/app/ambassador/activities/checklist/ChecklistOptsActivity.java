@@ -1,5 +1,6 @@
 package mx.app.ambassador.activities.checklist;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -170,14 +171,18 @@ public class ChecklistOptsActivity extends SectionActivity implements WebBridge.
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage(msg).setNeutralButton(R.string.bt_close, null).show();
         } else {
 
-            User.set("checklist_answers", getOptions(false), this);
-            User.set("checklist_type", Integer.toString(type), this);
+            //User.set("checklist_answers", getOptions(false), this);
+            //User.set("checklist_type", Integer.toString(type), this);
+
             findViewById(R.id.bt_send).setVisibility(View.GONE);
             for (int i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].setEnabled(false);
             }
 
             new AlertDialog.Builder(this).setTitle(R.string.txt_thanks).setMessage("Gracias por completar el checklist").setNeutralButton(R.string.bt_close, null).show();
+
+            setResult(Activity.RESULT_OK);
+            finish();
 
         }
     }

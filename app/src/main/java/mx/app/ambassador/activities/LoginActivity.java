@@ -156,7 +156,7 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
                 User.setToken(txtUsername.getText().toString(), token, this);
                 txtPassword.setText("");
 
-                User.set("prevaluation", evaluation == 0 ? "false" : "true", this);
+                //User.set("prevaluation", evaluation == 0 ? "false" : "true", this);
                 //User.set("prevaluation", "true", this);
 
                 Intent intent = new Intent(LoginActivity.this, MapActivity.class);

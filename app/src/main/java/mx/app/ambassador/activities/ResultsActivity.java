@@ -1,5 +1,6 @@
 package mx.app.ambassador.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -49,7 +50,6 @@ public class ResultsActivity extends SectionActivity implements WebBridge.WebBri
         }
 
         Map<String, Object> params = User.getToken(this);
-        //params.put("token", "1d2ab013ad3eb3cf4db50264fc9de13c01205cb5:FzQM5fUo");
         params.put("type", type);
         WebBridge.send("webservices.php?task=getScoreEvaluation", params, "Cargando", this, this);
 
@@ -60,6 +60,7 @@ public class ResultsActivity extends SectionActivity implements WebBridge.WebBri
 	/* CLICK EVENTS */
 
     public void clickBack(View v) {
+        setResult(Activity.RESULT_OK);
         finish();
         overridePendingTransition(R.anim.static_motion, R.anim.fade_out);
     }

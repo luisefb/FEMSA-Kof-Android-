@@ -3,6 +3,7 @@ package mx.app.ambassador.activities.games;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Build;
 import android.os.Bundle;
@@ -45,9 +46,9 @@ import mx.app.ambassador.utils.WebBridge;
  */
 public class GameOrderActivity extends SectionActivity implements WebBridge.WebBridgeListener, PanGestureListener {
 
-    int width, height, points, missed;
+    int width, height, points, missed, record, timer;
     float offsetY;
-    boolean started;
+    boolean started, finished;
 
     ArrayList<String> types;
 
@@ -56,19 +57,32 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
     ImageView imgRail;
     ImageView imgTruck;
+    TextView txtRecord;
 
-    Random random = new Random();
-    Handler handler = new Handler();
+    Random random    = new Random();
+    Handler handler1 = new Handler();
+    Handler handler2 = new Handler();
 
     BottleSetView images[];
     ArrayList<ImageView> truckImages;
     HashMap<String,ArrayList<BottleView>> bottleImages;
 
-    private Runnable updateTimer = new Runnable(){
+    private Runnable updateTimer1 = new Runnable(){
         public void run(){
-            //timer();
             random();
-            handler.postDelayed(updateTimer, 2000);
+            handler1.postDelayed(updateTimer1, 2000);
+        }
+    };
+
+    private Runnable updateTimer2 = new Runnable(){
+        public void run(){
+            if (!finished) {
+                String time = String.format("%02d:%02d", timer / 60, timer % 60);
+                String old = String.format("%02d:%02d", record / 60, record % 60);
+                txtRecord.setText("Récord: " + old + " || Tiempo: " + time);
+                timer++;
+                handler2.postDelayed(updateTimer2, 1000);
+            }
         }
     };
 
@@ -84,6 +98,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         rlContent = (RelativeLayout)findViewById(R.id.rl_content);
         imgRail   = (ImageView)findViewById(R.id.img_rail);
         imgTruck  = (ImageView)findViewById(R.id.img_truck);
+        txtRecord = (TextView)findViewById(R.id.txt_record);
 
 
         ViewTreeObserver vto = rlContent.getViewTreeObserver();
@@ -100,6 +115,13 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
                 }
             });
         }
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            record = bundle.getInt("record");
+        }
+
+        txtRecord.setText("");
 
     }
 
@@ -127,8 +149,10 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         });
 
         alpha.start();
+        finished = false;
 
-
+        handler1.postDelayed(updateTimer1, 0);
+        handler2.postDelayed(updateTimer2, 0);
 
     }
 
@@ -151,6 +175,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
             ((Button)findViewById(R.id.bt_instructions)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    setResult(Activity.RESULT_OK);
                     clickBack(null);
                 }
             });
@@ -175,6 +200,8 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
     protected void end () {
 
+        finished = true;
+
         JSONObject result  = new JSONObject();
         JSONObject answers = new JSONObject();
         JSONObject answer  = new JSONObject();
@@ -194,6 +221,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "todo-en-orden");
         params.put("json", result.toString());
+        params.put("game_records", timer);
 
         WebBridge.send("webservices.php?task=addAnswerdGames", params, "Cargando", this, this);
         //
@@ -292,9 +320,10 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
         }
 
-        //showInstructions(getString(R.string.txt_instructions), getString(R.string.txt_game_instructions_order), true);
-        findViewById(R.id.ll_instructions).setVisibility(View.GONE);
-        handler.postDelayed(updateTimer, 0);
+        showInstructions(getString(R.string.txt_instructions), getString(R.string.txt_game_instructions_order), true);
+        //findViewById(R.id.ll_instructions).setVisibility(View.GONE);
+        //handler1.postDelayed(updateTimer1, 0);
+
     }
 
 

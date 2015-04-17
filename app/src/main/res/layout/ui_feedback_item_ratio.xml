@@ -7,13 +7,13 @@
     <TextView
         android:id="@+id/txt_evaluation_question"
         style="@style/tv_question"
-        android:layout_marginTop="20dp"
         android:text="@string/txt_q1"/>
 
     <RadioGroup
         android:id="@+id/rg_evaluation_answers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical" >
 
         <RadioButton

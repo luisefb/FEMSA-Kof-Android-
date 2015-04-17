@@ -44,16 +44,16 @@
 		
 		<item>
 			<question><![CDATA[¿Qúe significa TPM?]]></question>
-			<answer1><![CDATA[Más de 70 marcas y 500 productos]]></answer1>
-			<answer2><![CDATA[Más de 30 marcas y 350 productos]]></answer2>
-			<answer3><![CDATA[20 marcas y 200 productos]]></answer3>
+			<answer1><![CDATA[Manejo temporal de producto]]></answer1>
+			<answer2><![CDATA[Total de producto que manejamos]]></answer2>
+			<answer3><![CDATA[Manejo total de producto]]></answer3>
 		</item>
 		
 		<item>
 			<question><![CDATA[¿Qué incluye el código de los productos?]]></question>
-			<answer1><![CDATA[Retornables, no retornables, multiempaques]]></answer1>
-			<answer2><![CDATA[Colas, Sabores, Tés, Isotónicos, Jugos y néctares, energetizantes, café, lácteos, bebidas funcionales, bebidas a base de frutas, agua]]></answer2>
-			<answer3><![CDATA[Sensitivas y no sensitivas]]></answer3>
+			<answer1><![CDATA[Fecha de caducidad, lote, línea de producción]]></answer1>
+			<answer2><![CDATA[Fecha de consumo óptimo, fecha de elaboración, lote de producción ]]></answer2>
+			<answer3><![CDATA[Hora de elaboración, fecha de salida al mercado, lote de producción]]></answer3>
 		</item>
 
 		<item>
@@ -90,7 +90,7 @@
 
 		<item>
 			<question><![CDATA[Todo lo que Coca Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta]]></question>
-			<answer1><![CDATA[Película de Exito]]></answer1>
+			<answer1><![CDATA[Película de éxito]]></answer1>
 			<answer2><![CDATA[La propuesta de valor]]></answer2>
 			<answer3><![CDATA[Valor Industria]]></answer3>
 		</item>
@@ -203,14 +203,13 @@
 			<question><![CDATA[¿Cuáles son las claves para el éxito 2015 de Distribución en la estrategia Crecer Crecer Crecer?]]></question>
 			<answer1><![CDATA[Prepotencia y prisa]]></answer1>
 			<answer2><![CDATA[Indiferente y servicio]]></answer2>
-			<answer3><![CDATA[Seguridad, Calidad, Oportunidad, Disciplina operativa ,Servicio]]></answer3>
+			<answer3><![CDATA[Seguridad, Calidad, Oportunidad, Disciplina  operativa ,Servicio]]></answer3>
 		</item>
 
 		<item>
 			<question><![CDATA[¿El azúcar de los refrescos de cola contribuye al sobrepeso y la obesidad?]]></question>
 			<answer1><![CDATA[Sí, contribuye]]></answer1>
 			<answer2><![CDATA[No, aunque TODAS LAS CALORÍAS CUENTAN incluyendo las de nuestras bebidas. Pero éstas por sí solas, no son responsables del sobrepeso u obesidad]]></answer2>
-			<answer3><![CDATA[]]></answer3>
 		</item>
 
 		<item>

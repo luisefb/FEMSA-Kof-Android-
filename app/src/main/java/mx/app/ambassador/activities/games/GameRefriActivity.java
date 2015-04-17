@@ -10,6 +10,7 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -52,12 +53,14 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 	/*------------*/
 	/* PROPERTIES */
 
-    int width, height, size, rack, border, total, points, questions = 15, spaces = 4;
+    int width, height, size, rack, border, total, points, timer, record, questions = 15, spaces = 4;
     float offsetY;
+    boolean finished;
     RelativeLayout rlContent;
     ImageView imgRefri;
     LinearLayout llInstructions;
     Button btFinish;
+    TextView txtRecord;
 
     float[] rackRefri = new float[]{0.2213f, 0.4205f, 0.5453f, 0.8215f};
     float[] rackWall  = new float[3];
@@ -67,6 +70,19 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
     ImageView[] images;
     ArrayList<HashMap<String, String>> data;
+
+    Handler handler = new Handler();
+    private Runnable updateTimer = new Runnable(){
+        public void run(){
+            if (!finished) {
+                String time = String.format("%02d:%02d", timer / 60, timer % 60);
+                String old = String.format("%02d:%02d", record / 60, record % 60);
+                txtRecord.setText("Récord: " + old + " || Tiempo: " + time);
+                timer++;
+                handler.postDelayed(updateTimer, 1000);
+            }
+        }
+    };
 
 
     @Override
@@ -82,18 +98,40 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         items.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "no");   put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "no");   put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "yes");  put("t", "all"); }});
+        //items.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "yes");  put("t", "dwn"); }});
         items.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "yes");  put("t", "dwn"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "23"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "24"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "25"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "26"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "27"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "28"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "29"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "30"); put("n", "no");   put("t", "all"); }});
+
+
 
         data = random(items);
 
         rlContent = (RelativeLayout)findViewById(R.id.rl_content);
         btFinish  = (Button)findViewById(R.id.bt_finish);
+        txtRecord = (TextView)findViewById(R.id.txt_record);
 
         ViewTreeObserver vto = rlContent.getViewTreeObserver();
         if(vto.isAlive()){
@@ -110,7 +148,14 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             });
         }
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            record = bundle.getInt("record");
+        }
+
         btFinish.setEnabled(false);
+        txtRecord.setText("");
+
     }
 
 
@@ -142,6 +187,11 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         });
 
         alpha.start();
+
+        timer = 0;
+        finished = false;
+        handler.postDelayed(updateTimer, 0);
+
     }
 
     public void clickFinish(View v) {
@@ -149,6 +199,8 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         for (int i = 0; i < images.length; i++) {
             images[i].setEnabled(false);
         }
+
+        /*
         btFinish.setEnabled(false);
 
         ObjectAnimator alpha = ObjectAnimator.ofFloat(btFinish, "alpha",  1.0f, 0.0f);
@@ -167,6 +219,9 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         });
 
         alpha.start();
+        */
+
+        finished = true;
 
         Log.e("answers", answers.size() + "");
         Log.e("faults", faults.size() + "");
@@ -190,6 +245,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "reto-refri");
         params.put("json", result.toString());
+        params.put("game_records", timer);
 
         WebBridge.send("webservices.php?task=addAnswerdGames", params, "Cargando", this, this);
 
@@ -214,6 +270,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             ((Button)findViewById(R.id.bt_instructions)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    setResult(Activity.RESULT_OK);
                     clickBack(null);
                 }
             });
@@ -301,6 +358,8 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
             HashMap<String, String> row = data.get(i);
             int drawable = getResources().getIdentifier("image_game_refri_" + row.get("i"), "drawable", getPackageName());
+
+            Log.e("", "image_game_refri_" + row.get("i"));
 
             Drawable d = getResources().getDrawable(drawable);
             int w = d.getIntrinsicWidth();
@@ -452,7 +511,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
     }
 
-    /*
+
     protected void validate () {
 
         if (answers.size() != total) return;
@@ -471,8 +530,10 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             images[i].setEnabled(false);
         }
 
+        clickFinish(null);
+
     }
-    */
+
 
     protected void bounce(final View v, float[] pos) {
 
@@ -512,7 +573,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             public void onAnimationEnd(Animation animation) {
                 v.setY(posY);
                 v.setEnabled(true);
-                //validate();
+                validate();
             }
         });
         v.startAnimation(translation);
