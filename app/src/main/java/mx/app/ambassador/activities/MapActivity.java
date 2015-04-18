@@ -54,6 +54,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
     Button btFeedback;
     Button btTop10;
     Button btEvaluation;
+    Button btFemsa;
 
 
     @Override
@@ -79,6 +80,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         btFeedback   = (Button)findViewById(R.id.bt_map_feedback);
         btTop10      = (Button)findViewById(R.id.bt_map_top10);
         btEvaluation = (Button)findViewById(R.id.bt_map_evaluation);
+        btFemsa      = (Button)findViewById(R.id.bt_map_femsa);
 
         llMenu.setVisibility(View.GONE);
         rlMap.setVisibility(View.GONE);
@@ -131,6 +133,8 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else if (selected == 11) {
             nav = new Intent(MapActivity.this, RankingActivity.class);
         } else if (selected == 12) {
+            showFemsa();
+        } else if (selected == 13) {
             User.clear(this);
             setResult(Activity.RESULT_OK);
             finish();
@@ -282,13 +286,11 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
                 if (level > 1  || true) fade(btGame);
                 if (level == 4 || true && checklist == 0) btChecklist.setVisibility(View.VISIBLE);
                 if (level == 5 || true) {
-                    if (feedback == 0) {
-                        btFeedback.setVisibility(View.VISIBLE);
-                    } else if (post == 0) {
-                        btEvaluation.setVisibility(View.VISIBLE);
-                    }
+                    if (feedback == 0)  btFeedback.setVisibility(View.VISIBLE);
+                    else if (post == 0) btEvaluation.setVisibility(View.VISIBLE);
                 }
-                if (level == 7) showFemsa();
+                if (level == 7 || true) btFemsa.setVisibility(View.VISIBLE);
+
             }
         }
     }

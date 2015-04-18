@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -52,6 +53,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import mx.app.ambassador.R;
 import mx.app.ambassador.ui.dialogs.ProgressDialog;
@@ -68,9 +71,9 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 	/* PROPERTIES */
 
     TextView txtName;
-    TextView txtBusiness;
-    TextView txtRank;
-    TextView txtEmail;
+    EditText txtBusiness;
+    EditText txtRank;
+    EditText txtEmail;
     ImageButton btPhoto;
     ProgressDialog progress;
 
@@ -90,9 +93,9 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
         setTitle("Perfil");
 
         txtName     = (TextView)findViewById(R.id.txt_name);
-        txtBusiness = (TextView)findViewById(R.id.txt_business);
-        txtRank     = (TextView)findViewById(R.id.txt_rank);
-        txtEmail    = (TextView)findViewById(R.id.txt_email);
+        txtBusiness = (EditText)findViewById(R.id.txt_business);
+        txtRank     = (EditText)findViewById(R.id.txt_rank);
+        txtEmail    = (EditText)findViewById(R.id.txt_email);
         btPhoto     = (ImageButton)findViewById(R.id.bt_photo);
 
         Map<String, Object> params = User.getToken(this);
@@ -153,21 +156,47 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 
     public void clickSave(View v) {
 
+        /*
         if (icImage == null) {
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage("Selecciona primero una imagen").setNeutralButton(R.string.bt_close, null).show();
             return;
         }
+        */
+
+        if (txtBusiness.getText().length() < 1) {
+            new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage("Indica tu corporativo").setNeutralButton(R.string.bt_close, null).show();
+            return;
+        }
+
+        if (txtRank.getText().length() < 1) {
+            new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage("Indica tu posición").setNeutralButton(R.string.bt_close, null).show();
+            return;
+        }
+
+        if (!isEmailValid(txtEmail.getText().toString())) {
+            new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage("Escribe un correo válido").setNeutralButton(R.string.bt_close, null).show();
+            return;
+        }
+
 
         Map<String, Object> t  = User.getToken(this);
         AsyncHttpClient client = new AsyncHttpClient();
-        File image             = new File(icImage.getFilePathOriginal());
+
 
         RequestParams params = new RequestParams();
         params.put("token", t.get("token"));
+        params.put("business", txtBusiness.getText());
+        params.put("business_position", txtRank.getText());
+        params.put("email", txtEmail.getText());
 
-        try {
-            params.put("file_image", image);
-        } catch(FileNotFoundException e) {}
+
+        if (icImage != null) {
+            File image = new File(icImage.getFilePathOriginal());
+            try {
+                params.put("file_image", image);
+            } catch (FileNotFoundException e) {}
+        }
+
 
 
         progress = ProgressDialog.show(this, "Enviando", true, false, null);
@@ -184,6 +213,28 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 
     }
 
+
+
+	/*----------------*/
+	/* CUSTOM METHODS */
+
+    private boolean isEmailValid(String email) {
+        String regExpn =
+                "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                        +"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                        +"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                        +"([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
+
+        CharSequence inputStr = email;
+
+        Pattern pattern = Pattern.compile(regExpn,Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+
+        if(matcher.matches()) return true;
+        else return false;
+    }
 
 
 
@@ -348,7 +399,7 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 
 
             } else if (url.contains("updateProfile")) {
-                new AlertDialog.Builder(this).setTitle(R.string.txt_thanks).setMessage("Se actualizó la imagen de perfil").setNeutralButton(R.string.bt_close, null).show();
+                new AlertDialog.Builder(this).setTitle(R.string.txt_thanks).setMessage("Se actualizaron los datos del perfil").setNeutralButton(R.string.bt_close, null).show();
             }
 
         }

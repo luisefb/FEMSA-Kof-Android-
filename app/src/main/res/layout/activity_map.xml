@@ -37,7 +37,7 @@
             android:layout_marginRight="20dp"
             android:textStyle="normal"
             android:drawableTop="@drawable/bt_map_logout"
-            android:tag="12"
+            android:tag="13"
             android:onClick="clickSection"
             android:text="@string/bt_map_logout"/>
 
@@ -148,6 +148,14 @@
             android:tag="11"
             android:onClick="clickSection"
             android:text="@string/bt_map_top10"/>
+
+        <Button
+            android:id="@+id/bt_map_femsa"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_femsa"
+            android:tag="12"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_femsa"/>
 
     </LinearLayout>
 

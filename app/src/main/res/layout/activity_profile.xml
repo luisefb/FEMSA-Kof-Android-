@@ -128,23 +128,26 @@
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/txt_business"
                 style="@style/tv_line"
                 android:drawableLeft="@drawable/icon_profile_corporative"
-                android:text="@string/txt_lines" />
+                android:inputType="textCapWords"
+                android:hint="@string/txt_profile_corp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/txt_rank"
                 style="@style/tv_line"
                 android:drawableLeft="@drawable/icon_profile_rank"
-                android:text="@string/txt_lines" />
+                android:inputType="textCapSentences"
+                android:hint="@string/txt_profile_rank"/>
 
-            <TextView
+            <EditText
                 android:id="@+id/txt_email"
                 style="@style/tv_line"
+                android:inputType="textEmailAddress"
                 android:drawableLeft="@drawable/icon_profile_email"
-                android:text="@string/txt_lines" />
+                android:hint="@string/txt_profile_email" />
 
             <TextView
                 android:layout_width="wrap_content"
