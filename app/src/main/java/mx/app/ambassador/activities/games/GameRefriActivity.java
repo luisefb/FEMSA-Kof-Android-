@@ -200,8 +200,9 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             images[i].setEnabled(false);
         }
 
-        /*
         btFinish.setEnabled(false);
+        /*
+
 
         ObjectAnimator alpha = ObjectAnimator.ofFloat(btFinish, "alpha",  1.0f, 0.0f);
         alpha.setDuration(400);

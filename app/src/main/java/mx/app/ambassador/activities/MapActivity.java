@@ -8,7 +8,6 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
@@ -23,10 +22,6 @@ import org.json.JSONObject;
 import java.util.Map;
 
 import mx.app.ambassador.R;
-import mx.app.ambassador.activities.games.GameKofActivity;
-import mx.app.ambassador.activities.games.GameProductsActivity;
-import mx.app.ambassador.activities.games.GameRefriActivity;
-import mx.app.ambassador.activities.games.GameTeamActivity;
 import mx.app.ambassador.utils.User;
 import mx.app.ambassador.utils.WebBridge;
 
@@ -120,6 +115,8 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
             nav = new Intent(MapActivity.this, ProfileActivity.class);
         } else if (selected == 5) {
             nav = new Intent(MapActivity.this, WallActivity.class);
+        } else if (selected == 6) {
+            nav = new Intent(MapActivity.this, YammerActivity.class);
         } else if (selected == 7) {
             nav = new Intent(MapActivity.this, InfoActivity.class);
         } else if (selected == 8) {

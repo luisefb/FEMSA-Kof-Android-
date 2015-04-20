@@ -106,7 +106,6 @@
             android:drawableLeft="@drawable/bt_map_yammer"
             android:tag="6"
             android:onClick="clickSection"
-            android:alpha="0.5"
             android:text="@string/bt_map_yammer"/>
 
         <Button
