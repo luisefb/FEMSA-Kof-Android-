@@ -83,6 +83,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_team);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
@@ -113,6 +114,12 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         data.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "storage");}});
         data.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "delivery");}});
         data.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "autoservice");}});
+
+        data.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "autoservice");}});
+        data.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "autoservice");}});
+        data.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "autoservice");}});
+        data.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "autoservice");}});
+
 
         random();
 
@@ -246,6 +253,8 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         try {
             result.put("games_answerds", items);
         } catch (JSONException e) {}
+
+        points = (int)(Math.floor(points * 200)/9) + timer;
 
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "equipar-al-equipo");
@@ -500,6 +509,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
     @Override
     public void onPanStart(View v, float deltaX, float deltaY) {
+        if (finished) return;
         v.bringToFront();
         offsetY = rlContent.getY();
     }
@@ -511,6 +521,8 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
     @Override
     public void onPanMove(View v, float deltaX, float deltaY) {
+
+        if (finished) return;
 
         if (deltaX > rlContent.getWidth() - v.getWidth()/2 || deltaX < v.getWidth()/2) return;
         if (deltaY > rlContent.getHeight() - v.getHeight()/2 + offsetY || deltaY < offsetY + v.getHeight()/2) return;

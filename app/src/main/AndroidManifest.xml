@@ -42,7 +42,7 @@
             android:name=".activities.LoginActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden" >
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
         </activity>
 
         <activity
@@ -64,6 +64,7 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
+
         </activity>
 
         <activity
@@ -84,26 +85,27 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden">
-
         </activity>
 
         <activity android:name=".activities.info.InfoMapsActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden">
+
         </activity>
 
         <activity android:name=".activities.FeedbackActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden">
-
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
         </activity>
 
         <activity android:name=".activities.InfoActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden">
+
+
         </activity>
 
         <activity android:name=".activities.checklist.ChecklistOptsActivity"
@@ -160,10 +162,19 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
+
         </activity>
 
         <activity
             android:name=".activities.games.GameOrderActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+
+        </activity>
+
+        <activity
+            android:name=".activities.LibraryActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
@@ -173,10 +184,10 @@
             android:name=".activities.YammerActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden" >
+            android:imeOptions="flagNoExtractUi"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan|adjustResize" >
         </activity>
-
-
 
         <uses-library android:name="com.google.android.maps" />
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />

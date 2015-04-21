@@ -44,6 +44,7 @@ android {
         apiKey "1be3dca15a972456fbbc27b5cc83dd4e232c5596"
     }
 
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 
@@ -52,6 +53,7 @@ dependencies {
     compile 'com.google.android.gms:play-services:7.0.0'
     compile 'com.loopj.android:android-async-http:1.4.6'
     compile 'com.kbeanie:image-chooser-library:1.4.02@aar'
+    compile 'com.joanzapata.pdfview:android-pdfview:1.0.+@aar'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile('com.crashlytics.sdk.android:crashlytics:2.2.3@aar') {
         transitive = true;

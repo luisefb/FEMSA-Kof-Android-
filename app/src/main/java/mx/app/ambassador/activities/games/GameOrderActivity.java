@@ -46,9 +46,10 @@ import mx.app.ambassador.utils.WebBridge;
  */
 public class GameOrderActivity extends SectionActivity implements WebBridge.WebBridgeListener, PanGestureListener {
 
-    int width, height, points, missed, record, timer;
+    int width, height, points, record, timer, max = 180;
     float offsetY;
     boolean started, finished;
+    //missed,
 
     ArrayList<String> types;
 
@@ -76,13 +77,28 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
     private Runnable updateTimer2 = new Runnable(){
         public void run(){
+            /*
             if (!finished) {
                 String time = String.format("%02d:%02d", timer / 60, timer % 60);
                 String old = String.format("%02d:%02d", record / 60, record % 60);
                 txtRecord.setText("Récord: " + old + " || Tiempo: " + time);
-                timer++;
+                timer--;
                 handler2.postDelayed(updateTimer2, 1000);
             }
+            */
+            if(finished) return;
+
+            String time  = String.format("%02d:%02d", timer / 60, timer % 60);
+            txtRecord.setText("Récord " + record + " completados || Tiempo: " + time);
+            timer--;
+
+            if (timer >= 0) {
+                handler2.postDelayed(updateTimer2, 1000);
+            } else {
+                end();
+                //clickFinish(null);
+            }
+
         }
     };
 
@@ -150,6 +166,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
         alpha.start();
         finished = false;
+        timer = max;
 
         handler1.postDelayed(updateTimer1, 0);
         handler2.postDelayed(updateTimer2, 0);
@@ -206,8 +223,10 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         JSONObject answers = new JSONObject();
         JSONObject answer  = new JSONObject();
 
-        int less = (int)Math.floor((Math.min(missed, 100) * 25)/100);
-        points = 25 - less;
+        //int less = (int)Math.floor((Math.min(missed, 100) * 25)/100);
+        //points = 25 - less;
+        points = 18 - truckImages.size();
+        points = (int)(Math.floor(points * 200)/18) + timer;
 
         try {
 
@@ -234,7 +253,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
         width        = rlContent.getWidth();
         height       = rlContent.getHeight();
         points       = 0;
-        missed       = 0;
+        //missed       = 0;
         types        = new ArrayList<String>();
         images       = new BottleSetView[3];
         truckImages  = new ArrayList<ImageView>();
@@ -377,9 +396,11 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
                 img.setRotation(0);
                 img.setX(-200);
                 bottleImages.get(img.getType()).add(img);
+                /*
                 if (started) {
                     missed++;
                 }
+                */
                 //Log.e("", img.getType() + ":" + bottleImages.get(img.getType()).size());
             }
         });
@@ -586,6 +607,8 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
     @Override
     public void onPanStart(View v, float deltaX, float deltaY) {
 
+        if (finished) return;
+
         if (v instanceof BottleView) {
             v.setAlpha(1.0f);
             v.setRotation(0.0f);
@@ -599,6 +622,8 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
     @Override
     public void onPanStop(View v, float deltaX, float deltaY) {
 
+        if (finished) return;
+
         if (v instanceof BottleView) {
             v.setEnabled(false);
             hit((BottleView)v, true);
@@ -610,6 +635,8 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
     @Override
     public void onPanMove(View v, float deltaX, float deltaY) {
+
+        if (finished) return;
 
         if (deltaX > rlContent.getWidth() - v.getWidth()/2 || deltaX < v.getWidth()/2) return;
         if (deltaY > rlContent.getHeight() - v.getHeight()/2 + offsetY || deltaY < offsetY + v.getHeight()/2) return;

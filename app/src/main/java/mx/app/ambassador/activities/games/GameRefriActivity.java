@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +54,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 	/*------------*/
 	/* PROPERTIES */
 
-    int width, height, size, rack, border, total, points, timer, record, questions = 15, spaces = 4;
+    int width, height, size, rack, border, total, points, timer, record, questions = 22, spaces = 4;
     float offsetY;
     boolean finished;
     RelativeLayout rlContent;
@@ -62,7 +63,8 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
     Button btFinish;
     TextView txtRecord;
 
-    float[] rackRefri = new float[]{0.2213f, 0.4205f, 0.5453f, 0.8215f};
+    float[] rackRefri = new float[]{0.3417f, 0.5794f, 0.7949f};
+    float[] gapRefri  = new float[]{0.0685f, 0.0322f, 0.0833f};
     float[] rackWall  = new float[3];
 
     ArrayList<String> answers;
@@ -94,38 +96,28 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         setTitle("Reto Refri");
 
         ArrayList<HashMap<String, String>> items = new ArrayList<HashMap<String, String>>();
-        items.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "no");   put("t", "all"); }});
-        //items.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "yes");  put("t", "all"); }});
         items.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "yes");  put("t", "dwn"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "23"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "24"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "25"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "26"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "27"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "28"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "29"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "30"); put("n", "no");   put("t", "all"); }});
-
-
+        items.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "yes");  put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "no");   put("t", "all"); }});
 
         data = random(items);
 
@@ -302,7 +294,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         rack    = drack.getIntrinsicHeight();
         answers = new ArrayList<String>();
         faults  = new ArrayList<String>();
-        images  = new ImageView[questions];
+        images  = new ImageView[data.size()];
 
         for (int i=1; i<spaces; i++) {
 
@@ -343,11 +335,12 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             rackRefri[i] = hrefri * rackRefri[i] + refri.getY();
         }
 
-        border = (int)Math.ceil(wrefri * 0.07836990595611);
+        border = (int)Math.ceil(wrefri * 0.08064516129032);
 
         Random random = new Random();
         total = 0;
         int offsetX = 0;
+
         int perrow  = (int)Math.ceil(data.size()/(spaces-1));
 
 
@@ -359,8 +352,6 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
             HashMap<String, String> row = data.get(i);
             int drawable = getResources().getIdentifier("image_game_refri_" + row.get("i"), "drawable", getPackageName());
-
-            Log.e("", "image_game_refri_" + row.get("i"));
 
             Drawable d = getResources().getDrawable(drawable);
             int w = d.getIntrinsicWidth();
@@ -411,6 +402,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
     protected ArrayList<HashMap<String, String>> random(ArrayList<HashMap<String, String>> images) {
 
+        /*
         ArrayList<HashMap<String, String>> items = new ArrayList<HashMap<String, String>>();
 
         Random random = new Random();
@@ -428,8 +420,12 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             if (items.size() == questions) break;
 
         }
+        */
 
-        return items;
+        long seed = System.nanoTime();
+        Collections.shuffle(images, new Random(seed));
+
+        return images;
     }
 
 

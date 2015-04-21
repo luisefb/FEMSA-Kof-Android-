@@ -2,67 +2,73 @@
 <maps>
    <item>
       <name>CEDIS EL COECILLO</name>
-      <address>Av. Industria Automotriz 1,203, Col. El Coecillo, Toluca, Edo. de México</address>
+      <address><![CDATA[<b>Jefe de RH:</b><br/>Víctor Valentín Mancera<br/><br/><b>Teléfono:</b><br/>72-2275-8724, 275-8725 Ext. 4550<br/><br/><b>Dirección:</b><br/>Av. Industria Automotriz 1,203, Col. El Coecillo, Toluca, Edo. de México]]></address>
       <lat>19.298326</lat>
       <lng>-99.597096</lng>
    </item>
    <item>
       <name>CEDIS NORTE</name>
-      <address>Blvd. De los Ferrocarriles No. 247, Esq. Norte 35, Col. Industrial Vallejo</address>
+      <address><![CDATA[<b>Jefe de RH:</b><br/>Miguel Ángel Figueroa Ojeda<br/><br/><b>Teléfono:</b><br/>57-26-90-29 ext 2320<br/><br/><b>Dirección:</b><br/>Blvd. De los Ferrocarriles No. 247 esq. Norte 35 Colonia Industrial Vallejo, Delegación Azcapotzalco C.P. 02300]]></address>
       <lat>19.480542</lat>
       <lng>-99.159159</lng>
    </item>
    <item>
       <name>CEDIS SUR</name>
-      <address>Eje 3 Oriente casi esq. Ermita Iztapalapa</address>
+      <address><![CDATA[<b>Jefe de RH:</b><br/>Javier Hernandez Ordoñez<br/><br/><b>Teléfono:</b><br/>56-24-99-05 ext 3231<br/><br/><b>Dirección:</b><br/>Eje 3 Oriente No. 101 entre Ermita Iztapalapa y Leñadores, Colonia Progreso del Sur, Delegación Iztapalapa, C.P. 098100]]></address>
       <lat>19.355307</lat>
       <lng>-99.112842</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA CHALCO</name>
-      <address>Km. 40 Carretera México – Cuautla, Chalco, Edo. De México.</address>
+      <address><![CDATA[<b>Jefe de RH:</b><br/>Adriana Moreno Perez<br/><br/><b>Teléfono:</b><br/>59729100 ext 9107<br/><br/><b>Dirección:</b><br/>Av. Cuauhtemoc Esq. Niños Heroes Lt 1 Col. Barrio La Conchita Chalco Edo. de Méx., C.P. 56600]]></address>
       <lat>19.255843</lat>
       <lng>-98.889109</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA COACALCO</name>
-      <address>Av. José López Bonaga s/n, Col. Guadalupe Victoria, Ecatepec Edo. De México</address>
+      <address><![CDATA[<b>Jefe RH:</b><br/>Ericka Guillen Ibarra<br/><br/><b>Dirección:</b><br/>Av. José López Bonaga S/N, Colonia Guadalupe Victoria, Ecatepec de Morelos<br/><br/><b>Teléfono:</b><br/>58-98-80-00]]></address>
       <lat>19.628300</lat>
       <lng>-99.078529</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA CUAUTITLÁN</name>
-      <address>Delfín Sur No. 18, Fraccionamiento Industrial Cuamatla, Cuautitlán Izcalli, Edo. De México</address>
+      <address><![CDATA[<b>Jefe RH:</b><br/>Daniela Zamora Gomez<br/><br/><b>Dirección:</b><br/>Delfín Sur No. 18 Colonia Parque Industrial Cuamatla C.P. 54730 Cuautitlán Izcalli]]></address>
       <lat>19.664331</lat>
       <lng>-99.187982</lng>
    </item>
    <item>
+      <name>DISTRIBUIDORA MIXCOAX</name>
+      <address><![CDATA[<b>Jefe RH:</b><br/>Angel de la Garza Estrada<br/><br/><b>Dirección:</b><br/>Mixcoac: Av. 5 de Mayo No. 400 bis, Colonia Merced Gómez, C.P. 01600]]></address>
+      <lat>19.365070</lat>
+      <lng>-99.202802</lng>
+   </item>
+   <item>
       <name>DISTRIBUIDORA LOS REYES</name>
-      <address>KM. 22.3 DE LA CARRETERA MÉXICO – TEXCOCO, COL. LA MAGDALENA ATLICPAC, LOS REYES LA PAZ, EDO. DE MÉXICO</address>
+      <address><![CDATA[<b>Jefe RH:</b><br/>Rosa María Patiño Patiño<br/><br/><b>Dirección:</b><br/>Reyes: Km 22 Carretera México - Texcoco C.P. 56400, Los Reyes La Paz]]></address>
       <lat>19.357352</lat>
       <lng>-98.957302</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA TEXCOCO</name>
-      <address>Camino a Lomas de Cristo No. 3 Fraccionamiento Lomas de Cristo</address>
+      <address><![CDATA[<b>Jefe de RH:</b><br/>Rebeca Ruano Dominguez<br/><br/><b>Dirección:</b><br/>Texcoco: Carretera México - Texcoco Entrada al Fraccionamiento Lomas de Cristo, No. 3, Texcoco Localidad Coatlinchan<br/><br/><b>Teléfono:</b><br/>(01) 5959522100 ext 2112]]></address>
       <lat>19.464787</lat>
       <lng>-98.890138</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA TLALNEPANTLA</name>
-      <address>Abraham Lincon No. 1, Col. Fraccionamiento Industrial Puente de Vigas, Tlalnepantla.</address>
+      <address><![CDATA[<b>Jefe RH:</b><br/>Veronica Gutierrez Daniel<br/><br/><b>Dirección:</b><br/>Tlalnepantla: Antonio Rivera Venegas No. 1 Fraccionamiento Industrial La Loma C.P. 54070, Tlalnepantla]]></address>
       <lat>19.523783</lat>
       <lng>-99.208681</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA TLALPAN</name>
-      <address>Calzada de Tlalpan No. 3001 Col. El Reloj</address>
+      <address><![CDATA[<b>Jefe RH:</b><br/>Myrna Sanchez Sebastian<br/><br/><b>Dirección:</b><br/>Tlalpan: Calzada de Tlalpan No. 3001 Colonia El Reloj C.P. 04640]]></address>
       <lat>19.314512</lat>
       <lng>-99.140174</lng>
    </item>
    <item>
       <name>DISTRIBUIDORA ZARAGOZA</name>
-      <address>Oriente 237 No. 108 Esq. Av. Ignacio Zaragoza Col. Agrícola Oriental</address>
+      <address><![CDATA[Jefe RH: Cristina Marin Farias<br/><br/><b>Dirección:</b><br/>Zaragoza: Oriente 237 No. 108 esq. Calz. Ignacio Zaragoza Colonia Agrícola Oriental, C.P. 08500<br/><br/><b>Teléfono:</b><br/>57-58-85-15 ext 6223]]></address>
       <lat>19.406566</lat>
       <lng>-99.073332</lng>
    </item>

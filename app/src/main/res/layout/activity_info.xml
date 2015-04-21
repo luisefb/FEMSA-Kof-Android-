@@ -20,158 +20,49 @@
             android:id="@+id/bt_info_recomendations"
             style="@style/bt_home"
             android:layout_width="wrap_content"
-            android:drawableTop="@drawable/bt_info_recomendations"
+            android:drawableTop="@drawable/bt_info_instructions"
             android:tag="1"
             android:onClick="clickSection"
-            android:layout_marginBottom="20dp"
-            android:text="@string/bt_checklist_info_recomendations"/>
+            android:layout_marginBottom="15dp"
+            android:text="@string/bt_info_instructions"/>
 
         <Button
             android:id="@+id/bt_info_maps"
             style="@style/bt_home"
             android:layout_width="wrap_content"
-            android:drawableTop="@drawable/bt_info_maps"
+            android:drawableTop="@drawable/bt_info_checklist"
             android:tag="2"
             android:onClick="clickSection"
-            android:layout_marginBottom="20dp"
-            android:visibility="gone"
-            android:text="@string/bt_checklist_info_units" />
+            android:layout_marginBottom="15dp"
+            android:text="@string/bt_info_checklist" />
 
         <Button
             android:id="@+id/bt_info_units"
             style="@style/bt_home"
             android:layout_width="wrap_content"
-            android:drawableTop="@drawable/bt_info_units"
+            android:drawableTop="@drawable/bt_info_maps"
             android:tag="3"
             android:onClick="clickSection"
-            android:layout_marginBottom="20dp"
-            android:text="@string/bt_checklist_info_maps" />
+            android:layout_marginBottom="15dp"
+            android:text="@string/bt_info_maps" />
 
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_table"
+        android:layout_below="@+id/header"
+        android:id="@+id/rl_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_4"
+        android:background="#55FFFFFF"
         android:padding="20dp"
         android:visibility="invisible">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-            <TableRow
-                android:background="#ff0000">
-                <TextView
-                    style="@style/tv_table_info"
-                    android:textColor="#FFFFFF"
-                    android:text="@string/txt_info_head_1"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:textColor="#FFFFFF"
-                    android:text="@string/txt_info_head_2"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:textColor="#FFFFFF"
-                    android:text="@string/txt_info_head_3"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:textColor="#FFFFFF"
-                    android:text="@string/txt_info_head_4"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_unity_1"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_name_1"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_tel_1"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_ext_1"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_unity_2"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_name_2"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_tel_2"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_ext_2"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_unity_3"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_name_3"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_tel_3"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_ext_3"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_unity_4"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_name_4"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_tel_4"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_ext_4"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_unity_5"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_name_5"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_tel_5"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_ext_5"/>
-            </TableRow>
-
-            <TableRow>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_unity_6"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_name_6"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_tel_6"/>
-                <TextView
-                    style="@style/tv_table_info"
-                    android:text="@string/txt_info_ext_6"/>
-            </TableRow>
-            
-        </TableLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/image_info_instructions"/>
 
         <Button
             android:layout_width="wrap_content"

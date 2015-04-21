@@ -129,11 +129,11 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/txt_business"
+                android:id="@+id/txt_area"
                 style="@style/tv_line"
-                android:drawableLeft="@drawable/icon_profile_corporative"
+                android:drawableLeft="@drawable/icon_profile_area"
                 android:inputType="textCapWords"
-                android:hint="@string/txt_profile_corp" />
+                android:hint="@string/txt_profile_area" />
 
             <EditText
                 android:id="@+id/txt_rank"
@@ -281,11 +281,23 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <ImageView
+            <WebView
+                android:id="@+id/wv_gif"
+                android:layout_width="115dp"
+                android:layout_height="350dp"
+                android:background="#ffffff">
+
+
+            </WebView>
+
+            <!--
+            <com.felipecsl.gifimageview.library.GifImageView
+                android:id="@+id/img_coke"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/image_profile_coke" />
+                android:src="@drawable/image_profile_coke_1" />
+                -->
 
             <Button
                 style="@style/bt_red"

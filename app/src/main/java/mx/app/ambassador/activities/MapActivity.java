@@ -45,7 +45,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
     Button btWall;
     Button btYammer;
     Button btInfo;
-    Button btChecklist;
+    //Button btChecklist;
     Button btFeedback;
     Button btTop10;
     Button btEvaluation;
@@ -71,7 +71,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         btWall       = (Button)findViewById(R.id.bt_map_wall);
         btYammer     = (Button)findViewById(R.id.bt_map_yammer);
         btInfo       = (Button)findViewById(R.id.bt_map_info);
-        btChecklist  = (Button)findViewById(R.id.bt_map_checklist);
+        //btChecklist  = (Button)findViewById(R.id.bt_map_checklist);
         btFeedback   = (Button)findViewById(R.id.bt_map_feedback);
         btTop10      = (Button)findViewById(R.id.bt_map_top10);
         btEvaluation = (Button)findViewById(R.id.bt_map_evaluation);
@@ -111,6 +111,8 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
             nav = new Intent(MapActivity.this, LogbookActivity.class);
         } else if (selected == 2) {
             nav = new Intent(MapActivity.this, GameActivity.class);
+        } else if (selected == 3) {
+            nav = new Intent(MapActivity.this, LibraryActivity.class);
         } else if (selected == 4) {
             nav = new Intent(MapActivity.this, ProfileActivity.class);
         } else if (selected == 5) {
@@ -119,10 +121,10 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
             nav = new Intent(MapActivity.this, YammerActivity.class);
         } else if (selected == 7) {
             nav = new Intent(MapActivity.this, InfoActivity.class);
-        } else if (selected == 8) {
+        }/* else if (selected == 8) {
             User.set("checklist_type", null, this);
             nav = new Intent(MapActivity.this, ChecklistActivity.class);
-        } else if (selected == 9) {
+        }*/ else if (selected == 9) {
             nav = new Intent(MapActivity.this, FeedbackActivity.class);
         } else if (selected == 10) {
             nav = new Intent(MapActivity.this, EvaluationActivity.class);
@@ -164,7 +166,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
     }
 
     public void clickFemsa(View v){
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ccf.tuola.mx/"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ccf.tuola.mx/acciones/44"));
         startActivity(browserIntent);
     }
 
@@ -184,10 +186,19 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
     }
 
     protected void hide() {
-        btFeedback.setVisibility(View.GONE);
-        btChecklist.setVisibility(View.GONE);
-        btGame.setVisibility(View.GONE);
+
+
+        btInfo.setVisibility(View.GONE);
+        btLogbook.setVisibility(View.GONE);
+
         btEvaluation.setVisibility(View.GONE);
+        btFeedback.setVisibility(View.GONE);
+        btFemsa.setVisibility(View.GONE);
+        btYammer.setVisibility(View.GONE);
+        //btLibrary.setVisibility(View.GONE);
+
+
+
     }
 
     protected void showFemsa() {
@@ -246,19 +257,20 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else {
             if (url.contains("getStatusMap")) {
 
-                int level = 0, pre = 0, checklist = 0, feedback = 0, post = 0;
+                int level = 0, pre = 0, feedback = 0, post = 0;
+                //checklist = 0,
 
                 try {
                     level       = json.getInt("map_level_access");
                     pre         = json.getInt("pre");
-                    checklist   = json.getInt("checklist");
+                    //checklist   = json.getInt("checklist");
                     feedback    = json.getInt("feedback");
                     post        = json.getInt("post");
                 } catch (Exception e) {}
 
                 if (pre == 0) {
-                    Intent intent = new Intent(MapActivity.this, EvaluationActivity.class);
-                    intent.putExtra("type", "pre");
+                    Intent intent = new Intent(MapActivity.this, ProfileActivity.class);
+                    intent.putExtra("evaluation", true);
                     startActivityForResult(intent, 1);
                     return;
                 }
@@ -280,13 +292,27 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
                 fade(path);
                 fade(llMenu);
 
+                if (level >= 3) {
+                    btInfo.setVisibility(View.VISIBLE);
+                    btLogbook.setVisibility(View.VISIBLE);
+                }
+
+                if (level >= 5) {
+                    btEvaluation.setVisibility(View.VISIBLE);
+                    btFeedback.setVisibility(View.VISIBLE);
+                    btFemsa.setVisibility(View.VISIBLE);
+                    btYammer.setVisibility(View.VISIBLE);
+                }
+
+                /*
                 if (level > 1  || true) fade(btGame);
-                if (level == 4 || true && checklist == 0) btChecklist.setVisibility(View.VISIBLE);
+                //if (level == 4 || true && checklist == 0) btChecklist.setVisibility(View.VISIBLE);
                 if (level == 5 || true) {
                     if (feedback == 0)  btFeedback.setVisibility(View.VISIBLE);
                     else if (post == 0) btEvaluation.setVisibility(View.VISIBLE);
                 }
                 if (level == 7 || true) btFemsa.setVisibility(View.VISIBLE);
+                */
 
             }
         }

@@ -13,6 +13,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.androidquery.callback.AjaxStatus;
 import com.google.android.gms.common.ConnectionResult;
@@ -60,8 +62,9 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
 	/* PROPERTIES */
 
     ProgressDialog progress;
-    RelativeLayout rlMap;
+    LinearLayout rlMap;
     LinearLayout llContent;
+    TextView txtAddress;
 
     JSONArray data;
 
@@ -81,9 +84,9 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
         setTitle("Croquis");
         
-        rlMap     = (RelativeLayout) findViewById(R.id.rl_map);
-        llContent = (LinearLayout) findViewById(R.id.ll_content);
-
+        rlMap      = (LinearLayout) findViewById(R.id.rl_map);
+        llContent  = (LinearLayout) findViewById(R.id.ll_content);
+        txtAddress = (TextView) findViewById(R.id.txt_address);
 
         StringBuilder bufferer = new StringBuilder();
         BufferedReader reader  = null;
@@ -193,10 +196,12 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
 
         double lat = 0;
         double lng = 0;
+        String add = "";
 
         try {
             lat = data.getJSONObject(index).getDouble("lat");
             lng = data.getJSONObject(index).getDouble("lng");
+            add = data.getJSONObject(index).getString("address");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -205,6 +210,8 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
         agency.setPosition(new LatLng(lat, lng));
         agency.setTitle(bt.getText().toString());
         agency.showInfoWindow();
+
+        txtAddress.setText(Html.fromHtml(add));
 
         Log.e("", lat + ":" + lng);
 
@@ -219,7 +226,7 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
             show();
 
             CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(lat, lng));
-            CameraUpdate zoom	= CameraUpdateFactory.zoomTo(15);
+            CameraUpdate zoom	= CameraUpdateFactory.zoomTo(12);
 
             mapView.moveCamera(center);
             mapView.animateCamera(zoom);
@@ -358,7 +365,7 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
         }
 
         route = mapView.addPolyline(path);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(builder.build(), 40);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(builder.build(), 120);
         mapView.animateCamera(cameraUpdate);
 
         show();

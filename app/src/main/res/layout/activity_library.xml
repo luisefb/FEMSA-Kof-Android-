@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_4">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_toggle" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <Button
+                android:id="@+id/bt_library_energy"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_1"
+                android:gravity="center"
+                android:tag="1"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_energy" />
+
+            <Button
+                android:id="@+id/bt_library_hydration"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_2"
+                android:gravity="center"
+                android:tag="2"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_hydration" />
+
+            <Button
+                android:id="@+id/bt_library_tpm"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_3"
+                android:gravity="center"
+                android:tag="3"
+                android:onClick="clickSection"
+                android:alpha="0.5"
+                android:text="@string/bt_library_tpm" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <Button
+                android:id="@+id/bt_library_portfolio"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_4"
+                android:gravity="center"
+                android:tag="4"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_portfolio" />
+
+            <Button
+                android:id="@+id/bt_library_language"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_5"
+                android:gravity="center"
+                android:tag="5"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_language" />
+
+            <Button
+                android:id="@+id/bt_library_value_chain"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_6"
+                android:gravity="center"
+                android:tag="6"
+                android:onClick="clickSection"
+                android:alpha="0.5"
+                android:text="@string/bt_library_value_chain" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_library_q_and_a"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_7"
+                android:gravity="center"
+                android:tag="7"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_q_and_a" />
+
+            <Button
+                android:id="@+id/bt_library_kof"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_8"
+                android:gravity="center"
+                android:tag="8"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_kof" />
+
+            <Button
+                android:id="@+id/bt_library_culture"
+                style="@style/bt_library"
+                android:drawableTop="@drawable/bt_library_9"
+                android:gravity="center"
+                android:tag="9"
+                android:onClick="clickSection"
+                android:text="@string/bt_library_culture" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_pdf"
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55FFFFFF"
+        android:padding="20dp"
+        android:visibility="invisible">
+
+        <com.joanzapata.pdfview.PDFView
+            android:id="@+id/pdf_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_game_error"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:onClick="clickHidePdf"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_video"
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55FFFFFF"
+        android:padding="20dp"
+        android:visibility="invisible">
+
+        <VideoView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/video_kof"
+            android:visibility="visible"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_game_error"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:onClick="clickHideVideo"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

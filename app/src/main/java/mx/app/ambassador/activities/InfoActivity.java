@@ -6,7 +6,6 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import mx.app.ambassador.R;
@@ -21,7 +20,7 @@ public class InfoActivity extends SectionActivity {
 	/*------------*/
 	/* PROPERTIES */
 
-    RelativeLayout rlTable;
+    RelativeLayout rlInfo;
 
 
     @Override
@@ -31,13 +30,13 @@ public class InfoActivity extends SectionActivity {
         setContentView(R.layout.activity_info);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
-        setTitle("Información");
+        setTitle("Día en la Operación");
 
-        rlTable = (RelativeLayout) findViewById(R.id.rl_table);
+        rlInfo = (RelativeLayout) findViewById(R.id.rl_info);
 
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)rlTable.getLayoutParams();
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)rlInfo.getLayoutParams();
         params.topMargin = getStatusBarHeight();
-        rlTable.setLayoutParams(params);
+        rlInfo.setLayoutParams(params);
 
     }
 
@@ -52,9 +51,9 @@ public class InfoActivity extends SectionActivity {
         Intent nav   = null;
 
         if (selected == 1) {
-            nav = new Intent(InfoActivity.this, InfoMapsActivity.class);
-        } else if (selected == 2) {
             show();
+        } else if (selected == 2) {
+            nav = new Intent(InfoActivity.this, ChecklistActivity.class);
         } else if (selected == 3) {
             nav = new Intent(InfoActivity.this, InfoMapsActivity.class);
         }
@@ -67,17 +66,35 @@ public class InfoActivity extends SectionActivity {
     }
 
 
+    public void clickHide(View v){
+
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlInfo, "alpha",  1.0f, 0.0f);
+        alpha1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {}
+            @Override
+            public void onAnimationCancel(Animator animation) {}
+            @Override
+            public void onAnimationRepeat(Animator animation) {}
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                rlInfo.setVisibility(View.GONE);
+            }
+        });
+        alpha1.start();
+    }
+
 
 	/*----------------*/
 	/* CUSTOM METHODS */
 
     protected void show() {
 
-        rlTable.setVisibility(View.VISIBLE);
+        rlInfo.setVisibility(View.VISIBLE);
 
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(rlTable, "scaleX", 2.0f, 1.0f);
-        ObjectAnimator scaleY = ObjectAnimator.ofFloat(rlTable, "scaleY", 2.0f, 1.0f);
-        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlTable, "alpha",  0.0f, 1.0f);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(rlInfo, "scaleX", 2.0f, 1.0f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(rlInfo, "scaleY", 2.0f, 1.0f);
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlInfo, "alpha",  0.0f, 1.0f);
 
         scaleX.setDuration(400);
         scaleY.setDuration(400);
@@ -91,22 +108,6 @@ public class InfoActivity extends SectionActivity {
 
 
 
-    public void clickHide(View v){
 
-        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(rlTable, "alpha",  1.0f, 0.0f);
-        alpha1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {}
-            @Override
-            public void onAnimationCancel(Animator animation) {}
-            @Override
-            public void onAnimationRepeat(Animator animation) {}
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                rlTable.setVisibility(View.GONE);
-            }
-        });
-        alpha1.start();
-    }
 
 }

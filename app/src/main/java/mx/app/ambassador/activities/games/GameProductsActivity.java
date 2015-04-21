@@ -69,7 +69,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
     TextView txtRecord;
 
     ArrayList<HashMap<String, String>> data;
-    String[] types = new String[]{"Colas", "Jugos/Néctares", "No Carbonatadas"};
+    String[] types = new String[]{"Colas", "Sabores", "Jugos/Néctares", "Aguas", "Café", "Deportiva", "Energizante", "Lácteo", "Té"};
     Random random = new Random();
     Handler handler = new Handler();
 
@@ -96,9 +96,15 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
         setTitle("Caza Productos");
 
         data = new ArrayList<HashMap<String, String>>();
-        for (int i=1;  i<=14; i++) data.add(getItem(Integer.toString(i), "0"));
-        for (int i=15; i<=21; i++) data.add(getItem(Integer.toString(i), "1"));
-        for (int i=22; i<=42; i++) data.add(getItem(Integer.toString(i), "2"));
+        for (int i=1;  i<=8; i++)  data.add(getItem(Integer.toString(i), "0"));
+        for (int i=9;  i<=17; i++) data.add(getItem(Integer.toString(i), "1"));
+        for (int i=18; i<=24; i++) data.add(getItem(Integer.toString(i), "2"));
+        for (int i=25; i<=29; i++) data.add(getItem(Integer.toString(i), "3"));
+        for (int i=30; i<=30; i++) data.add(getItem(Integer.toString(i), "4"));
+        for (int i=31; i<=43; i++) data.add(getItem(Integer.toString(i), "5"));
+        for (int i=44; i<=44; i++) data.add(getItem(Integer.toString(i), "6"));
+        for (int i=45; i<=45; i++) data.add(getItem(Integer.toString(i), "7"));
+        for (int i=46; i<=47; i++) data.add(getItem(Integer.toString(i), "8"));
 
         rlContent  = (RelativeLayout)findViewById(R.id.rl_content);
         llRails    = (LinearLayout)findViewById(R.id.ll_rails);

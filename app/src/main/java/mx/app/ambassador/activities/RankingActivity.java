@@ -41,7 +41,7 @@ public class RankingActivity extends SectionActivity implements WebBridge.WebBri
         setContentView(R.layout.activity_ranking);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
-        setTitle("Top 10");
+        setTitle("Top 10 Generación");
 
         llRanking = (LinearLayout)findViewById(R.id.ll_ranking);
 

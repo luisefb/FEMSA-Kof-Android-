@@ -3,12 +3,10 @@ package mx.app.ambassador.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import mx.app.ambassador.R;
 import mx.app.ambassador.activities.checklist.ChecklistOptsActivity;
-import mx.app.ambassador.utils.User;
 
 /**
  * Created by kreativeco on 09/04/15.

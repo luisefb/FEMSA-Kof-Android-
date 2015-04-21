@@ -61,7 +61,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_gravity="right"
                 android:onClick="clickNext"
-                android:text="@string/bt_next" />
+                android:text="@string/bt_send" />
 
         </LinearLayout>
 

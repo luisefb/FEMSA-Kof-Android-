@@ -13,6 +13,7 @@ import org.json.JSONObject;
 public class KCOYammerAPI {
     public static final String LOGIN_URL = "https://www.yammer.com/dialog/oauth?client_id=%s";
     public static final String LOGIN_OAUTH = "https://www.yammer.com/oauth2/access_token.json?client_id=%s&client_secret=%s&code=%s";
+    public static final String LOG_OUT = "https://www.yammer.com/logout_landing";
     public static final String CLIENT_ID = "FMpIy5fUOrO9fu2tWghg"; //cambiar por ID de cliente
     public static final String CLIENT_SECRET = "rSTgL7zkhb2cZ8ZlRoz18VXgr1kPBkGhfjHiqdisJ4"; //cambiar por llave secreta
 
@@ -62,5 +63,7 @@ public class KCOYammerAPI {
         String url = "https://www.yammer.com/api/v1/users.json";
 
         return KCOWebServices.SendHttpGetArray(url, KCOYammerPreference.getYammerToken(context));
+
+
     }
 }

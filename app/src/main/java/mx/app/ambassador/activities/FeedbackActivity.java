@@ -54,7 +54,7 @@ public class FeedbackActivity extends SectionActivity implements WebBridge.WebBr
         setContentView(R.layout.activity_feedback);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
-        setTitle("Feedback Total");
+        setTitle("Evaluación de la Clínica");
 
 
         svExperience          = (ScrollView) findViewById(R.id.sv_experience);
@@ -82,8 +82,7 @@ public class FeedbackActivity extends SectionActivity implements WebBridge.WebBr
                 ((TextView) item.findViewById(R.id.tv_question)).setText(experienceQuestions[i]);
                 llExperienceQuestions.addView(item);
                 experiencie[i] = item.findViewById(R.id.txt_answer);
-
-                ((EditText)item.findViewById(R.id.txt_answer)).setText("--" + i);
+                //((EditText)item.findViewById(R.id.txt_answer)).setText("--" + i);
             }
         }
 
@@ -93,7 +92,7 @@ public class FeedbackActivity extends SectionActivity implements WebBridge.WebBr
                 ((TextView) item.findViewById(R.id.tv_question)).setText(clinicalQuestions[i]);
                 llClinicalQuestions.addView(item);
                 clinic[i] = item.findViewById(R.id.txt_answer);
-                ((EditText)item.findViewById(R.id.txt_answer)).setText("--" + i);
+                //((EditText)item.findViewById(R.id.txt_answer)).setText("--" + i);
             }else{
                 item = inflater.inflate(R.layout.ui_feedback_item_yes_no, null);
                 ((TextView) item.findViewById(R.id.tv_question_b)).setText(clinicalQuestions[i]);

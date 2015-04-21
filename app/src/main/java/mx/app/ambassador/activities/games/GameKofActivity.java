@@ -53,6 +53,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
 
     int width, height, space, points, record, timer, max = 40;
     float offsetY;
+    boolean finished;
     RelativeLayout rlContent;
     LinearLayout llInstructions;
     ImageView[] images;
@@ -66,6 +67,8 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
     Handler handler = new Handler();
     private Runnable updateTimer = new Runnable(){
         public void run(){
+
+        if(finished) return;
 
         String time  = String.format("%02d:%02d", timer / 60, timer % 60);
         txtRecord.setText("Récord " + record + " aciertos || Tiempo: " + time);
@@ -100,7 +103,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         data.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "Embajador");}});
         data.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "Portafolio");}});
         data.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "Cliente");}});
-        data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "Dilo");}});
+        data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "DILO");}});
         data.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "Producto o Marca");}});
         data.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "Comunidad");}});
         data.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "Multiserve");}});
@@ -120,7 +123,15 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         data.add(new HashMap<String, String>() {{ put("i", "26"); put("n", "Inventario Físico");}});
         data.add(new HashMap<String, String>() {{ put("i", "27"); put("n", "Pallet");}});
         data.add(new HashMap<String, String>() {{ put("i", "28"); put("n", "Pet");}});
-        data.add(new HashMap<String, String>() {{ put("i", "29"); put("n", "Producto");}});
+        data.add(new HashMap<String, String>() {{ put("i", "29"); put("n", "Producto Extraño");}});
+        data.add(new HashMap<String, String>() {{ put("i", "30"); put("n", "Material POP");}});
+        data.add(new HashMap<String, String>() {{ put("i", "31"); put("n", "Zapatos de Seguridad");}});
+        data.add(new HashMap<String, String>() {{ put("i", "32"); put("n", "Franela");}});
+        data.add(new HashMap<String, String>() {{ put("i", "33"); put("n", "Hand Held");}});
+        data.add(new HashMap<String, String>() {{ put("i", "34"); put("n", "Enfriador");}});
+        data.add(new HashMap<String, String>() {{ put("i", "35"); put("n", "Isla");}});
+        data.add(new HashMap<String, String>() {{ put("i", "36"); put("n", "Credencial");}});
+
         //data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "Base de Datos");}});
 
         random();
@@ -188,6 +199,8 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
     }
 
     public void clickFinish(View v) {
+
+        finished = true;
 
         Drawable d = getResources().getDrawable(R.drawable.icon_game_success);
         int w = d.getIntrinsicWidth();
@@ -312,6 +325,8 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         try {
             result.put("games_answerds", json);
         } catch (JSONException e) {}
+
+        points = (int)(Math.floor(points * 200)/9) + timer;
 
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "codigo-kof");

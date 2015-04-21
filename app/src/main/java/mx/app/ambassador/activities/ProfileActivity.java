@@ -1,5 +1,6 @@
 package mx.app.ambassador.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -71,16 +73,20 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 	/* PROPERTIES */
 
     TextView txtName;
-    EditText txtBusiness;
+    EditText txtArea;
     EditText txtRank;
     EditText txtEmail;
     ImageButton btPhoto;
     ProgressDialog progress;
+    WebView wvGif;
+    boolean evaluation = false;
+
 
     private ImageChooserManager icManager;
     private String icFilePath;
     private int icType;
     private ChosenImage icImage;
+
 
 
     @Override
@@ -93,14 +99,23 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
         setTitle("Perfil");
 
         txtName     = (TextView)findViewById(R.id.txt_name);
-        txtBusiness = (EditText)findViewById(R.id.txt_business);
+        txtArea     = (EditText)findViewById(R.id.txt_area);
         txtRank     = (EditText)findViewById(R.id.txt_rank);
         txtEmail    = (EditText)findViewById(R.id.txt_email);
         btPhoto     = (ImageButton)findViewById(R.id.bt_photo);
+        wvGif       = (WebView)findViewById(R.id.wv_gif);
 
         Map<String, Object> params = User.getToken(this);
         WebBridge.send("webservices.php?task=getProfile", params, "Cargando", this, this);
 
+        wvGif.getSettings().setUseWideViewPort(true);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            evaluation = bundle.getBoolean("evaluation");
+        }
+
+        //wvGif.loadData(html, "text/html", "UTF-8");
     }
 
 
@@ -163,8 +178,8 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
         }
         */
 
-        if (txtBusiness.getText().length() < 1) {
-            new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage("Indica tu corporativo").setNeutralButton(R.string.bt_close, null).show();
+        if (txtArea.getText().length() < 1) {
+            new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage("Indica tu área").setNeutralButton(R.string.bt_close, null).show();
             return;
         }
 
@@ -185,7 +200,7 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 
         RequestParams params = new RequestParams();
         params.put("token", t.get("token"));
-        params.put("business", txtBusiness.getText());
+        params.put("business", txtArea.getText());
         params.put("business_position", txtRank.getText());
         params.put("email", txtEmail.getText());
 
@@ -299,6 +314,10 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
             }
             icManager.submit(requestCode, data);
         }
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            setResult(Activity.RESULT_OK);
+            finish();
+        }
     }
 
     @Override
@@ -346,6 +365,7 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
             if (url.contains("getProfile")) {
 
                 String avatar = "", name = "", business = "", rank = "", email = "";
+                int percent   = 0;
 
                 try {
 
@@ -358,6 +378,8 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
                     Log.e("", badgets.toString());
                     Log.e("", skills.toString());
 
+
+                    percent  = profile.getInt("skills_total_porcent");
                     avatar   = user.getString("file_image");
                     name 	 = user.getString("name") + " " + user.getString("last_name");
                     business = user.getString("business");
@@ -382,7 +404,16 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
                     ((TextView)findViewById(R.id.badge_be_aware)).setCompoundDrawablesWithIntrinsicBounds(r4, 0, 0, 0);
                     ((TextView)findViewById(R.id.badge_be_together)).setCompoundDrawablesWithIntrinsicBounds(r5, 0, 0, 0);
 
-                } catch (Exception e) {}
+                } catch (Exception e) {e.printStackTrace();}
+
+                String gif = "image_profile_coke_0.gif";
+                if (percent >= 100)     gif = "image_profile_coke_5.gif";
+                else if (percent >= 80) gif = "image_profile_coke_4.gif";
+                else if (percent >= 60) gif = "image_profile_coke_3.gif";
+                else if (percent >= 40) gif = "image_profile_coke_2.gif";
+                else if (percent >= 20) gif = "image_profile_coke_1.gif";
+
+                wvGif.loadUrl("file:///android_asset/" + gif);
 
                 LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)btPhoto.getLayoutParams();
                 params.width  = btPhoto.getWidth();
@@ -393,13 +424,18 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
                 aq.image(avatar, true, true, 0, R.id.bt_photo, null, AQuery.FADE_IN);
 
                 txtName.setText(name);
-                txtBusiness.setText(business);
+                txtArea.setText(business);
                 txtRank.setText(rank);
                 txtEmail.setText(email);
 
 
             } else if (url.contains("updateProfile")) {
                 new AlertDialog.Builder(this).setTitle(R.string.txt_thanks).setMessage("Se actualizaron los datos del perfil").setNeutralButton(R.string.bt_close, null).show();
+                if (evaluation) {
+                    Intent intent = new Intent(ProfileActivity.this, EvaluationActivity.class);
+                    intent.putExtra("type", "pre");
+                    startActivityForResult(intent, 1);
+                }
             }
 
         }

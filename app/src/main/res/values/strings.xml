@@ -42,10 +42,10 @@
     <string name="bt_map_profile">Perfil</string>
     <string name="bt_map_wall">Cuadro de Honor</string>
     <string name="bt_map_yammer">Yammer</string>
-    <string name="bt_map_info">Información</string>
+    <string name="bt_map_info">Día en la Operación</string>
     <string name="bt_map_checklist">Checklist</string>
-    <string name="bt_map_feedback">Feedback Total</string>
-    <string name="bt_map_top10">Top Ten</string>
+    <string name="bt_map_feedback">Evaluación de la Clínica</string>
+    <string name="bt_map_top10">Top Ten Generación</string>
     <string name="bt_map_evaluation">Post Evaluación</string>
     <string name="bt_map_logout">Cerrar Sesión</string>
     <string name="bt_map_femsa">Embajadores en Acción</string>
@@ -61,9 +61,9 @@
     <string name="txt_profile_prize_9">Be on time</string>
     <string name="txt_profile_prize_10">Be proud</string>
 
-    <string name="bt_checklist_info_recomendations">Instrucciones</string>
-    <string name="bt_checklist_info_maps">Mapas / Direcciones</string>
-    <string name="bt_checklist_info_units">Unidad Operativa</string>
+    <string name="bt_info_instructions">Instrucciones Básicas</string>
+    <string name="bt_info_maps">Mapas / Direcciones</string>
+    <string name="bt_info_checklist">Checklist</string>
 
     <string name="bt_select_camera">Desde la cámara</string>
     <string name="bt_select_photo">Desde la galería</string>
@@ -95,8 +95,8 @@
     <string name="error_connectivity">No se encontró señal de internet.</string>
 
 
-    <string name="txt_game_instructions_kof">Arrastra los conceptos al icono que sea el correcto.\n¡Usa nuestro código!</string>
-    <string name="txt_game_instructions_team">Arrastra las herramientas a cada uno de los personajes del equipo KOF.\n¡Dale las armas correctas al equipo!</string>
+    <string name="txt_game_instructions_kof">Arrastra los conceptos que define la imagen con base a nuestro Lenguaje KOF</string>
+    <string name="txt_game_instructions_team">Relaciona las imágenes con cada uno de los personajes del Equipo KOF</string>
     <string name="txt_game_instructions_products">Haz click en los productos que se indican en la parte superior derecha.\n¡Tienes 1 minuto para hacer todos los puntos que puedas!</string>
     <string name="txt_game_instructions_order">Haz click en los productos que se indican en la parte superior derecha.\n¡Tienes 1 minuto para hacer todos los puntos que puedas!</string>
     <string name="txt_game_instructions_refri">Demuestra que sabes el acomodo de los productos.\n¡Deja solo los productos que deben ir en el enfriador!</string>
@@ -151,62 +151,77 @@
     <string name="txt_info_ext_6">9908</string>
 
 
+    <string name="bt_library_energy">Balance Energético</string>
+    <string name="bt_library_hydration">Hidratación</string>
+    <string name="bt_library_tpm">TPM</string>
+    <string name="bt_library_portfolio">Portafolio</string>
+    <string name="bt_library_language">Lenguaje De Negocio</string>
+    <string name="bt_library_value_chain">Cadena De Valor</string>
+    <string name="bt_library_q_and_a">Q&amp;A</string>
+    <string name="bt_library_kof">Historia KOF</string>
+    <string name="bt_library_culture">Cultura</string>
+
+
     <string-array name="array_checklist_sales">
 
-        <item>Escaneo de entrada del cliente y saludar al cliente</item>
+        <item>Escanear código y saludar al cliente</item>
         <item>Revisar inventarios</item>
-        <item>Relleno de enfriadores y exhibidores</item>
-        <item>Diálogo de Respeto al Enfriador</item>
+        <item>Rellenar y acomodar enfriadores y exhibidores</item>
+        <item>Realizar diálogo de “respeto al enfriador”</item>
         <item>Sugerir y elaborar pedido</item>
-        <item>informar y ofrecer promociones o lanzamientos</item>
+        <item>Informar y ofrecer promociones y/o lanzamientos</item>
         <item>Generar ticket y confirmarlo con el cliente</item>
-        <item>Escuchar y atender al cliente</item>
-        <item>Despedida y escaneo de salida del cliente</item>
+        <item>Escuchar y tomar nota de otros requerimientos del cliente</item>
+        <item>Despedirse y escanear código a la salida del cliente</item>
+        <item>Trasmitir información de pedidos</item>
+        <item>Conocer indicadores que se miden en preventa</item>
+        <item>Conocer segmentación de portafolio de productos y precios dependiendo los clientes.</item>
+        <item>Requerimientos para dar de alta a un cliente nuevo</item>
 
     </string-array>
 
     <string-array name="array_checklist_distribution">
 
-        <item>El procedimiento de cobro seguro</item>
-        <item>Los procedimientos de seguridad de manejo de carga</item>
-        <item>El procedimiento de seguridad de maniobra en reversa</item>
-        <item>La revisión de carga</item>
-        <item>Cómo hacer la revisión de una unidad previo a la salida de la Unidad Operativa</item>
-        <item>El manejo correcto del producto</item>
-        <item>El proceso de Liquidación</item>
+        <item>Conocer el proceso de revisión de carga</item>
+        <item>Observar la revisión del camión previo a la salida</item>
+        <item>Observar el procedimiento de cobro seguro</item>
+        <item>Conocer los procedimientos seguros de manejo de carga</item>
+        <item>Observar los procedimientos de maniobra en reversa</item>
+        <item>Observar el manejo correcto del producto</item>
+        <item>Observar el proceso de entrega de envase</item>
+        <item>Conocer el proceso de liquidación</item>
 
     </string-array>
 
     <string-array name="array_checklist_storage">
 
-        <item>Generales de cómo está conformada la bodega (puestos y sus principales roles: auxiliar de bodega, montacarguista, maniobras generales y chofer de patio)</item>
-        <item>Uso e importacia del equipo de seguridad</item>
-        <item>Orden y limpieza del almacén</item>
-        <item>TPM</item>
-        <item>Recepción y atención de fleteo (mencionar el manejo de producto no conforme)</item>
-        <item>Acomodo de producto en almacén primeras entradas primeras salidas</item>
-        <item>Carga de rutas, desde marbete hasta armado de tarimas</item>
-        <item>Armado de tarimas estándar y Armado de restos</item>
+        <item>Conocer los roles y principales responsabilidades en la bodega: Auxiliar de Bodega, Montacarguista, Maniobras Generales y Chofer de Patio.</item>
+        <item>Conocer el uso y la importancia del equipo de seguridad</item>
+        <item>Observar orden y limpieza del almacén</item>
+        <item>Aprender el TPM</item>
+        <item>Conocer el manejo del producto no conforme</item>
+        <item>Conocer en que consiste el proceso de fleteo</item>
+        <item>Conocer en que consiste el proceso de carga de rutas</item>
+        <item>Observar armado de tarimas estándar y restos</item>
+        <item>Conocer los sobrenombres de productos y presentaciones que se usan en bodega</item>
 
     </string-array>
 
     <string-array name="array_checklist_service">
 
-        <item>Aprendí a frentear el equipo de refrigeración, anaqueles y exhibiciones adicionales</item>
-        <item>Aprendí a rellenar equipos de refrigeración</item>
-        <item>Aprendí a rellenar anaqueles y exhibiciones</item>
-        <item>Aprendí la rotación del producto</item>
-        <item>Aprendí la limpieza de productos y anaqueles</item>
-        <item>Aprendí la negociación de espacios en el autoservicio</item>
+        <item>Conocer el proceso del promotor mercaderista en el autoservicio</item>
+        <item>Conocer el acomodo de productos en enfriador, anaqueles y exhibiciones</item>
+        <item>Aprender la negociación de espacios en el autoservicio</item>
+        <item>Observar frenteo, rotación del producto</item>
 
     </string-array>
 
     <string-array name="txt_array_experience_questions">
-        <item>Las dinámicas la evalúas como:</item>
+        <item>Las dinámicas las evalúas como:</item>
         <item>La calidad de los materiales la evalúas como:</item>
         <item>La calidad del contenido lo evalúas como:</item>
         <item>¿Recomendarías éste curso para que se imparta a otros grupos? ¿Por qué?</item>
-        <item>¿Tienes alguna sugerencia para mejorarlo?</item>
+        <item>¿Tienes alguna sugerencia para mejorarlo? ¿Por qué?</item>
         <item>Comentarios adicionales</item>
     </string-array>
 
@@ -216,6 +231,14 @@
         <item>¿Tienes claro el rol de embajador activo?</item>
         <item>¿Contamos contigo para ser un embajador activo en el mercado?</item>
         <item>¿Alguna sugerencia para mejorar ésta experiencia en el mercado?</item>
+    </string-array>
+
+    <string-array name="txt_array_checklist_operating_unit">
+        <item>Orden y Limpieza en baños, oficinas y patios</item>
+        <item>El procedimiento de recepción por parte del personal de protección patrimonial (registro y revisión al ingreso)</item>
+        <item>¿Los materiales de comunicación son vigentes y se encuentran en buenas condiciones?</item>
+        <item>¿El personal realiza sus actividades en condiciones de seguridad?</item>
+        <item>¿El personal porta correctamente sus uniformes y equipo de seguridad?</item>
     </string-array>
 
     
@@ -261,8 +284,11 @@
     <string name="txt_report_text">Be in love - Enamórate</string>
 
     <string name="txt_profile_heart">x10</string>
-    <string name="txt_profile_corp">Corporativo</string>
+    <string name="txt_profile_area">Área</string>
     <string name="txt_profile_rank">Puesto</string>
     <string name="txt_profile_email">Correo</string>
+
+    <string name="txt_yammer_instructions">Podrás compartir las memorias de tu visita en YAMMER (Fotografías y comentarios de tu experiencia).\nNo olvides utilizar el #YoSoyUnEmbajadorEnAcción\n\n¿Cómo comenzar a navegar en YAMMER KOF?\n1.- Entra a la liga  https://www.yammer.com/kof.com.mx/\n2.. Ingresa tu cuenta de red y tu password KOF\n3.- Únete al grupo All Company y continua y el proceso\n4.- Crea tu perfil: Agrega tus datos personales, información laboral y fotografía\n5.- Comienza a navegar\n\nNota: Si tienes problema con tu acceso envía un correo a: ccorporativa@kof.com.mx</string>
+
 
 </resources>
