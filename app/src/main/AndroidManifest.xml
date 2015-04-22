@@ -57,14 +57,13 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
-        </activity>
+'        </activity>
 
         <activity
             android:name=".activities.ProfileActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
-
         </activity>
 
         <activity
@@ -98,6 +97,7 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+
         </activity>
 
         <activity android:name=".activities.InfoActivity"
@@ -138,7 +138,6 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
-
         </activity>
 
         <activity
@@ -146,7 +145,6 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
-
         </activity>
 
         <activity
@@ -162,7 +160,6 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
-
         </activity>
 
         <activity
@@ -170,7 +167,6 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" >
-
         </activity>
 
         <activity

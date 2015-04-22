@@ -1,34 +1,21 @@
 package mx.app.ambassador.activities;
 
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.net.Uri;
-import android.os.Bundle;
-import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.content.Loader;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -57,6 +44,7 @@ public class YammerActivity extends SectionActivity {
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
         setTitle("Yammer");
+
 
         mWebView = (WebView)findViewById(R.id.webView);
         rlInstructions = (RelativeLayout)findViewById(R.id.rl_instructions);

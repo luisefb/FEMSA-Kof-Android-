@@ -82,7 +82,7 @@ public class InfoMapsActivity extends SectionActivity implements View.OnClickLis
         setContentView(R.layout.activity_info_maps);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
-        setTitle("Croquis");
+        setTitle("Mapas / Direcciones");
         
         rlMap      = (LinearLayout) findViewById(R.id.rl_map);
         llContent  = (LinearLayout) findViewById(R.id.ll_content);

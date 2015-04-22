@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.webkit.CookieManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -134,6 +135,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else if (selected == 12) {
             showFemsa();
         } else if (selected == 13) {
+            CookieManager.getInstance().removeAllCookie();
             User.clear(this);
             setResult(Activity.RESULT_OK);
             finish();
@@ -194,7 +196,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         btEvaluation.setVisibility(View.GONE);
         btFeedback.setVisibility(View.GONE);
         btFemsa.setVisibility(View.GONE);
-        btYammer.setVisibility(View.GONE);
+        //btYammer.setVisibility(View.GONE);
         //btLibrary.setVisibility(View.GONE);
 
 

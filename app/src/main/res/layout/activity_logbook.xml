@@ -82,10 +82,22 @@
                 android:textSize="25sp" />
 
             <TextView
+                android:id="@+id/txt_instructions_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/txt_instructions_desc"
+                android:textColor="#ffffff"
+                android:layout_below="@+id/txt_instructions"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/rl_logbook_right"
+                android:textSize="14sp" />
+
+            <TextView
                 android:id="@+id/tv_notes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_instructions"
+                android:layout_below="@+id/txt_instructions_desc"
                 android:text="@string/txt_notes"
                 android:textColor="#EB103E"
                 android:textSize="25sp" />

@@ -207,7 +207,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         int h = d.getIntrinsicHeight();
 
         final JSONObject result  = new JSONObject();
-        AlphaAnimation a = new AlphaAnimation(0.0f, 1.0f);;
+        AlphaAnimation a = new AlphaAnimation(0.0f, 1.0f);
 
         for (int i=0; i<answers.length; i++) {
 

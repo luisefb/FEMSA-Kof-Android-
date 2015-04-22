@@ -77,15 +77,6 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
 
     private Runnable updateTimer2 = new Runnable(){
         public void run(){
-            /*
-            if (!finished) {
-                String time = String.format("%02d:%02d", timer / 60, timer % 60);
-                String old = String.format("%02d:%02d", record / 60, record % 60);
-                txtRecord.setText("Récord: " + old + " || Tiempo: " + time);
-                timer--;
-                handler2.postDelayed(updateTimer2, 1000);
-            }
-            */
             if(finished) return;
 
             String time  = String.format("%02d:%02d", timer / 60, timer % 60);
@@ -96,9 +87,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
                 handler2.postDelayed(updateTimer2, 1000);
             } else {
                 end();
-                //clickFinish(null);
             }
-
         }
     };
 

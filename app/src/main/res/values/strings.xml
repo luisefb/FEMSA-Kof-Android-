@@ -83,6 +83,7 @@
     <string name="txt_prizes">Premios</string>
     <string name="txt_notes">Notas</string>
     <string name="txt_instructions">Instrucciones</string>
+    <string name="txt_instructions_desc">Te pedimos tu retroalimentación y sugerencias de mejora para los responsables de la unidad operativa que visitaste:</string>
     <string name="txt_time">01:00</string>
     <string name="txt_lines">-------</string>
     <string name="txt_finished">Finalizado</string>
@@ -90,7 +91,7 @@
     <string name="txt_gps_alert">¡Tu GPS está deshabilitado! ¿Te gustaría activarlo?</string>
     <string name="txt_gps_activate">Habilitar GPS</string>
 
-    <string name="error_username">Verifica el formato del correo.</string>
+    <string name="error_username">El nombre de usuario debe tenre al menos 1 caracter.</string>
     <string name="error_password">La contraseña debe tener al menos 1 caracter.</string>
     <string name="error_connectivity">No se encontró señal de internet.</string>
 
@@ -194,7 +195,6 @@
     </string-array>
 
     <string-array name="array_checklist_storage">
-
         <item>Conocer los roles y principales responsabilidades en la bodega: Auxiliar de Bodega, Montacarguista, Maniobras Generales y Chofer de Patio.</item>
         <item>Conocer el uso y la importancia del equipo de seguridad</item>
         <item>Observar orden y limpieza del almacén</item>
@@ -204,24 +204,21 @@
         <item>Conocer en que consiste el proceso de carga de rutas</item>
         <item>Observar armado de tarimas estándar y restos</item>
         <item>Conocer los sobrenombres de productos y presentaciones que se usan en bodega</item>
-
     </string-array>
 
     <string-array name="array_checklist_service">
-
         <item>Conocer el proceso del promotor mercaderista en el autoservicio</item>
         <item>Conocer el acomodo de productos en enfriador, anaqueles y exhibiciones</item>
         <item>Aprender la negociación de espacios en el autoservicio</item>
         <item>Observar frenteo, rotación del producto</item>
-
+        <item>Observar la limpieza de productos y anaqueles</item>
     </string-array>
 
     <string-array name="txt_array_experience_questions">
-        <item>Las dinámicas las evalúas como:</item>
-        <item>La calidad de los materiales la evalúas como:</item>
-        <item>La calidad del contenido lo evalúas como:</item>
-        <item>¿Recomendarías éste curso para que se imparta a otros grupos? ¿Por qué?</item>
-        <item>¿Tienes alguna sugerencia para mejorarlo? ¿Por qué?</item>
+        <item>¿Se cumplió el objetivo de desarrollar tu conocimiento del negocio? ¿Por qué?</item>
+        <item>¿Qué valor generó esta experiencia para tu trabajo diario?</item>
+        <item>¿Cómo evalúas la experiencia de “Embajadores en acción”?</item>
+        <item>¿A qué te comprometes como “Embajador en acción”?</item>
         <item>Comentarios adicionales</item>
     </string-array>
 

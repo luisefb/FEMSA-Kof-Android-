@@ -69,7 +69,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
     TextView txtRecord;
 
     ArrayList<HashMap<String, String>> data;
-    String[] types = new String[]{"Colas", "Sabores", "Jugos/Néctares", "Aguas", "Café", "Deportiva", "Energizante", "Lácteo", "Té"};
+    String[] types = new String[]{"Colas", "Sabores", "Jugos/Néctares", "Aguas", "Café", "Isotónica", "Energizante", "Lácteo", "Té"};
     Random random = new Random();
     Handler handler = new Handler();
 

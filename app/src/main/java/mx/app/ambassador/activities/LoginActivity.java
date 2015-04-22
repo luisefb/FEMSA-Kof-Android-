@@ -64,7 +64,8 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
     public void clickLogin(View v) {
 
         ArrayList<String> errors = new ArrayList<String>();
-        if (!isEmailValid(txtUsername.getText().toString())) errors.add(getString(R.string.error_username));
+        if (txtUsername.getText().toString().length() < 1) errors.add(getString(R.string.error_username));
+        //if (!isEmailValid(txtUsername.getText().toString())) errors.add(getString(R.string.error_username));
         if (txtPassword.getText().length() < 1) errors.add(getString(R.string.error_password));
 
         if (errors.size() != 0) {

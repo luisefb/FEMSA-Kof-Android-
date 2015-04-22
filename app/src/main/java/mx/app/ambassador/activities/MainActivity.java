@@ -20,7 +20,9 @@ public class MainActivity extends SectionActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         Fabric.with(this, new Crashlytics());
+
         setContentView(R.layout.activity_main);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
 

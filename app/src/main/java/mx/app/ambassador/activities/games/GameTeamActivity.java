@@ -99,7 +99,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         data.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "presales");}});
         data.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "delivery");}});
 
-        data.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "autoservice");}});
+        data.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "delivery");}});
         data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "storage");}});
         data.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "storage");}});
 

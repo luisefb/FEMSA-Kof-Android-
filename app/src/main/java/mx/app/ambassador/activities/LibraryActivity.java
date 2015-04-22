@@ -111,9 +111,9 @@ public class LibraryActivity extends SectionActivity {
 
         String uriPath = "";
         if(tag==8){
-            uriPath = "android.resource://mx.app.ambassador/"+ R.raw.guidelines_video_08;
+           uriPath = "android.resource://mx.app.ambassador/"+ R.raw.guidelines_video_08;
         } else if(tag==9){
-            uriPath = "android.resource://mx.app.ambassador/"+ R.raw.guidelines_video_08;
+           uriPath = "android.resource://mx.app.ambassador/"+ R.raw.guidelines_video_09;
         }
         Uri uri = Uri.parse(uriPath);
         videoView.setVideoURI(uri);

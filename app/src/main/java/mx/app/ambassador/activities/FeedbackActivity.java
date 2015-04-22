@@ -71,8 +71,8 @@ public class FeedbackActivity extends SectionActivity implements WebBridge.WebBr
         String[] clinicalQuestions = res.getStringArray(R.array.txt_array_clinical_questions);
 
 
-        for(int i = 0; i<6; i++){
-            if(i<3){
+        for(int i = 0; i<experienceQuestions.length; i++){
+            if(i == 2){
                 item = inflater.inflate(R.layout.ui_feedback_item_face, null);
                 ((TextView) item.findViewById(R.id.tv_question_face)).setText(experienceQuestions[i]);
                 llExperienceQuestions.addView(item);
@@ -86,7 +86,7 @@ public class FeedbackActivity extends SectionActivity implements WebBridge.WebBr
             }
         }
 
-        for(int i = 0; i<5; i++){
+        for(int i = 0; i<clinicalQuestions.length; i++){
             if(i == 0 || i == 2 || i == 4){
                 item = inflater.inflate(R.layout.ui_feedback_item_text, null);
                 ((TextView) item.findViewById(R.id.tv_question)).setText(clinicalQuestions[i]);
@@ -265,13 +265,15 @@ public class FeedbackActivity extends SectionActivity implements WebBridge.WebBr
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage(msg).setNeutralButton(R.string.bt_close, null).show();
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Gracias por contestar el feedback");
+            builder.setMessage("Gracias por contestar la evaluación");
             builder.setCancelable(true);
             builder.setPositiveButton(R.string.bt_close, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    Intent intent = new Intent(FeedbackActivity.this, EvaluationActivity.class);
-                    intent.putExtra("type", "post");
-                    startActivityForResult(intent, 1);
+                    //Intent intent = new Intent(FeedbackActivity.this, EvaluationActivity.class);
+                    //intent.putExtra("type", "post");
+                    //startActivityForResult(intent, 1);
+                    setResult(Activity.RESULT_OK);
+                    clickBack(null);
                 }
             });
 

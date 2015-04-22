@@ -54,7 +54,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 	/*------------*/
 	/* PROPERTIES */
 
-    int width, height, size, rack, border, total, points, timer, record, questions = 22, spaces = 4;
+    int width, height, size, rack, border, total, points, timer, record, spaces = 4, max = 120;
     float offsetY;
     boolean finished;
     RelativeLayout rlContent;
@@ -64,31 +64,37 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
     TextView txtRecord;
 
     float[] rackRefri = new float[]{0.3417f, 0.5794f, 0.7949f};
-    float[] gapRefri  = new float[]{0.0685f, 0.0322f, 0.0833f};
     float[] rackWall  = new float[3];
-
-    ArrayList<String> answers;
-    ArrayList<String> faults;
+    int[] rackSpaces  = new int[]{5, 6, 4};
 
     ImageView[] images;
     ArrayList<HashMap<String, String>> data;
+    //ArrayList<HashMap<String, String>> answers;
+    ArrayList<Integer> answers;
 
     Handler handler = new Handler();
     private Runnable updateTimer = new Runnable(){
         public void run(){
-            if (!finished) {
-                String time = String.format("%02d:%02d", timer / 60, timer % 60);
-                String old = String.format("%02d:%02d", record / 60, record % 60);
-                txtRecord.setText("Récord: " + old + " || Tiempo: " + time);
-                timer++;
+
+            if(finished) return;
+
+            String time  = String.format("%02d:%02d", timer / 60, timer % 60);
+            txtRecord.setText("Récord " + record + " aciertos || Tiempo: " + time);
+            timer--;
+
+            if (timer >= 0) {
                 handler.postDelayed(updateTimer, 1000);
+            } else {
+                clickFinish(null);
             }
+
         }
     };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_refri);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
@@ -96,28 +102,28 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         setTitle("Reto Refri");
 
         ArrayList<HashMap<String, String>> items = new ArrayList<HashMap<String, String>>();
-        items.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "yes");  put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "no");   put("t", "all"); }});
-        items.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "no");   put("t", "all"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "yes");  put("t", "1"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "yes");  put("t", "1"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "yes");  put("t", "1"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "yes");  put("t", "1"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "yes");  put("t", "1"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "yes");  put("t", "2"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "yes");  put("t", "2"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "yes");  put("t", "2"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "yes");  put("t", "2"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "yes");  put("t", "2"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "yes");  put("t", "2"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "yes");  put("t", "3"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "yes");  put("t", "3"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "yes");  put("t", "3"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "yes");  put("t", "3"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "no");   put("t", "0"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "no");   put("t", "0"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "no");   put("t", "0"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "no");   put("t", "0"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "no");   put("t", "0"); }});
+        items.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "no");   put("t", "0"); }});
+        //items.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "no");   put("t", "0"); }});
 
         data = random(items);
 
@@ -180,47 +186,80 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
         alpha.start();
 
-        timer = 0;
+        timer = max;
         finished = false;
         handler.postDelayed(updateTimer, 0);
+        btFinish.setEnabled(true);
 
     }
 
     public void clickFinish(View v) {
 
+        finished = true;
+        points   = 0;
+
         for (int i = 0; i < images.length; i++) {
             images[i].setEnabled(false);
         }
 
-        btFinish.setEnabled(false);
-        /*
+        Drawable d = getResources().getDrawable(R.drawable.icon_game_success_sm);
+        int width = d.getIntrinsicWidth();
+        float x = imgRefri.getX() + border;
+        AlphaAnimation a = new AlphaAnimation(0.0f, 1.0f);
 
+        for (int i = 0; i < answers.size(); i++) {
 
-        ObjectAnimator alpha = ObjectAnimator.ofFloat(btFinish, "alpha",  1.0f, 0.0f);
-        alpha.setDuration(400);
-        alpha.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {}
-            @Override
-            public void onAnimationCancel(Animator animation) {}
-            @Override
-            public void onAnimationRepeat(Animator animation) {}
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                btFinish.setVisibility(View.GONE);
+            ImageView img = new ImageView(this);
+
+            Log.e("", (answers.get(i)-1) + "==" + i);
+
+            if (answers.get(i)-1 == i) {
+                img.setImageResource(R.drawable.icon_game_success_sm);
+                points++;
+            } else {
+                img.setImageResource(R.drawable.icon_game_error_sm);
             }
-        });
 
-        alpha.start();
-        */
+            int b = 0;
+            for (int j=0; j<rackSpaces.length; j++) {
 
-        finished = true;
+                int w   = (imgRefri.getWidth() - border * 2)/rackSpaces[j];
+                int o   = (w - width)/2;
+                img.setX( x + ((i - b) * w) + o );
+                b = b + rackSpaces[j];
+                img.setY( imgRefri.getY() + rackRefri[j] - 20 );
 
-        Log.e("answers", answers.size() + "");
-        Log.e("faults", faults.size() + "");
+                if (b > i) break;
+            }
 
-        points = (int)Math.ceil((answers.size() * 25)/total);
-        points = Math.max(0, points - faults.size() );
+            a = new AlphaAnimation(0.0f, 1.0f);
+            a.setDuration(300);
+            a.setStartOffset(150 * i);
+
+            img.startAnimation(a);
+            rlContent.addView(img);
+
+        }
+
+        btFinish.setEnabled(false);
+        if (a != null) {
+            a.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {}
+                @Override
+                public void onAnimationRepeat(Animation animation) {}
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    end();
+                }
+            });
+        }
+
+    }
+
+    public void end() {
+
+        points = (int)(Math.floor(points * 200)/answers.size()) + timer;
 
         JSONObject result  = new JSONObject();
         JSONObject answers = new JSONObject();
@@ -238,12 +277,11 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         Map<String, Object> params = User.getToken(this);
         params.put("game_type", "reto-refri");
         params.put("json", result.toString());
-        params.put("game_records", timer);
+        params.put("game_records", points);
 
         WebBridge.send("webservices.php?task=addAnswerdGames", params, "Cargando", this, this);
 
     }
-
 
 
 	/*----------------*/
@@ -292,8 +330,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         height  = rlContent.getHeight();
         size    = (int)Math.round(height/spaces);
         rack    = drack.getIntrinsicHeight();
-        answers = new ArrayList<String>();
-        faults  = new ArrayList<String>();
+        answers = new ArrayList<Integer>();
         images  = new ImageView[data.size()];
 
         for (int i=1; i<spaces; i++) {
@@ -337,7 +374,6 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
         border = (int)Math.ceil(wrefri * 0.08064516129032);
 
-        Random random = new Random();
         total = 0;
         int offsetX = 0;
 
@@ -373,22 +409,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
             if (row.get("n").equals("yes")) {
                 total++;
-            }
-
-            if (i > data.size() - rackRefri.length) {
-
-                int ey = data.size() - i;
-                int ex = (int)(imgRefri.getX() + border + random.nextInt(wrefri - border*2 - w));
-
-                img.setY(rackRefri[ey] - h );
-                img.setX(ex);
-
-                if (row.get("n").equals("yes")) {
-                    answers.add(img.getTag().toString());
-                } else {
-                    faults.add(img.getTag().toString());
-                }
-
+                answers.add(-1);
             }
 
             images[i] = img;
@@ -401,30 +422,8 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
 
     protected ArrayList<HashMap<String, String>> random(ArrayList<HashMap<String, String>> images) {
-
-        /*
-        ArrayList<HashMap<String, String>> items = new ArrayList<HashMap<String, String>>();
-
-        Random random = new Random();
-        int no = 0;
-
-        while (true) {
-            HashMap<String, String> img = images.get( random.nextInt(images.size()) );
-
-            if (img.get("n").equals("no")) {
-                if (no > 4) continue;
-                no++;
-            }
-
-            items.add((HashMap<String, String>) img.clone());
-            if (items.size() == questions) break;
-
-        }
-        */
-
         long seed = System.nanoTime();
         Collections.shuffle(images, new Random(seed));
-
         return images;
     }
 
@@ -453,26 +452,18 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
                 } else if (location1[0] + v.getWidth() > location2[0] + imgRefri.getWidth() - border) {
                     v.setX(location2[0] + imgRefri.getWidth() - border - v.getWidth());
                 }
+                bounce(v, rackRefri, false);
 
-                HashMap<String, String> row = data.get( Integer.parseInt(v.getTag().toString()) );
-                if (row.get("n").equals("yes")) {
-                    answers.add(v.getTag().toString());
-                } else {
-                    faults.add(v.getTag().toString());
-                }
-                bounce(v, rackRefri);
             }
 
         } else {
             if (move) {
-
                 if (location1[0] + v.getWidth() > location2[0] && location1[0] < location2[0] + border) {
                     v.setX(location2[0] - v.getWidth());
                 } else if (location1[0] < location2[0] + imgRefri.getWidth() && location1[0] > location2[0]) {
                     v.setX(location2[0] + imgRefri.getWidth());
                 }
-
-                bounce(v, rackWall);
+                bounce(v, rackWall, true);
             }
         }
 
@@ -488,59 +479,70 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         a.setRepeatCount(1);
         a.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {
-            }
-
+            public void onAnimationStart(Animation animation) {}
             @Override
             public void onAnimationRepeat(Animation animation) {
                 v.setX(Float.parseFloat(row.get("x").toString()));
                 v.setY(Float.parseFloat(row.get("y").toString()));
             }
-
             @Override
-            public void onAnimationEnd(Animation animation) {
-
-
-            }
+            public void onAnimationEnd(Animation animation) {}
         });
 
         v.startAnimation(a);
 
     }
 
+    protected void bounce(final View v, float[] pos, boolean outside) {
 
-    protected void validate () {
+        int index = Integer.parseInt(v.getTag().toString());
+        HashMap<String, String> row = data.get(index);
 
-        if (answers.size() != total) return;
+        int min = 0;
+        int max = Integer.parseInt(row.get("t"));
+        int rac = 0;
 
-        ImageView icon = new ImageView(this);
-        Drawable d = getResources().getDrawable(R.drawable.icon_game_success);
-        int w = d.getIntrinsicWidth();
-        int h = d.getIntrinsicHeight();
-        icon.setImageResource(R.drawable.icon_game_success);
-        icon.setX(imgRefri.getX() + (imgRefri.getWidth() - w)/2);
-        icon.setY( (float)(imgRefri.getY() + (imgRefri.getHeight() * 0.8618) - h/2) );
-
-        rlContent.addView(icon);
-
-        for (int i = 0; i < images.length; i++) {
-            images[i].setEnabled(false);
-        }
-
-        clickFinish(null);
-
-    }
-
-
-    protected void bounce(final View v, float[] pos) {
+        min = max == 0 || outside ? 0 : max - 1;
+        max = max == 0 || outside ? pos.length : max;
 
         int y = 0;
-        for (int i=0; i<pos.length; i++) {
+        for (int i=min; i<max; i++) {
             if (v.getY() + v.getHeight() < pos[i]) {
                 y = (int)(pos[i] - v.getHeight());
+                rac = i;
                 break;
             }
+        }
 
+        if (!outside) {
+
+            int b   = 0;
+            int s   = 0;
+            int l   = rackSpaces[rac];
+            int w   = (imgRefri.getWidth() - border * 2)/l;
+            float o = imgRefri.getX() + border;
+            float c = v.getX() + v.getWidth() / 2;
+            float x = 0;
+
+            for (int i=0; i<l; i++) {
+                int g = i*w;
+                if (c >= o+g && c < o+(i+1)*w) {
+                    b = i;
+                    x = o + g + (w - v.getWidth())/2;
+                    break;
+                }
+            }
+
+            for (int i=0; i<rac; i++) {
+                s = s + rackSpaces[i];
+            }
+
+            if (answers.get(s + b) == -1) {
+                v.setX(x);
+                answers.set(s + b, Integer.parseInt(row.get("i")));
+            } else {
+                y = 0;
+            }
         }
 
         if (y == 0) {
@@ -570,7 +572,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             public void onAnimationEnd(Animation animation) {
                 v.setY(posY);
                 v.setEnabled(true);
-                validate();
+                //validate();
             }
         });
         v.startAnimation(translation);
@@ -595,23 +597,14 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
 
     @Override
     public void onPanStop(View v, float deltaX, float deltaY) {
-
+        HashMap<String, String> row = data.get(Integer.parseInt(v.getTag().toString()));
+        int index = Integer.parseInt(row.get("i"));
         for (int i=0; i<answers.size(); i++) {
-            String index = v.getTag().toString();
             if (answers.get(i).equals(index)) {
-                answers.remove(index);
+                answers.set(i, -1);
                 break;
             }
         }
-
-        for (int i=0; i<faults.size(); i++) {
-            String index = v.getTag().toString();
-            if (faults.get(i).equals(index)) {
-                faults.remove(index);
-                break;
-            }
-        }
-
         hit(v, true);
     }
 
