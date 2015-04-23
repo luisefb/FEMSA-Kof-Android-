@@ -46,4 +46,28 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/rl_welcome"
+        android:background="#44FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/status_bar">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_login_welcome"/>
+
+        <Button
+            style="@style/bt_red"
+            android:text="@string/bt_next"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:onClick="clickContinue"/>
+
+    </RelativeLayout>
+
+
 </RelativeLayout>

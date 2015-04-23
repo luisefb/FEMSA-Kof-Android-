@@ -3,6 +3,7 @@ package mx.app.ambassador.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -430,12 +431,34 @@ public class ProfileActivity extends SectionActivity implements WebBridge.WebBri
 
 
             } else if (url.contains("updateProfile")) {
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(R.string.txt_thanks);
+                builder.setMessage("Se actualizaron los datos del perfil");
+                builder.setCancelable(true);
+
+                if (evaluation) {
+                    builder.setPositiveButton(R.string.bt_close, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent = new Intent(ProfileActivity.this, EvaluationActivity.class);
+                            intent.putExtra("type", "pre");
+                            startActivityForResult(intent, 1);
+                        }
+                    });
+                } else {
+                    builder.setPositiveButton(R.string.bt_close, null);
+                }
+
+                builder.create().show();
+
+                /*
                 new AlertDialog.Builder(this).setTitle(R.string.txt_thanks).setMessage("Se actualizaron los datos del perfil").setNeutralButton(R.string.bt_close, null).show();
                 if (evaluation) {
-                    Intent intent = new Intent(ProfileActivity.this, EvaluationActivity.class);
-                    intent.putExtra("type", "pre");
-                    startActivityForResult(intent, 1);
+
                 }
+                */
+
             }
 
         }

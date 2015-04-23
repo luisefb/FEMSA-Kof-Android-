@@ -1,5 +1,7 @@
 package mx.app.ambassador.activities;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -7,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 import com.androidquery.callback.AjaxStatus;
 
@@ -33,6 +36,7 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
 
     EditText txtUsername;
     EditText txtPassword;
+    RelativeLayout rlWelcome;
 
 
     @Override
@@ -45,6 +49,7 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
 
         txtUsername = (EditText)findViewById(R.id.txt_username);
         txtPassword = (EditText)findViewById(R.id.txt_password);
+        rlWelcome   = (RelativeLayout)findViewById(R.id.rl_welcome);
 
         if (User.getToken(this) != null) {
             Intent intent = new Intent(LoginActivity.this, MapActivity.class);
@@ -87,6 +92,12 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
 
     }
 
+    public void clickContinue(View v) {
+        Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivityForResult(intent, 1);
+    }
+
 
 
 	/*-----------------*/
@@ -97,6 +108,8 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode != RESULT_OK) {
             finish();
+        } else {
+            rlWelcome.setVisibility(View.GONE);
         }
     }
 
@@ -124,6 +137,27 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
     }
 
 
+	/*----------------*/
+	/* CUSTOM METHODS */
+
+    protected void show(View v) {
+
+        v.setVisibility(View.VISIBLE);
+
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(v, "scaleX", 2.0f, 1.0f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(v, "scaleY", 2.0f, 1.0f);
+        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(v, "alpha",  0.0f, 1.0f);
+
+        scaleX.setDuration(400);
+        scaleY.setDuration(400);
+        alpha1.setDuration(400);
+
+        AnimatorSet set = new AnimatorSet();
+        set.play(scaleX).with(scaleY).with(alpha1);
+        set.start();
+
+    }
+
 
 
 	/*--------------------*/
@@ -148,24 +182,14 @@ public class LoginActivity extends SectionActivity implements WebBridge.WebBridg
             if (url.contains("login")) {
 
                 String token   = "";
-                int evaluation = 0;
                 try {
                     token 	   = json.getString("token");
-                    evaluation = json.getInt("pre");
                 } catch (Exception e) {}
 
                 User.setToken(txtUsername.getText().toString(), token, this);
                 txtPassword.setText("");
-
-                //User.set("prevaluation", evaluation == 0 ? "false" : "true", this);
-                //User.set("prevaluation", "true", this);
-
-                Intent intent = new Intent(LoginActivity.this, MapActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivityForResult(intent, 1);
-
+                show(rlWelcome);
             }
-
         }
     }
 

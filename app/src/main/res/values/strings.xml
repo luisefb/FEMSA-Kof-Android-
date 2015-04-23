@@ -36,7 +36,8 @@
     <string name="bt_checklist_delivery">Reparto</string>
     <string name="bt_checklist_info">Información</string>
 
-    <string name="bt_map_logbook">Bitácora</string>
+
+    <string name="bt_map_logbook">Notas</string>
     <string name="bt_map_game">Jugar</string>
     <string name="bt_map_library">Biblioteca</string>
     <string name="bt_map_profile">Perfil</string>
@@ -64,6 +65,7 @@
     <string name="bt_info_instructions">Instrucciones Básicas</string>
     <string name="bt_info_maps">Mapas / Direcciones</string>
     <string name="bt_info_checklist">Checklist</string>
+    <string name="bt_info_operating_unit">Unidad Operativa</string>
 
     <string name="bt_select_camera">Desde la cámara</string>
     <string name="bt_select_photo">Desde la galería</string>
@@ -91,7 +93,7 @@
     <string name="txt_gps_alert">¡Tu GPS está deshabilitado! ¿Te gustaría activarlo?</string>
     <string name="txt_gps_activate">Habilitar GPS</string>
 
-    <string name="error_username">El nombre de usuario debe tenre al menos 1 caracter.</string>
+    <string name="error_username">El nombre de usuario debe tener al menos 1 caracter.</string>
     <string name="error_password">La contraseña debe tener al menos 1 caracter.</string>
     <string name="error_connectivity">No se encontró señal de internet.</string>
 
@@ -154,10 +156,10 @@
 
     <string name="bt_library_energy">Balance Energético</string>
     <string name="bt_library_hydration">Hidratación</string>
-    <string name="bt_library_tpm">TPM</string>
+    <string name="bt_library_only_once">Solo Una Vez</string>
     <string name="bt_library_portfolio">Portafolio</string>
     <string name="bt_library_language">Lenguaje De Negocio</string>
-    <string name="bt_library_value_chain">Cadena De Valor</string>
+    <string name="bt_library_value_chain">Video Femsa</string>
     <string name="bt_library_q_and_a">Q&amp;A</string>
     <string name="bt_library_kof">Historia KOF</string>
     <string name="bt_library_culture">Cultura</string>
@@ -238,9 +240,7 @@
         <item>¿El personal porta correctamente sus uniformes y equipo de seguridad?</item>
     </string-array>
 
-    
 
-    
     <!-- TEXTOS FAKE -->
 
     <string name="txt_h1">Conceptos básicos de FEMSA</string>

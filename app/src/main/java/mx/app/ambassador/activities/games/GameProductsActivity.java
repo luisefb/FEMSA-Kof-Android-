@@ -144,7 +144,7 @@ public class GameProductsActivity extends SectionActivity implements RailView.On
         txtType.setText("");
         txtScore.setText("");
         txtTime.setText("");
-        txtRecord.setText("Récord anterior: " + record + " puntos");
+        txtRecord.setText("Récord: " + record + " puntos");
 
     }
 

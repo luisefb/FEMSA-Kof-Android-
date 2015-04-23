@@ -8,45 +8,70 @@
         android:id="@+id/header"
         layout="@layout/header_toggle" />
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/header"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="250dp">
 
-        <Button
-            android:id="@+id/bt_info_recomendations"
-            style="@style/bt_home"
-            android:layout_width="wrap_content"
-            android:drawableTop="@drawable/bt_info_instructions"
-            android:tag="1"
-            android:onClick="clickSection"
-            android:layout_marginBottom="15dp"
-            android:text="@string/bt_info_instructions"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/bt_info_maps"
-            style="@style/bt_home"
-            android:layout_width="wrap_content"
-            android:drawableTop="@drawable/bt_info_checklist"
-            android:tag="2"
-            android:onClick="clickSection"
-            android:layout_marginBottom="15dp"
-            android:text="@string/bt_info_checklist" />
+            <Button
+                android:id="@+id/bt_info_recomendations"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_info_instructions"
+                android:tag="1"
+                android:onClick="clickSection"
+                android:layout_marginBottom="15dp"
+                android:text="@string/bt_info_instructions"/>
 
-        <Button
-            android:id="@+id/bt_info_units"
-            style="@style/bt_home"
-            android:layout_width="wrap_content"
-            android:drawableTop="@drawable/bt_info_maps"
-            android:tag="3"
-            android:onClick="clickSection"
-            android:layout_marginBottom="15dp"
-            android:text="@string/bt_info_maps" />
+            <Button
+                android:id="@+id/bt_info_maps"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_info_checklist"
+                android:tag="2"
+                android:onClick="clickSection"
+                android:text="@string/bt_info_checklist" />
 
-    </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/bt_info_units"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_info_maps"
+                android:tag="3"
+                android:onClick="clickSection"
+                android:text="@string/bt_info_maps" />
+
+            <Button
+                android:id="@+id/bt_info_operating"
+                style="@style/bt_home"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/bt_info_units"
+                android:tag="4"
+                android:onClick="clickSection"
+                android:text="@string/bt_info_operating_unit" />
+
+        </TableRow>
+
+
+    </TableLayout>
 
     <RelativeLayout
         android:layout_below="@+id/header"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import mx.app.ambassador.R;
+import mx.app.ambassador.activities.checklist.ChecklistOptsActivity;
 import mx.app.ambassador.activities.info.InfoMapsActivity;
 
 /**
@@ -56,6 +57,9 @@ public class InfoActivity extends SectionActivity {
             nav = new Intent(InfoActivity.this, ChecklistActivity.class);
         } else if (selected == 3) {
             nav = new Intent(InfoActivity.this, InfoMapsActivity.class);
+        } else if (selected == 4) {
+            nav = new Intent(InfoActivity.this, ChecklistOptsActivity.class);
+            nav.putExtra("option", 5);
         }
 
         if (nav == null) return;

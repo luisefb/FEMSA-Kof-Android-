@@ -8,6 +8,7 @@
 			<answer1><![CDATA[Más de 70 marcas y 500 productos]]></answer1>
 			<answer2><![CDATA[Más de 30 marcas y 350 productos]]></answer2>
 			<answer3><![CDATA[20 marcas y 200 productos]]></answer3>
+			<right>1</right>
 		</item>
 		
 		<item>
@@ -15,6 +16,7 @@
 			<answer1><![CDATA[Retornables, no retornables, multiempaques]]></answer1>
 			<answer2><![CDATA[Colas, Sabores, Tés, Isotónicos, Jugos y néctares, energetizantes, café, lácteos, bebidas funcionales, bebidas a base de frutas, agua]]></answer2>
 			<answer3><![CDATA[Sensitivas y no sensitivas]]></answer3>
+			<right>2</right>
 		</item>
 		
 		<item>
@@ -22,6 +24,7 @@
 			<answer1><![CDATA[Zensao, Burn, Fanta, Lift]]></answer1>
 			<answer2><![CDATA[Mundet, Frutsi, Coca Cola, Del Valle]]></answer2>
 			<answer3><![CDATA[Fanta, Lift, Fresca , Sprite, Mundet]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -29,6 +32,7 @@
 			<answer1><![CDATA[Unicel, vidrio, Tetrapack]]></answer1>
 			<answer2><![CDATA[Vidrio, Pet, Alumino y Tetrapack]]></answer2>
 			<answer3><![CDATA[Plástico, corrugado, cristal]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -36,6 +40,7 @@
 			<answer1><![CDATA[Single serve]]></answer1>
 			<answer2><![CDATA[Multi serve]]></answer2>
 			<answer3><![CDATA[Retornables]]></answer3>
+			<right>1</right>
 		</item>
 	
 	</portfolio>
@@ -47,6 +52,7 @@
 			<answer1><![CDATA[Manejo temporal de producto]]></answer1>
 			<answer2><![CDATA[Total de producto que manejamos]]></answer2>
 			<answer3><![CDATA[Manejo total de producto]]></answer3>
+			<right>3</right>
 		</item>
 		
 		<item>
@@ -54,6 +60,7 @@
 			<answer1><![CDATA[Fecha de caducidad, lote, línea de producción]]></answer1>
 			<answer2><![CDATA[Fecha de consumo óptimo, fecha de elaboración, lote de producción ]]></answer2>
 			<answer3><![CDATA[Hora de elaboración, fecha de salida al mercado, lote de producción]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -61,6 +68,7 @@
 			<answer1><![CDATA[Colocarlo al interperie, trasladarlo en el último palet]]></answer1>
 			<answer2><![CDATA[No exponerlo al sol, limpieza y no golpear]]></answer2>
 			<answer3><![CDATA[Colocarlo con los detergentes, exponerlo al sol]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -68,6 +76,7 @@
 			<answer1><![CDATA[Lay out]]></answer1>
 			<answer2><![CDATA[PEPS]]></answer2>
 			<answer3><![CDATA[En base al programa de fleteo]]></answer3>
+			<right>1</right>
 		</item>
 		   
 	</managment>
@@ -79,6 +88,7 @@
 			<answer1><![CDATA[Nielsen]]></answer1>
 			<answer2><![CDATA[ICE]]></answer2>
 			<answer3><![CDATA[Cobertura]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -86,6 +96,7 @@
 			<answer1><![CDATA[Técnica de 360°, fachada y toldo el cliente]]></answer1>
 			<answer2><![CDATA[Mostrador, comunicación, tráfico]]></answer2>
 			<answer3><![CDATA[Portafolio, precio, 4 puntos de conexión, elementos de ajuste (promociones/lanzamientos)]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -93,6 +104,7 @@
 			<answer1><![CDATA[Película de éxito]]></answer1>
 			<answer2><![CDATA[La propuesta de valor]]></answer2>
 			<answer3><![CDATA[Valor Industria]]></answer3>
+			<right>1</right>
 		</item>
 		
 	</lunching>
@@ -104,6 +116,7 @@
 			<answer1><![CDATA[Es el porcentaje de detallistas en los que está presente y disponible una(s) marca(s) o empaque(s) dentro de un universo de clientes]]></answer1>
 			<answer2><![CDATA[Es el porcentaje que representan las ventas de una marca(s) en el total de productos que compiten en el mismo mercado comparado con las ventas del resto de marcas, presentaciones, compañías, productos, etc.]]></answer2>
 			<answer3><![CDATA[Número de cajas por marca, tamaño y presentación que se requieren en el punto de venta para que siempre exista producto disponible para los consumidores, evitando clientes secos]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -111,6 +124,7 @@
 			<answer1><![CDATA[El porcentaje de clientes en los que están presentes y disponibles ciertas marcas o empaques]]></answer1>
 			<answer2><![CDATA[Cantidad de producto que vende un cliente]]></answer2>
 			<answer3><![CDATA[Clientes potenciales para venta]]></answer3>
+			<right>1</right>
 		</item>
 
 		<item>
@@ -118,6 +132,7 @@
 			<answer1><![CDATA[Porcentaje de clientes con pedido sobre clientes programados de preventa]]></answer1>
 			<answer2><![CDATA[Es el porcentaje de visitas reales sobre las programadas en mi ruta]]></answer2>
 			<answer3><![CDATA[Es el porcentaje de visitas realizadas en mi ruta]]></answer3>
+			<right>1</right>
 		</item>
 
 		<item>
@@ -125,6 +140,7 @@
 			<answer1><![CDATA[Es el porcentaje de pedidos realizados sobre las visitas programadas]]></answer1>
 			<answer2><![CDATA[Son todas las visitas a detallistas que tiene que realizar en un día o sector]]></answer2>
 			<answer3><![CDATA[Es el porcentaje que representan los pedidos entregados sobre los pedidos levantados]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -132,6 +148,7 @@
 			<answer1><![CDATA[Es el porcentaje de visitas realizadas en mi ruta]]></answer1>
 			<answer2><![CDATA[Es el porcentaje de visitas reales sobre las programadas en  ruta]]></answer2>
 			<answer3><![CDATA[Es el porcentaje de pedidos realizados sobre las visitas programadas]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -139,6 +156,7 @@
 			<answer1><![CDATA[Tarima]]></answer1>
 			<answer2><![CDATA[Caja física]]></answer2>
 			<answer3><![CDATA[Caja unidad]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -146,6 +164,7 @@
 			<answer1><![CDATA[Caloría]]></answer1>
 			<answer2><![CDATA[SKU]]></answer2>
 			<answer3><![CDATA[Cantidad de líquido que contiene un producto]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -153,6 +172,7 @@
 			<answer1><![CDATA[Documento de control para la carga y descarga del producto]]></answer1>
 			<answer2><![CDATA[Marca de los productos ]]></answer2>
 			<answer3><![CDATA[Modelo de carga]]></answer3>
+			<right>1</right>
 		</item>
 
 	</indicators>
@@ -164,6 +184,7 @@
 			<answer1><![CDATA[Abarrotes, misceláneas y tienditas]]></answer1>
 			<answer2><![CDATA[Canal tradicional, canal moderno]]></answer2>
 			<answer3><![CDATA[Home delivery, vending y fountain]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -171,6 +192,7 @@
 			<answer1><![CDATA[Abarrotes, misceláneas y tienditas]]></answer1>
 			<answer2><![CDATA[Canal tradicional, canal moderno]]></answer2>
 			<answer3><![CDATA[Home delivery, vending, at work]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -178,6 +200,7 @@
 			<answer1><![CDATA[Por edad y sexo]]></answer1>
 			<answer2><![CDATA[Oro y plata ]]></answer2>
 			<answer3><![CDATA[Oro,plata, bronce y customizados]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -185,6 +208,7 @@
 			<answer1><![CDATA[Kabobie reparto directo de las plantas, reparto especializado, reparto terceros, reparto tradicional]]></answer1>
 			<answer2><![CDATA[Mayoristas y tradicional]]></answer2>
 			<answer3><![CDATA[Terceros y depósitos]]></answer3>
+			<right>1</right>
 		</item>
 
 	</model>
@@ -197,6 +221,7 @@
 			<answer1><![CDATA[Ejecución, Participación ,Crecimiento, Calle, Servicio]]></answer1>
 			<answer2><![CDATA[Despachar, saludar y conformismo]]></answer2>
 			<answer3><![CDATA[Superioridad e indiferencia]]></answer3>
+			<right>1</right>
 		</item>
 
 		<item>
@@ -204,12 +229,14 @@
 			<answer1><![CDATA[Prepotencia y prisa]]></answer1>
 			<answer2><![CDATA[Indiferente y servicio]]></answer2>
 			<answer3><![CDATA[Seguridad, Calidad, Oportunidad, Disciplina  operativa ,Servicio]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
 			<question><![CDATA[¿El azúcar de los refrescos de cola contribuye al sobrepeso y la obesidad?]]></question>
 			<answer1><![CDATA[Sí, contribuye]]></answer1>
 			<answer2><![CDATA[No, aunque TODAS LAS CALORÍAS CUENTAN incluyendo las de nuestras bebidas. Pero éstas por sí solas, no son responsables del sobrepeso u obesidad]]></answer2>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -217,6 +244,7 @@
 			<answer1><![CDATA[No. Todos los ingredientes e inclusive nuestros empaques son SEGUROS]]></answer1>
 			<answer2><![CDATA[Sí, algunos ingredientes perjudican la salud]]></answer2>
 			<answer3><![CDATA[Si, el azúcar]]></answer3>
+			<right>1</right>
 		</item>
 
 		<item>
@@ -224,6 +252,7 @@
 			<answer1><![CDATA[Comer y moverte]]></answer1>
 			<answer2><![CDATA[Consumir igual energía en forma de alimentos y bebidas que la que gasta nuestro organismo]]></answer2>
 			<answer3><![CDATA[Realizar ejercicio y dieta balanceada]]></answer3>
+			<right>2</right>
 		</item>
 
 		<item>
@@ -231,6 +260,7 @@
 			<answer1><![CDATA[Agua y Jugos]]></answer1>
 			<answer2><![CDATA[Agua]]></answer2>
 			<answer3><![CDATA[Todas nuestras bebidas hidratan]]></answer3>
+			<right>3</right>
 		</item>
 
 		<item>
@@ -238,6 +268,7 @@
 			<answer1><![CDATA[Sí, son seguros inclusive para niños y mujeres embarazadas, además son ÚTILES para mantener el peso.]]></answer1>
 			<answer2><![CDATA[No, especialmente los niños y las mujeres embarazadas no deben consumirlos]]></answer2>
 			<answer3><![CDATA[No, los niños no deben consumirlos]]></answer3>
+			<right>1</right>
 		</item>
 
 	</others>

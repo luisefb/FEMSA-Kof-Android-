@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
@@ -45,16 +46,14 @@ public class LibraryActivity extends SectionActivity {
     /*--------------*/
 	/* CLICK EVENTS */
 
-    public void clickSection(View v) {
-
+    public void clickShowPdf(View v) {
         int i = Integer.parseInt(v.getTag().toString());
+        showPDF(i);
+    }
 
-        if (i == 9 || i == 8) {
-            showVideo(i);
-        } else {
-            showPDF(i);
-        }
-
+    public void clickShowVideo(View v) {
+        int i = Integer.parseInt(v.getTag().toString());
+        showVideo(i);
     }
 
     public void clickHidePdf(View v){
@@ -109,13 +108,11 @@ public class LibraryActivity extends SectionActivity {
 
     public void showVideo(int tag){
 
-        String uriPath = "";
-        if(tag==8){
-           uriPath = "android.resource://mx.app.ambassador/"+ R.raw.guidelines_video_08;
-        } else if(tag==9){
-           uriPath = "android.resource://mx.app.ambassador/"+ R.raw.guidelines_video_09;
-        }
-        Uri uri = Uri.parse(uriPath);
+        int id = getResources().getIdentifier("guidelines_video_" + String.format("%02d", tag), "raw", getPackageName());
+
+        Log.e("", "android.resource://mx.app.ambassador/" + id);
+
+        Uri uri = Uri.parse("android.resource://mx.app.ambassador/" + id);
         videoView.setVideoURI(uri);
         videoView.requestFocus();
         videoView.start();
@@ -124,25 +121,12 @@ public class LibraryActivity extends SectionActivity {
     }
 
     public void showPDF(int tag){
+        String pdf = "guidelines_pdf_" + String.format("%02d", tag) + ".pdf";
 
-        String pdf = "";
+        Log.e("", pdf);
 
-        if (tag==1) {
-            pdf = "1_balance_energetico.pdf";
-        } else if(tag==2){
-            pdf ="2_hidratacion.pdf";
-        } else if(tag==4){
-            pdf ="4_portafolio.pdf";
-        } else if(tag==5){
-            pdf ="5_lenguaje.pdf";
-        } else if(tag==7){
-            pdf ="7_mitos.pdf";
-        }
-
-        if (!pdf.equals("")) {
-            pdfView.fromAsset(pdf).defaultPage(1).load();
-            show(rlPdf);
-        }
+        pdfView.fromAsset(pdf).defaultPage(1).load();
+        show(rlPdf);
     }
 
 }

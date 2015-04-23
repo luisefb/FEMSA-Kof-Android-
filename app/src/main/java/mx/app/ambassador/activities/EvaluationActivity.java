@@ -39,8 +39,8 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
     JSONObject data;
     TextView txtEvaluationTitle;
 
-    String categoryOrder[] = new String[]{"portfolio", "managment", "lunching", "indicators", "model", "others"};
-    String categoryNames[] = new String[]{"Portafolio", "Manejo del Producto", "Ejecución", "Indicadores de negocio", "Modelo de negocio", "Otros"};
+    String categoryOrder[] = new String[]{"portfolio", "managment", "indicators", "lunching", "model", "others"};
+    String categoryNames[] = new String[]{"Portafolio", "Manejo de Producto", "Indicadores de negocio", "Ejecución", "Modelo de negocio", "Embajadores"};
     int currentQuestion;
     int currentCategory;
 
@@ -258,14 +258,17 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
 
         try {
 
-            String title = ((TextView)v.findViewById(R.id.txt_evaluation_question)).getText().toString();
+            int o = Integer.parseInt(option) + 1;
+            JSONObject q = category(categoryOrder[(topic - 1)]).getJSONObject(question-1);
+
+            if (q == null) return -1;
+
             JSONObject answer = new JSONObject();
 
-            answer.put("answerd", title);
-            answer.put("answerd_right", option + 1);
+            answer.put("answerd", q.getString("answer" + o));
+            answer.put("answerd_right", q.getInt("right") == o ? 1 : 0);
 
             answers.getJSONObject("tema_" + topic).put("question_" + question, answer);
-
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -310,10 +313,11 @@ public class EvaluationActivity extends SectionActivity implements WebBridge.Web
             new AlertDialog.Builder(this).setTitle(R.string.txt_error).setMessage(msg).setNeutralButton(R.string.bt_close, null).show();
         } else {
 
-            //User.set("prevaluation", "true", this);
+            String amsg = type.equals("pre") ? "Gracias por contestar la evaluación" : "Estás listo para ser un Embajador en Acción.  Lleva el conocimiento a tu día a día, en la cultura KOF,  en tu participación activa en eventos de desarrollo y responsabilidad social y en el reporte de oportunidades en el mercado.";
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Gracias por contestar la evaluación");
+            builder.setTitle("¡Felicidades!");
+            builder.setMessage(amsg);
             builder.setCancelable(true);
             builder.setPositiveButton(R.string.bt_close, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {

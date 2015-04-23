@@ -79,7 +79,7 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
             if(finished) return;
 
             String time  = String.format("%02d:%02d", timer / 60, timer % 60);
-            txtRecord.setText("Récord " + record + " aciertos || Tiempo: " + time);
+            txtRecord.setText("Récord: " + record + " puntos || Tiempo: " + time);
             timer--;
 
             if (timer >= 0) {
@@ -210,8 +210,6 @@ public class GameRefriActivity extends SectionActivity implements PanGestureList
         for (int i = 0; i < answers.size(); i++) {
 
             ImageView img = new ImageView(this);
-
-            Log.e("", (answers.get(i)-1) + "==" + i);
 
             if (answers.get(i)-1 == i) {
                 img.setImageResource(R.drawable.icon_game_success_sm);

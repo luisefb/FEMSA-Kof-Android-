@@ -29,7 +29,7 @@ public class ResultsActivity extends SectionActivity implements WebBridge.WebBri
 
     FlowLayout flResults;
     String type = "pre";
-    String categoryNames[] = new String[]{"Portafolio", "Manejo del Producto", "Ejecución", "Indicadores de negocio", "Modelo de negocio", "Otros"};
+    String categoryNames[] = new String[]{"Portafolio", "Manejo de Producto", "Indicadores de negocio", "Ejecución", "Modelo de negocio", "Embajadores"};
     TextView txtScore;
 
     @Override

@@ -80,7 +80,7 @@ public class GameOrderActivity extends SectionActivity implements WebBridge.WebB
             if(finished) return;
 
             String time  = String.format("%02d:%02d", timer / 60, timer % 60);
-            txtRecord.setText("Récord " + record + " completados || Tiempo: " + time);
+            txtRecord.setText("Récord: " + record + " puntos || Tiempo: " + time);
             timer--;
 
             if (timer >= 0) {

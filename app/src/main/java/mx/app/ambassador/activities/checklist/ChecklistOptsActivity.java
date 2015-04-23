@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.androidquery.callback.AjaxStatus;
 
@@ -34,8 +35,11 @@ public class ChecklistOptsActivity extends SectionActivity implements WebBridge.
 	/*------------*/
 	/* PROPERTIES */
 
+    View[] experiencie = new View[5];
     ScrollView slChecklist;
     LinearLayout llCheckList;
+    LayoutInflater inflater;
+    View item;
     CheckBox[] checkboxes;
     int type;
 
@@ -70,29 +74,42 @@ public class ChecklistOptsActivity extends SectionActivity implements WebBridge.
         else if (type == 2) data = res.getStringArray(R.array.array_checklist_storage);
         else if (type == 3) data = res.getStringArray(R.array.array_checklist_service);
         else if (type == 4) data = res.getStringArray(R.array.array_checklist_distribution);
+        else if (type == 5) {
+            data = res.getStringArray(R.array.txt_array_checklist_operating_unit);
+            for(int i = 0; i<5; i++){
+                inflater = getLayoutInflater();
+                item = inflater.inflate(R.layout.ui_feedback_item_face, null);
+                ((TextView) item.findViewById(R.id.tv_question_face)).setText(data[i]);
+                llCheckList.addView(item);
+                experiencie[i] = item.findViewById(R.id.rg_face);
+            }
+        }
 
-        checkboxes = new CheckBox[data.length];
+        if(type != 5){
+            checkboxes = new CheckBox[data.length];
 
-        for (int i = 0; i < data.length; i++) {
-            LayoutInflater inflater = getLayoutInflater();
+            for (int i = 0; i < data.length; i++) {
+                LayoutInflater inflater = getLayoutInflater();
 
-            View item = inflater.inflate(R.layout.ui_checkbox, null);
-            checkboxes[i] = (CheckBox)item.findViewById(R.id.cb_checkbox);
+                View item = inflater.inflate(R.layout.ui_checkbox, null);
+                checkboxes[i] = (CheckBox)item.findViewById(R.id.cb_checkbox);
 
-            checkboxes[i].setText(data[i]);
-            checkboxes[i].setEnabled(!finished);
+                checkboxes[i].setText(data[i]);
+                checkboxes[i].setEnabled(!finished);
 
-            llCheckList.addView(item);
+                llCheckList.addView(item);
 
-            if (finished) {
-                for (int j = 0; j < checked.length; j++) {
-                    if (i+1 == Integer.parseInt(checked[j])) {
-                        checkboxes[i].setChecked(true);
+                if (finished) {
+                    for (int j = 0; j < checked.length; j++) {
+                        if (i+1 == Integer.parseInt(checked[j])) {
+                            checkboxes[i].setChecked(true);
+                        }
                     }
                 }
-            }
 
+            }
         }
+
 
     }
 

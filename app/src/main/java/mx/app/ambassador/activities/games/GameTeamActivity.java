@@ -67,8 +67,11 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
     Handler handler = new Handler();
     private Runnable updateTimer = new Runnable(){
         public void run(){
+
+            if (finished) return;
+
             String time  = String.format("%02d:%02d", timer / 60, timer % 60);
-            txtRecord.setText("Récord " + record + " aciertos || Tiempo: " + time);
+            txtRecord.setText("Récord: " + record + " puntos || Tiempo: " + time);
             timer--;
             if (timer >= 0) {
                 handler.postDelayed(updateTimer, 1000);
@@ -92,7 +95,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
         data = new ArrayList<HashMap<String, String>>();
         data.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "storage");}});
-        data.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "delivery");}});
+        //data.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "delivery");}});
         data.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "presales");}});
 
         data.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "autoservice");}});
@@ -109,7 +112,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
 
         data.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "storage");}});
         data.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "storage");}});
-        data.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "presales");}});
+        //data.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "presales");}});
 
         data.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "storage");}});
         data.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "delivery");}});
@@ -119,6 +122,9 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         data.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "autoservice");}});
         data.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "autoservice");}});
         data.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "autoservice");}});
+
+        data.add(new HashMap<String, String>() {{ put("i", "23"); put("n", "presales");}});
+        data.add(new HashMap<String, String>() {{ put("i", "24"); put("n", "storage");}});
 
 
         random();
@@ -254,6 +260,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
             result.put("games_answerds", items);
         } catch (JSONException e) {}
 
+        finished = true;
         points = (int)(Math.floor(points * 200)/9) + timer;
 
         Map<String, Object> params = User.getToken(this);

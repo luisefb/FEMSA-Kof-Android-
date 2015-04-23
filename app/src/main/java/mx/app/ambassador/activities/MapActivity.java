@@ -196,7 +196,7 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         btEvaluation.setVisibility(View.GONE);
         btFeedback.setVisibility(View.GONE);
         btFemsa.setVisibility(View.GONE);
-        //btYammer.setVisibility(View.GONE);
+        btYammer.setVisibility(View.GONE);
         //btLibrary.setVisibility(View.GONE);
 
 
@@ -304,6 +304,14 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
                     btFeedback.setVisibility(View.VISIBLE);
                     btFemsa.setVisibility(View.VISIBLE);
                     btYammer.setVisibility(View.VISIBLE);
+                }
+
+                if (feedback == 1) {
+                    btFeedback.setVisibility(View.GONE);
+                }
+
+                if (post == 1) {
+                    btEvaluation.setVisibility(View.GONE);
                 }
 
                 /*

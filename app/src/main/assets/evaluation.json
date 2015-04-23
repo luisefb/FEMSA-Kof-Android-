@@ -3,34 +3,39 @@
     "portfolio": {
       "item": [
         {
-          "question": "¿Cuántas marcas y SKUs con los que contamos?",
-          "answer1": "Más de 70 marcas y 500 productos.",
-          "answer2": "Más de 30 marcas y 350 productos.",
-          "answer3": "20 marcas y 200 productos."
+          "question": "¿Cuántas marcas tenemos dentro de nuestro portafolio? ¿Cuál es el número de SKUs con los que contamos?",
+          "answer1": "Más de 70 marcas y 500 productos",
+          "answer2": "Más de 30 marcas y 350 productos",
+          "answer3": "20 marcas y 200 productos",
+          "right": "1"
         },
         {
-          "question": "De las siguientes opciones, elige ¿cuáles son las categorías de nuestros productos?",
-          "answer1": "Retornables, no retornables, multiempaques.",
-          "answer2": "Colas, Sabores, Tés, Isotónicos, Jugos y néctares, energetizantes, café, lácteos, bebidas funcionales, bebidas a base de frutas, agua.",
-          "answer3": "Sensitivas y no sensitivas."
+          "question": "De las siguientes opciones, elige cuáles son las categorías de nuestros productos.",
+          "answer1": "Retornables, no retornables, multiempaques",
+          "answer2": "Colas, Sabores, Tés, Isotónicos, Jugos y néctares, energetizantes, café, lácteos, bebidas funcionales, bebidas a base de frutas, agua",
+          "answer3": "Sensitivas y no sensitivas",
+          "right": "2"
         },
         {
           "question": "¿Cuáles son nuestras marcas de sabores core?",
-          "answer1": "Zensao, Burn, Fanta, Lift.",
-          "answer2": "Mundet, Frutsi, Coca Cola, Del Valle.",
-          "answer3": "Fanta, Lift, Fresca , Sprite, Mundet."
+          "answer1": "Zensao, Burn, Fanta, Lift",
+          "answer2": "Mundet, Frutsi, Coca Cola, Del Valle",
+          "answer3": "Fanta, Lift, Fresca , Sprite, Mundet",
+          "right": "3"
         },
         {
-          "question": "De las siguientes opciones, elige cuáles son los tipos de envase que manejamos.",
-          "answer1": "Unicel, vidrio, Tetrapack.",
-          "answer2": "Vidrio, Pet, Alumino y Tetrapack.",
-          "answer3": "Plástico, Corrugado, Cristal."
+          "question": "De las siguientes opciones, elige cuáles son los tipos de envases que manejamos.",
+          "answer1": "Unicel, vidrio, Tetrapack",
+          "answer2": "Vidrio, Pet, Alumino y Tetrapack",
+          "answer3": "Plástico, corrugado, cristal",
+          "right": "2"
         },
         {
           "question": "Las presentaciones 192ml, 250 ml, 355ml, 600ml, 1lt son consideradas presentaciones:",
-          "answer1": "Singleserve.",
-          "answer2": "Multiserve.",
-          "answer3": "Retornables."
+          "answer1": "Single serve",
+          "answer2": "Multi serve",
+          "answer3": "Retornables",
+          "right": "1"
         }
       ]
     },
@@ -38,27 +43,31 @@
       "item": [
         {
           "question": "¿Qúe significa TPM?",
-          "answer1": "Manejo Temporal de Producto.",
-          "answer2": "Total de producto que manejamos.",
-          "answer3": "Manejo Total de Producto."
+          "answer1": "Manejo temporal de producto",
+          "answer2": "Total de producto que manejamos",
+          "answer3": "Manejo total de producto",
+          "right": "3"
         },
         {
-          "question": "¿Qué datos incluye el código impreso en nuestros productos?",
-          "answer1": "Fecha de caducidad, lote, línea de producción.",
-          "answer2": "Fecha de consumo óptimo, fecha de elaboración, lote de producción.",
-          "answer3": "GDA's, fecha de salida al mercado, lote de producción."
+          "question": "¿Qué incluye el código de los productos?",
+          "answer1": "Fecha de caducidad, lote, línea de producción",
+          "answer2": "Fecha de consumo óptimo, fecha de elaboración, lote de producción ",
+          "answer3": "Hora de elaboración, fecha de salida al mercado, lote de producción",
+          "right": "2"
         },
         {
-          "question": "Selecciona qué condiciones se deben de cuidar para garantizar el buen manejo del producto",
-          "answer1": "Evitar colocarlo al interperie y trasladarlo en el último palet.",
-          "answer2": "No exponerlo al sol, cuidar la limpieza y no golpearlo.",
-          "answer3": "Colocarlo lejos de detergentes, exponerlo al sol."
+          "question": "Selecciona las condiciones que se deben de cuidar para garantizar que el producto llegue correctamente",
+          "answer1": "Colocarlo al interperie, trasladarlo en el último palet",
+          "answer2": "No exponerlo al sol, limpieza y no golpear",
+          "answer3": "Colocarlo con los detergentes, exponerlo al sol",
+          "right": "2"
         },
         {
-          "question": "Es el diagrama que indica la distribución de la bodega:",
-          "answer1": "Lay out.",
-          "answer2": "PEPS.",
-          "answer3": "En base al programa de fleteo."
+          "question": "Es el diagrama que indica la distribución de la bodega…",
+          "answer1": "Lay out",
+          "answer2": "PEPS",
+          "answer3": "En base al programa de fleteo",
+          "right": "1"
         }
       ]
     },
@@ -66,21 +75,24 @@
       "item": [
         {
           "question": "Forma en la que se miden los criterios de ejecución en el punto de venta y se comparan con el resto de las operaciones",
-          "answer1": "Nielsen.",
-          "answer2": "ICE.",
-          "answer3": "Cobertura."
+          "answer1": "Nielsen",
+          "answer2": "ICE",
+          "answer3": "Cobertura",
+          "right": "2"
         },
         {
-          "question": "Cuáles son los elementos de la película de éxito",
-          "answer1": "Técnica de 360°, fachada y toldo del cliente.",
-          "answer2": "Mostrador, Comunicación, Tráfico.",
-          "answer3": "Portafolio, Precio, Puntos de Conexión, Elementos de ajuste (promociones/lanzamientos)."
+          "question": "Identifica cuáles son los elementos de la película de éxito",
+          "answer1": "Técnica de 360°, fachada y toldo el cliente",
+          "answer2": "Mostrador, comunicación, tráfico",
+          "answer3": "Portafolio, precio, 4 puntos de conexión, elementos de ajuste (promociones/lanzamientos)",
+          "right": "3"
         },
         {
-          "question": "Todo lo que Coca-Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta",
-          "answer1": "Película de Éxito.",
-          "answer2": "Propuesta de Valor.",
-          "answer3": "Valor Industria."
+          "question": "Todo lo que Coca Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta",
+          "answer1": "Película de éxito",
+          "answer2": "La propuesta de valor",
+          "answer3": "Valor Industria",
+          "right": "1"
         }
       ]
     },
@@ -88,51 +100,59 @@
       "item": [
         {
           "question": "¿Qué es participación de mercado?",
-          "answer1": "Es el porcentaje de detallistas en los que está presente y disponible una(s) marca(s) o empaque(s) dentro de un universo de clientes.",
+          "answer1": "Es el porcentaje de detallistas en los que está presente y disponible una(s) marca(s) o empaque(s) dentro de un universo de clientes",
           "answer2": "Es el porcentaje que representan las ventas de una marca(s) en el total de productos que compiten en el mismo mercado comparado con las ventas del resto de marcas, presentaciones, compañías, productos, etc.",
-          "answer3": "Número de cajas por marca, tamaño y presentación que se requieren en el punto de venta para que siempre exista producto disponible para los consumidores, evitando clientes secos."
+          "answer3": "Número de cajas por marca, tamaño y presentación que se requieren en el punto de venta para que siempre exista producto disponible para los consumidores, evitando clientes secos",
+          "right": "2"
         },
         {
-          "question": "Es la definición de \"cobertura\"",
-          "answer1": "El porcentaje de clientes en los que están presentes y disponibles ciertas marcas o empaques.",
-          "answer2": "Cantidad de producto que vende un cliente.",
-          "answer3": "Clientes potenciales para venta."
+          "question": "Es la definición de cobertura:",
+          "answer1": "El porcentaje de clientes en los que están presentes y disponibles ciertas marcas o empaques",
+          "answer2": "Cantidad de producto que vende un cliente",
+          "answer3": "Clientes potenciales para venta",
+          "right": "1"
         },
         {
-          "question": "¿Qué es \"Efectividad de Preventa\"?",
-          "answer1": "Porcentaje de clientes con pedido sobre clientes programados de preventa.",
-          "answer2": "Es el porcentaje de visitas reales sobre las programadas en mi ruta.",
-          "answer3": "Es el porcentaje de visitas realizadas en mi ruta."
+          "question": "¿Qué es Efectividad de Visita o de Preventa?",
+          "answer1": "Porcentaje de clientes con pedido sobre clientes programados de preventa",
+          "answer2": "Es el porcentaje de visitas reales sobre las programadas en mi ruta",
+          "answer3": "Es el porcentaje de visitas realizadas en mi ruta",
+          "right": "1"
         },
         {
-          "question": "¿Cuál es la \"Efectividad de Reparto\"?",
-          "answer1": "Es el porcentaje de pedidos realizados sobre las visitas programadas.",
-          "answer2": "Son todas las visitas a detallistas que tiene que realizar en un día o sector.",
-          "answer3": "Es el porcentaje que representan los pedidos entregados sobre los pedidos levantados."
+          "question": "¿Cuál es la efectividad de reparto?",
+          "answer1": "Es el porcentaje de pedidos realizados sobre las visitas programadas",
+          "answer2": "Son todas las visitas a detallistas que tiene que realizar en un día o sector",
+          "answer3": "Es el porcentaje que representan los pedidos entregados sobre los pedidos levantados",
+          "right": "3"
         },
         {
-          "question": "¿Qué es \"Eficiencia de visita\"?",
-          "answer1": "Es el porcentaje de visitas realizadas en la ruta de Preventa.",
-          "answer2": "Es el porcentaje de visitas reales sobre las programadas en  ruta.",
-          "answer3": "Es el porcentaje de pedidos realizados sobre las visitas programadas."
+          "question": "¿Qué es Eficiencia de visita?",
+          "answer1": "Es el porcentaje de visitas realizadas en mi ruta",
+          "answer2": "Es el porcentaje de visitas reales sobre las programadas en  ruta",
+          "answer3": "Es el porcentaje de pedidos realizados sobre las visitas programadas",
+          "right": "2"
         },
         {
           "question": "Es el contenido de una caja física convertida a cajas con 24 botellas de 8 onzas para obtener un comparativo real sin importar el tamaño de la botella:",
-          "answer1": "Tarima.",
-          "answer2": "Caja física.",
-          "answer3": "Caja unidad."
+          "answer1": "Tarima",
+          "answer2": "Caja física",
+          "answer3": "Caja unidad",
+          "right": "3"
         },
         {
-          "question": "Es la unidad mínima de venta, es decir es el producto de una marca o presentación",
-          "answer1": "Caloría.",
-          "answer2": "SKU.",
-          "answer3": "Cantidad de líquido que contiene un producto."
+          "question": "Es la unidad mínima de venta, es decir es el producto de una marca o presentación:",
+          "answer1": "Caloría",
+          "answer2": "SKU",
+          "answer3": "Cantidad de líquido que contiene un producto",
+          "right": "2"
         },
         {
-          "question": "¿Qué es un \"Marbete\"?",
-          "answer1": "Documento de control para la carga y descarga del producto.",
-          "answer2": "Marca de los productos.",
-          "answer3": "Modelo de carga."
+          "question": "¿Qué es un marbete?",
+          "answer1": "Documento de control para la carga y descarga del producto",
+          "answer2": "Marca de los productos ",
+          "answer3": "Modelo de carga",
+          "right": "1"
         }
       ]
     },
@@ -140,72 +160,83 @@
       "item": [
         {
           "question": "De las siguientes opciones elige cuáles son los canales de venta a través de intermediarios",
-          "answer1": "Abarrotes,Hogar y Vending.",
-          "answer2": "Canal tradicional, Canal moderno.",
-          "answer3": "Home delivery, Vending, Fountain."
+          "answer1": "Abarrotes, misceláneas y tienditas",
+          "answer2": "Canal tradicional, canal moderno",
+          "answer3": "Home delivery, vending y fountain",
+          "right": "2"
         },
         {
           "question": "Son sistemas de venta directas al consumidor",
-          "answer1": "Abarrotes,Hogar y Vending.",
-          "answer2": "Canal tradicional, Canal moderno.",
-          "answer3": "Home delivery, Vending, Fountain."
+          "answer1": "Abarrotes, misceláneas y tienditas",
+          "answer2": "Canal tradicional, canal moderno",
+          "answer3": "Home delivery, vending, at work",
+          "right": "3"
         },
         {
-          "question": "¿Cómo segmentamos a nuestros clientes con base en su Valor Industria?",
-          "answer1": "Por edad y sexo.",
-          "answer2": "Oro, Plata y Bronce.",
-          "answer3": "Oro, Plata, bronce y Customizados."
+          "question": "¿Cuál es la clasificación de la segmentación de nuestros clientes?",
+          "answer1": "Por edad y sexo",
+          "answer2": "Oro y plata ",
+          "answer3": "Oro,plata, bronce y customizados",
+          "right": "3"
         },
         {
-          "question": "Son los sistemas de reparto que utilizamos",
-          "answer1": "Kabobie (reparto directo desde plantas), reparto especializado, reparto vía terceros y reparto tradicional.",
-          "answer2": "Madrinas. Reparto nocturno, autoservicio y reparto tradicional.",
-          "answer3": "Depósito, Mayoristas, Camión, Fletes."
+          "question": "Son algunos de los sistemas de reparto que utilizamos",
+          "answer1": "Kabobie reparto directo de las plantas, reparto especializado, reparto terceros, reparto tradicional",
+          "answer2": "Mayoristas y tradicional",
+          "answer3": "Terceros y depósitos",
+          "right": "1"
         }
       ]
     },
     "others": {
       "item": [
         {
-          "question": "¿Cuáles son las claves para el éxito 2015 de Ventas en la estrategia Crecer.Crecer.Crecer?",
-          "answer1": "Ejecución, Participación ,Crecimiento, Calle y Servicio.",
-          "answer2": "Despachar, Saludar y Vender.",
-          "answer3": "Ejecución y Servicio."
+          "question": "¿Cuáles son las claves para el éxito 2015 de Ventas en la estrategia Crecer Crecer Crecer?",
+          "answer1": "Ejecución, Participación ,Crecimiento, Calle, Servicio",
+          "answer2": "Despachar, saludar y conformismo",
+          "answer3": "Superioridad e indiferencia",
+          "right": "1"
         },
         {
-          "question": "¿Cuáles son las claves para el éxito 2015 de Distribución en la estrategia Crecer.Crecer.Crecer?",
-          "answer1": "Ejecución, Participación ,Crecimiento, Calle y Servicio.",
-          "answer2": "Primeras Entradas, Primeras Salidas.",
-          "answer3": "Seguridad, Calidad, Oportunidad, Disciplina  operativa y Servicio."
+          "question": "¿Cuáles son las claves para el éxito 2015 de Distribución en la estrategia Crecer Crecer Crecer?",
+          "answer1": "Prepotencia y prisa",
+          "answer2": "Indiferente y servicio",
+          "answer3": "Seguridad, Calidad, Oportunidad, Disciplina  operativa ,Servicio",
+          "right": "3"
         },
         {
-          "question": "¿El azúcar de los refrescos de Cola contribuye al sobrepeso y la obesidad?",
-          "answer1": "Sí, contribuye.",
-          "answer2": "No, aunque TODAS LAS CALORÍAS CUENTAN incluyendo las de nuestras bebidas. Pero éstas por sí solas, no son responsables del sobrepeso u obesidad."
+          "question": "¿El azúcar de los refrescos de cola contribuye al sobrepeso y la obesidad?",
+          "answer1": "Sí, contribuye",
+          "answer2": "No, aunque TODAS LAS CALORÍAS CUENTAN incluyendo las de nuestras bebidas. Pero éstas por sí solas, no son responsables del sobrepeso u obesidad",
+          "right": "2"
         },
         {
           "question": "¿Nuestras bebidas tienen ingredientes que perjudican la salud?",
-          "answer1": "No. Todos los ingredientes e inclusive nuestros empaques son seguros.",
-          "answer2": "Sí, algunos ingredientes perjudican la salud.",
-          "answer3": "Si, el azúcar."
+          "answer1": "No. Todos los ingredientes e inclusive nuestros empaques son SEGUROS",
+          "answer2": "Sí, algunos ingredientes perjudican la salud",
+          "answer3": "Si, el azúcar",
+          "right": "1"
         },
         {
           "question": "¿Qué es Balance Energético?",
-          "answer1": "Comer y moverte.",
-          "answer2": "Consumir igual energía en forma de alimentos y bebidas que la que gasta nuestro organismo.",
-          "answer3": "Realizar ejercicio y dieta balanceada."
+          "answer1": "Comer y moverte",
+          "answer2": "Consumir igual energía en forma de alimentos y bebidas que la que gasta nuestro organismo",
+          "answer3": "Realizar ejercicio y dieta balanceada",
+          "right": "2"
         },
         {
-          "question": "¿Qué categorías de nuestro portafolio hidratan?",
-          "answer1": "Agua y Jugos.",
-          "answer2": "Aguas, Deportivas e Isotónicos.",
-          "answer3": "Todas nuestras bebidas hidratan."
+          "question": "¿De nuestro portafolio qué categorías hidratan?",
+          "answer1": "Agua y Jugos",
+          "answer2": "Agua",
+          "answer3": "Todas nuestras bebidas hidratan",
+          "right": "3"
         },
         {
           "question": "¿Todos pueden consumir edulcorantes no calóricos?",
           "answer1": "Sí, son seguros inclusive para niños y mujeres embarazadas, además son ÚTILES para mantener el peso.",
-          "answer2": "No, especialmente los niños y las mujeres embarazadas no deben consumirlos.",
-          "answer3": "No, los niños no deben consumirlos."
+          "answer2": "No, especialmente los niños y las mujeres embarazadas no deben consumirlos",
+          "answer3": "No, los niños no deben consumirlos",
+          "right": "1"
         }
       ]
     }
