@@ -37,7 +37,7 @@
     <string name="bt_checklist_info">Información</string>
 
 
-    <string name="bt_map_logbook">Notas</string>
+    <string name="bt_map_logbook">Feedback de la Visita</string>
     <string name="bt_map_game">Jugar</string>
     <string name="bt_map_library">Biblioteca</string>
     <string name="bt_map_profile">Perfil</string>
@@ -46,7 +46,7 @@
     <string name="bt_map_info">Día en la Operación</string>
     <string name="bt_map_checklist">Checklist</string>
     <string name="bt_map_feedback">Evaluación de la Clínica</string>
-    <string name="bt_map_top10">Top Ten Generación</string>
+    <string name="bt_map_top10">Top Ten</string>
     <string name="bt_map_evaluation">Post Evaluación</string>
     <string name="bt_map_logout">Cerrar Sesión</string>
     <string name="bt_map_femsa">Embajadores en Acción</string>
@@ -156,14 +156,18 @@
 
     <string name="bt_library_energy">Balance Energético</string>
     <string name="bt_library_hydration">Hidratación</string>
-    <string name="bt_library_only_once">Solo Una Vez</string>
+    <string name="bt_library_only_once">Una Sola Voz</string>
     <string name="bt_library_portfolio">Portafolio</string>
     <string name="bt_library_language">Lenguaje De Negocio</string>
-    <string name="bt_library_value_chain">Video Femsa</string>
+    <string name="bt_library_value_chain">Creer Para Crear</string>
     <string name="bt_library_q_and_a">Q&amp;A</string>
     <string name="bt_library_kof">Historia KOF</string>
     <string name="bt_library_culture">Cultura</string>
-
+    
+    <string name="txt_infographics_1">Auxiliar Bodega</string>
+    <string name="txt_infographics_2">Vendedor / Ayudante</string>
+    <string name="txt_infographics_3">Promotor / Mercadista</string>
+    <string name="txt_infographics_4">Preventa</string>
 
     <string-array name="array_checklist_sales">
 

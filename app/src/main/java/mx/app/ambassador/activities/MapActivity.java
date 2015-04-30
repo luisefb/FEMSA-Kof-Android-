@@ -259,15 +259,16 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
         } else {
             if (url.contains("getStatusMap")) {
 
-                int level = 0, pre = 0, feedback = 0, post = 0;
+                int level = 0, pre = 0, feedback = 0, post = 0, checklist = 0, operation = 0;
                 //checklist = 0,
 
                 try {
                     level       = json.getInt("map_level_access");
                     pre         = json.getInt("pre");
-                    //checklist   = json.getInt("checklist");
+                    checklist   = json.getInt("checklist");
                     feedback    = json.getInt("feedback");
                     post        = json.getInt("post");
+                    operation   = json.getInt("operativa");
                 } catch (Exception e) {}
 
                 if (pre == 0) {
@@ -313,6 +314,9 @@ public class MapActivity extends SectionActivity implements WebBridge.WebBridgeL
                 if (post == 1) {
                     btEvaluation.setVisibility(View.GONE);
                 }
+
+                User.set("checklist", checklist == 1 ? "true" : "false", this);
+                User.set("operation", operation == 1 ? "true" : "false", this);
 
                 /*
                 if (level > 1  || true) fade(btGame);

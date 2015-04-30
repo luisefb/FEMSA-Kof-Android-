@@ -29,7 +29,7 @@ public class ResultsActivity extends SectionActivity implements WebBridge.WebBri
 
     FlowLayout flResults;
     String type = "pre";
-    String categoryNames[] = new String[]{"Portafolio", "Manejo de Producto", "Indicadores de negocio", "Ejecución", "Modelo de negocio", "Embajadores"};
+    String categoryPreNames[] = new String[]{"Portafolio", "Manejo de Producto", "Indicadores de negocio", "Ejecución", "Modelo de negocio", "Embajadores"};
     TextView txtScore;
 
     @Override
@@ -121,10 +121,10 @@ public class ResultsActivity extends SectionActivity implements WebBridge.WebBri
             try {
 
                 JSONObject evaluation = json.getJSONObject("evaluation").getJSONObject(type);
-                for (int i=1; true && i<=categoryNames.length; i++) {
+                for (int i=1; true && i<=categoryPreNames.length; i++) {
                     if (!evaluation.has("team_" + i)) break;
                     int value = evaluation.getInt("team_" + i);
-                    flResults.addView(getItem(categoryNames[i-1], value * 1.0f));
+                    flResults.addView(getItem(categoryPreNames[i-1], value * 1.0f));
                 }
 
                 if (evaluation.has("total")) {

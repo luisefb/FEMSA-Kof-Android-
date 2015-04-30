@@ -86,7 +86,7 @@ public class LogbookActivity extends SectionActivity implements WebBridge.WebBri
         setContentView(R.layout.activity_logbook);
         overridePendingTransition(R.anim.slide_left_from, R.anim.slide_left);
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
-        setTitle("Bitácora");
+        setTitle("Feedback de la Visita");
 
 
         imgCanvas = (ImageView)findViewById(R.id.img_canvas);

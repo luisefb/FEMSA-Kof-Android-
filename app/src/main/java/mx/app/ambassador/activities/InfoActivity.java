@@ -3,14 +3,18 @@ package mx.app.ambassador.activities;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import mx.app.ambassador.R;
 import mx.app.ambassador.activities.checklist.ChecklistOptsActivity;
 import mx.app.ambassador.activities.info.InfoMapsActivity;
+import mx.app.ambassador.utils.User;
 
 /**
  * Created by kreativeco on 07/04/15.
@@ -22,6 +26,8 @@ public class InfoActivity extends SectionActivity {
 	/* PROPERTIES */
 
     RelativeLayout rlInfo;
+    Button btInfoChecklist;
+    Button btInfoUnits;
 
 
     @Override
@@ -33,11 +39,15 @@ public class InfoActivity extends SectionActivity {
         setStatusBarColor(SectionActivity.STATUS_BAR_COLOR);
         setTitle("Día en la Operación");
 
-        rlInfo = (RelativeLayout) findViewById(R.id.rl_info);
+        rlInfo          = (RelativeLayout) findViewById(R.id.rl_info);
+        btInfoChecklist = (Button) findViewById(R.id.bt_info_checklist);
+        btInfoUnits     = (Button) findViewById(R.id.bt_info_units);
 
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)rlInfo.getLayoutParams();
         params.topMargin = getStatusBarHeight();
         rlInfo.setLayoutParams(params);
+
+        validate();
 
     }
 
@@ -58,8 +68,8 @@ public class InfoActivity extends SectionActivity {
         } else if (selected == 3) {
             nav = new Intent(InfoActivity.this, InfoMapsActivity.class);
         } else if (selected == 4) {
-            nav = new Intent(InfoActivity.this, ChecklistOptsActivity.class);
-            nav.putExtra("option", 5);
+            nav = new Intent(InfoActivity.this, OperatingUnitActivity.class);
+            //nav.putExtra("option", 5);
         }
 
         if (nav == null) return;
@@ -110,6 +120,36 @@ public class InfoActivity extends SectionActivity {
 
     }
 
+    protected void validate() {
+
+        if (User.get("checklist", this).equals("true")) {
+            btInfoChecklist.setEnabled(false);
+            btInfoChecklist.setAlpha(0.5f);
+        }
+
+        if (User.get("operation", this).equals("true")) {
+            btInfoUnits.setEnabled(false);
+            btInfoUnits.setAlpha(0.5f);
+        }
+
+    }
+
+
+
+
+	/*-----------------*/
+	/* OVERRIDE RESULT */
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+
+            Log.e("", "onActivity");
+
+            validate();
+        }
+    }
 
 
 

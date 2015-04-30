@@ -94,38 +94,30 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         setTitle("Equipa al Equipo");
 
         data = new ArrayList<HashMap<String, String>>();
-        data.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "storage");}});
-        //data.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "delivery");}});
+
+        data.add(new HashMap<String, String>() {{ put("i", "1");  put("n", "presales");}});
+        data.add(new HashMap<String, String>() {{ put("i", "2");  put("n", "presales");}});
         data.add(new HashMap<String, String>() {{ put("i", "3");  put("n", "presales");}});
+        data.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "presales");}});
 
-        data.add(new HashMap<String, String>() {{ put("i", "4");  put("n", "autoservice");}});
-        data.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "presales");}});
+        data.add(new HashMap<String, String>() {{ put("i", "5");  put("n", "delivery");}});
         data.add(new HashMap<String, String>() {{ put("i", "6");  put("n", "delivery");}});
-
         data.add(new HashMap<String, String>() {{ put("i", "7");  put("n", "delivery");}});
-        data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "storage");}});
+        data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "delivery");}});
+
         data.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "storage");}});
-
-        data.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "delivery");}});
-        data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "autoservice");}});
-        data.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "presales");}});
-
+        data.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "storage");}});
+        data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "storage");}});
+        data.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "storage");}});
         data.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "storage");}});
         data.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "storage");}});
-        //data.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "presales");}});
+        data.add(new HashMap<String, String>() {{ put("i", "15"); put("n", "storage");}});
 
-        data.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "storage");}});
-        data.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "delivery");}});
+        data.add(new HashMap<String, String>() {{ put("i", "16"); put("n", "autoservice");}});
+        data.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "autoservice");}});
         data.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "autoservice");}});
-
         data.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "autoservice");}});
         data.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "autoservice");}});
-        data.add(new HashMap<String, String>() {{ put("i", "21"); put("n", "autoservice");}});
-        data.add(new HashMap<String, String>() {{ put("i", "22"); put("n", "autoservice");}});
-
-        data.add(new HashMap<String, String>() {{ put("i", "23"); put("n", "presales");}});
-        data.add(new HashMap<String, String>() {{ put("i", "24"); put("n", "storage");}});
-
 
         random();
 

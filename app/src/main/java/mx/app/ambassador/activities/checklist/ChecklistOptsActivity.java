@@ -183,6 +183,8 @@ public class ChecklistOptsActivity extends SectionActivity implements WebBridge.
 
             //User.set("checklist_answers", getOptions(false), this);
             //User.set("checklist_type", Integer.toString(type), this);
+            User.set("checklist", "true", this);
+
 
             findViewById(R.id.bt_send).setVisibility(View.GONE);
             for (int i = 0; i < checkboxes.length; i++) {

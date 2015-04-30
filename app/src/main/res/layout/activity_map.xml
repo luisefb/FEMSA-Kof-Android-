@@ -100,10 +100,13 @@
             android:onClick="clickSection"
             android:text="@string/bt_map_game"/>
 
-
-
-
-
+        <Button
+            android:id="@+id/bt_map_feedback"
+            style="@style/bt_map"
+            android:drawableLeft="@drawable/bt_map_feedback"
+            android:tag="9"
+            android:onClick="clickSection"
+            android:text="@string/bt_map_feedback"/>
 
         <Button
             android:id="@+id/bt_map_info"
@@ -112,15 +115,7 @@
             android:tag="7"
             android:onClick="clickSection"
             android:text="@string/bt_map_info"/>
-        <!--
-        <Button
-            android:id="@+id/bt_map_checklist"
-            style="@style/bt_map"
-            android:drawableLeft="@drawable/bt_map_checklist"
-            android:tag="8"
-            android:onClick="clickSection"
-            android:text="@string/bt_map_checklist"/>
-        -->
+
         <Button
             android:id="@+id/bt_map_evaluation"
             style="@style/bt_map"
@@ -128,14 +123,6 @@
             android:tag="10"
             android:onClick="clickSection"
             android:text="@string/bt_map_evaluation"/>
-
-        <Button
-            android:id="@+id/bt_map_feedback"
-            style="@style/bt_map"
-            android:drawableLeft="@drawable/bt_map_feedback"
-            android:tag="9"
-            android:onClick="clickSection"
-            android:text="@string/bt_map_feedback"/>
 
         <Button
             android:id="@+id/bt_map_yammer"
