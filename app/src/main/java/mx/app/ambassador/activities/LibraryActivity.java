@@ -3,11 +3,14 @@ package mx.app.ambassador.activities;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
 
@@ -15,14 +18,13 @@ import com.joanzapata.pdfview.PDFView;
 
 import mx.app.ambassador.R;
 
-/**
- * Created by kreativeco on 20/04/15.
- */
+
 public class LibraryActivity extends SectionActivity {
 
-    RelativeLayout rlVideo, rlPdf;
+    RelativeLayout rlVideo, rlPdf, rlImage;
     PDFView pdfView;
     VideoView videoView;
+    ImageView imgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,10 @@ public class LibraryActivity extends SectionActivity {
         getWindow().setFormat(PixelFormat.UNKNOWN);
         rlVideo   = (RelativeLayout) findViewById(R.id.rl_video);
         rlPdf     = (RelativeLayout) findViewById(R.id.rl_pdf);
+        rlImage   = (RelativeLayout) findViewById(R.id.rl_image);
         pdfView   = (PDFView) findViewById(R.id.pdf_view);
         videoView = (VideoView)findViewById(R.id.video_kof);
+        imgView   = (ImageView)findViewById(R.id.img_kof);
 
     }
 
@@ -54,6 +58,29 @@ public class LibraryActivity extends SectionActivity {
     public void clickShowVideo(View v) {
         int i = Integer.parseInt(v.getTag().toString());
         showVideo(i);
+    }
+
+    public void clickShowImage(View v) {
+
+        CharSequence options[] = new CharSequence[] {getString(R.string.txt_infographics_1),
+                                                     getString(R.string.txt_infographics_2),
+                                                     getString(R.string.txt_infographics_3),
+                                                     getString(R.string.txt_infographics_4)};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Selecciona una opción");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showImage(which + 1);
+            }
+        });
+        builder.show();
+
+    }
+
+    public void clickHideImage(View v){
+        hide(rlImage);
     }
 
     public void clickHidePdf(View v){
@@ -103,6 +130,16 @@ public class LibraryActivity extends SectionActivity {
         AnimatorSet set = new AnimatorSet();
         set.play(scaleX).with(scaleY).with(alpha1);
         set.start();
+
+    }
+
+    public void showImage(int tag){
+
+        int id = getResources().getIdentifier("image_infographics_" + tag, "drawable", getPackageName());
+        Log.e("", "ID: " + id);
+        imgView.setImageResource(id);
+
+        show(rlImage);
 
     }
 

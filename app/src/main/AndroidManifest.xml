@@ -103,12 +103,6 @@
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
-        
-        <activity android:name=".activities.InfographicsActivity"
-            android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
 
         <activity android:name=".activities.checklist.ChecklistOptsActivity"
             android:screenOrientation="landscape"
