@@ -22,7 +22,7 @@
 		<item>
 			<question><![CDATA[¿Cuáles son nuestras marcas de sabores core?]]></question>
 			<answer1><![CDATA[Zensao, Burn, Fanta, Lift]]></answer1>
-			<answer2><![CDATA[Mundet, Frutsi, Coca Cola, Del Valle]]></answer2>
+			<answer2><![CDATA[Mundet, Frutsi, Coca-Cola, Del Valle]]></answer2>
 			<answer3><![CDATA[Fanta, Lift, Fresca , Sprite, Mundet]]></answer3>
 			<right>3</right>
 		</item>
@@ -100,7 +100,7 @@
 		</item>
 
 		<item>
-			<question><![CDATA[Todo lo que Coca Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta]]></question>
+			<question><![CDATA[Todo lo que Coca-Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta]]></question>
 			<answer1><![CDATA[Película de éxito]]></answer1>
 			<answer2><![CDATA[La propuesta de valor]]></answer2>
 			<answer3><![CDATA[Valor Industria]]></answer3>

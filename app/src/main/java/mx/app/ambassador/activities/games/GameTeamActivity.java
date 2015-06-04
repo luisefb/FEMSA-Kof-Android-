@@ -117,7 +117,7 @@ public class GameTeamActivity extends SectionActivity implements PanGestureListe
         data.add(new HashMap<String, String>() {{ put("i", "17"); put("n", "autoservice");}});
         data.add(new HashMap<String, String>() {{ put("i", "18"); put("n", "autoservice");}});
         data.add(new HashMap<String, String>() {{ put("i", "19"); put("n", "autoservice");}});
-        data.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "autoservice");}});
+        //data.add(new HashMap<String, String>() {{ put("i", "20"); put("n", "autoservice");}});
 
         random();
 

@@ -100,9 +100,10 @@
 
     <string name="txt_game_instructions_kof">Arrastra los conceptos que define la imagen con base a nuestro Lenguaje KOF</string>
     <string name="txt_game_instructions_team">Relaciona las imágenes con cada uno de los personajes del Equipo KOF</string>
-    <string name="txt_game_instructions_products">Haz click en los productos que se indican en la parte superior derecha.\n¡Tienes 1 minuto para hacer todos los puntos que puedas!</string>
-    <string name="txt_game_instructions_order">Haz click en los productos que se indican en la parte superior derecha.\n¡Tienes 1 minuto para hacer todos los puntos que puedas!</string>
+    <string name="txt_game_instructions_products">Haz click en los productos que se indican en la parte superior derecha.</string>
+    <string name="txt_game_instructions_order">En este juego realizarás dos actividades:\nActividad 1, haz click en los productos que deberás colocar para el armado de empaques\nActividad 2, has click en los empaques para el acomodo en el camión\n¡Tienes 3 minutos para hacer todos los puntos que puedas!</string>
     <string name="txt_game_instructions_refri">Demuestra que sabes el acomodo de los productos.\n¡Deja solo los productos que deben ir en el enfriador!</string>
+
 
 
     <string name="txt_gy_1">Croquis C.D. Coecillo</string>
@@ -156,7 +157,7 @@
 
     <string name="bt_library_energy">Balance Energético</string>
     <string name="bt_library_hydration">Hidratación</string>
-    <string name="bt_library_only_once">Una Sola Voz</string>
+    <string name="bt_library_only_once">Infografía</string>
     <string name="bt_library_portfolio">Portafolio</string>
     <string name="bt_library_language">Lenguaje De Negocio</string>
     <string name="bt_library_value_chain">Creer Para Crear</string>
@@ -166,7 +167,7 @@
     
     <string name="txt_infographics_1">Auxiliar Bodega</string>
     <string name="txt_infographics_2">Vendedor / Ayudante</string>
-    <string name="txt_infographics_3">Promotor / Mercadista</string>
+    <string name="txt_infographics_3">Promotor Mercaderista</string>
     <string name="txt_infographics_4">Preventa</string>
 
     <string-array name="array_checklist_sales">

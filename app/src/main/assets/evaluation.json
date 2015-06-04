@@ -19,7 +19,7 @@
         {
           "question": "¿Cuáles son nuestras marcas de sabores core?",
           "answer1": "Senzao, Burn, Fanta, Lift",
-          "answer2": "Mundet, Frutsi, Coca Cola, Del Valle",
+          "answer2": "Mundet, Frutsi, Coca-Cola, Del Valle",
           "answer3": "Fanta, Lift, Fresca , Sprite, Mundet",
           "right": "3"
         },
@@ -88,7 +88,7 @@
           "right": "3"
         },
         {
-          "question": "Todo lo que Coca Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta",
+          "question": "Todo lo que Coca-Cola FEMSA quiere que el consumidor experimente al ingresar en el punto de venta",
           "answer1": "Película de éxito",
           "answer2": "La propuesta de valor",
           "answer3": "Valor Industria",
@@ -181,7 +181,7 @@
         },
         {
           "question": "Son algunos de los sistemas de reparto que utilizamos",
-          "answer1": "Kabobie reparto directo de las plantas, reparto especializado, reparto terceros, reparto tradicional",
+          "answer1": "Kabobie (reparto directo de las plantas), reparto especializado, reparto terceros, reparto tradicional",
           "answer2": "Mayoristas y tradicional",
           "answer3": "Terceros y depósitos",
           "right": "1"

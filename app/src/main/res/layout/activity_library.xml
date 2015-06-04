@@ -23,31 +23,31 @@
             android:layout_marginBottom="15dp">
 
             <Button
-                android:id="@+id/bt_library_energy"
+                android:id="@+id/bt_library_kof"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_1"
                 android:gravity="center"
                 android:tag="1"
-                android:onClick="clickShowPdf"
-                android:text="@string/bt_library_energy" />
+                android:onClick="clickShowVideo"
+                android:text="@string/bt_library_kof" />
 
             <Button
-                android:id="@+id/bt_library_hydration"
+                android:id="@+id/bt_library_portfolio"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_2"
                 android:gravity="center"
                 android:tag="2"
                 android:onClick="clickShowPdf"
-                android:text="@string/bt_library_hydration" />
+                android:text="@string/bt_library_portfolio" />
 
             <Button
-                android:id="@+id/bt_library_tpm"
+                android:id="@+id/bt_library_language"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_3"
                 android:gravity="center"
                 android:tag="3"
-                android:onClick="clickShowImage"
-                android:text="@string/bt_library_only_once" />
+                android:onClick="clickShowPdf"
+                android:text="@string/bt_library_language" />
 
         </LinearLayout>
 
@@ -58,22 +58,22 @@
             android:layout_marginBottom="15dp">
 
             <Button
-                android:id="@+id/bt_library_portfolio"
+                android:id="@+id/bt_library_q_and_a"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_4"
                 android:gravity="center"
                 android:tag="4"
                 android:onClick="clickShowPdf"
-                android:text="@string/bt_library_portfolio" />
+                android:text="@string/bt_library_q_and_a" />
 
             <Button
-                android:id="@+id/bt_library_language"
+                android:id="@+id/bt_library_culture"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_5"
                 android:gravity="center"
                 android:tag="5"
                 android:onClick="clickShowPdf"
-                android:text="@string/bt_library_language" />
+                android:text="@string/bt_library_culture" />
 
             <Button
                 android:id="@+id/bt_library_value_chain"
@@ -92,31 +92,31 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/bt_library_q_and_a"
+                android:id="@+id/bt_library_tpm"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_7"
                 android:gravity="center"
                 android:tag="7"
-                android:onClick="clickShowPdf"
-                android:text="@string/bt_library_q_and_a" />
+                android:onClick="clickShowImage"
+                android:text="@string/bt_library_only_once" />
 
             <Button
-                android:id="@+id/bt_library_kof"
+                android:id="@+id/bt_library_energy"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_8"
                 android:gravity="center"
                 android:tag="8"
-                android:onClick="clickShowVideo"
-                android:text="@string/bt_library_kof" />
+                android:onClick="clickShowPdf"
+                android:text="@string/bt_library_energy" />
 
             <Button
-                android:id="@+id/bt_library_culture"
+                android:id="@+id/bt_library_hydration"
                 style="@style/bt_library"
                 android:drawableTop="@drawable/bt_library_9"
                 android:gravity="center"
                 android:tag="9"
                 android:onClick="clickShowPdf"
-                android:text="@string/bt_library_culture" />
+                android:text="@string/bt_library_hydration" />
 
         </LinearLayout>
     </LinearLayout>

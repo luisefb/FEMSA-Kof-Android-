@@ -107,7 +107,7 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
         data.add(new HashMap<String, String>() {{ put("i", "8");  put("n", "Caja Física");}});
         data.add(new HashMap<String, String>() {{ put("i", "9");  put("n", "Hand Held");}});
         data.add(new HashMap<String, String>() {{ put("i", "10"); put("n", "Caja");}});
-        data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "Café");}});
+        //data.add(new HashMap<String, String>() {{ put("i", "11"); put("n", "Café");}});
         data.add(new HashMap<String, String>() {{ put("i", "12"); put("n", "Material POP");}});
         data.add(new HashMap<String, String>() {{ put("i", "13"); put("n", "Fecha Preferente\nde Consumo");}});
         data.add(new HashMap<String, String>() {{ put("i", "14"); put("n", "Single Serve");}});
@@ -229,21 +229,6 @@ public class GameKofActivity extends SectionActivity implements PanGestureListen
                 result.put("question_" + (i+1), answer);
 
             } catch (JSONException e) {}
-
-            /*
-            if (i == answers.length - 1) {
-                a.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {}
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {}
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        end(result);
-                    }
-                });
-            }
-            */
 
             img.startAnimation(a);
             rlContent.addView(img);

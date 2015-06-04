@@ -135,6 +135,8 @@ public class LibraryActivity extends SectionActivity {
 
     public void showImage(int tag){
 
+        tag = 3;
+
         int id = getResources().getIdentifier("image_infographics_" + tag, "drawable", getPackageName());
         Log.e("", "ID: " + id);
         imgView.setImageResource(id);
