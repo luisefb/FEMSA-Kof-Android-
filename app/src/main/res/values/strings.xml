@@ -164,11 +164,17 @@
     <string name="bt_library_q_and_a">Q&amp;A</string>
     <string name="bt_library_kof">Historia KOF</string>
     <string name="bt_library_culture">Cultura</string>
+    <string name="bt_library_videos">Videos</string>
     
     <string name="txt_infographics_1">Auxiliar Bodega</string>
     <string name="txt_infographics_2">Vendedor / Ayudante</string>
     <string name="txt_infographics_3">Promotor Mercaderista</string>
     <string name="txt_infographics_4">Preventa</string>
+
+    <string name="txt_video_6">Almacén</string>
+    <string name="txt_video_7">Canal Moderno</string>
+    <string name="txt_video_8">Distribución</string>
+    <string name="txt_video_9">Ventas</string>
 
     <string-array name="array_checklist_sales">
 

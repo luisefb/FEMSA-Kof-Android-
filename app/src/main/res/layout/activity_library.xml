@@ -20,11 +20,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center_horizontal">
 
             <Button
                 android:id="@+id/bt_library_kof"
-                style="@style/bt_library"
+                style="@style/bt_library3"
                 android:drawableTop="@drawable/bt_library_1"
                 android:gravity="center"
                 android:tag="1"
@@ -42,7 +43,7 @@
 
             <Button
                 android:id="@+id/bt_library_language"
-                style="@style/bt_library"
+                style="@style/bt_library3"
                 android:drawableTop="@drawable/bt_library_3"
                 android:gravity="center"
                 android:tag="3"
@@ -55,11 +56,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center_horizontal">
 
             <Button
                 android:id="@+id/bt_library_q_and_a"
-                style="@style/bt_library"
+                style="@style/bt_library2"
                 android:drawableTop="@drawable/bt_library_4"
                 android:gravity="center"
                 android:tag="4"
@@ -68,7 +70,7 @@
 
             <Button
                 android:id="@+id/bt_library_culture"
-                style="@style/bt_library"
+                style="@style/bt_library2"
                 android:drawableTop="@drawable/bt_library_5"
                 android:gravity="center"
                 android:tag="5"
@@ -77,32 +79,33 @@
 
             <Button
                 android:id="@+id/bt_library_value_chain"
-                style="@style/bt_library"
+                style="@style/bt_library2"
                 android:drawableTop="@drawable/bt_library_6"
                 android:gravity="center"
                 android:tag="6"
                 android:onClick="clickShowVideo"
                 android:text="@string/bt_library_value_chain" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
             <Button
                 android:id="@+id/bt_library_tpm"
-                style="@style/bt_library"
+                style="@style/bt_library2"
                 android:drawableTop="@drawable/bt_library_7"
                 android:gravity="center"
                 android:tag="7"
                 android:onClick="clickShowImage"
                 android:text="@string/bt_library_only_once" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
             <Button
                 android:id="@+id/bt_library_energy"
-                style="@style/bt_library"
+                style="@style/bt_library3"
                 android:drawableTop="@drawable/bt_library_8"
                 android:gravity="center"
                 android:tag="8"
@@ -117,6 +120,15 @@
                 android:tag="9"
                 android:onClick="clickShowPdf"
                 android:text="@string/bt_library_hydration" />
+
+            <Button
+                android:id="@+id/bt_library_videos"
+                style="@style/bt_library3"
+                android:drawableTop="@drawable/bt_library_10"
+                android:gravity="center"
+                android:tag="10"
+                android:onClick="clickShowVideos"
+                android:text="@string/bt_library_videos" />
 
         </LinearLayout>
     </LinearLayout>

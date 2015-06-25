@@ -79,6 +79,25 @@ public class LibraryActivity extends SectionActivity {
 
     }
 
+    public void clickShowVideos(View v) {
+
+        CharSequence options[] = new CharSequence[] {getString(R.string.txt_video_6),
+                getString(R.string.txt_video_7),
+                getString(R.string.txt_video_8),
+                getString(R.string.txt_video_9)};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Selecciona una opción");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                showVideo(which+6);
+            }
+        });
+        builder.show();
+
+    }
+
     public void clickHideImage(View v){
         hide(rlImage);
     }
